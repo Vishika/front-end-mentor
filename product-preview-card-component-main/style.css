@@ -27,7 +27,7 @@ html {
 
 body {
   background-color: var(--cream);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,8 @@ body {
   display: flex;
   width: 600px;
   border-radius: var(--radius);
-  overflow: hidden;
+  overflow-x: hidden;
+  margin: 5rem;
 }
 
 .text-box {
@@ -72,6 +73,10 @@ p {
   width: 300px;
 }
 
+.product-img--mobile {
+  display: none;
+}
+
 .product-description {
   font-size: var(--s);
   line-height: 1.5;
@@ -80,6 +85,7 @@ p {
 .product-price {
   display: flex;
   align-items: center;
+  gap: 2.4rem;
 }
 
 .price-discount {
@@ -87,7 +93,6 @@ p {
   font-family: "Fraunces", serif;
   font-size: var(--xl);
   color: var(--green);
-  margin-right: 2.4rem;
 }
 
 .price-original {
