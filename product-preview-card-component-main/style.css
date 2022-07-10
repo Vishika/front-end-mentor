@@ -6,10 +6,19 @@
 
 :root {
   --green: hsl(158, 36%, 37%);
+  --dark-green: hsl(156, 42%, 18%);
   --dark-grey: hsl(212, 21%, 14%);
   --grey: hsl(228, 12%, 48%);
   --cream: hsl(30, 38%, 92%);
   --off-white: hsl(0, 0%, 100%);
+
+  --t: 1rem;
+  --s: 1.4rem;
+  --m: 1.6rem;
+  --l: 2rem;
+  --xl: 3rem;
+
+  --radius: 1rem;
 }
 
 html {
@@ -23,46 +32,88 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Montserrat", sans-serif;
+  font-size: var(--m);
+  font-weight: 500;
   color: var(--grey);
 }
 
 .card {
   display: flex;
   width: 600px;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .text-box {
   background-color: var(--off-white);
-  padding: 20px;
+  padding: 3.2rem;
 }
 
 p {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .sub-heading {
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  color: var(--grey);
+  letter-spacing: 0.3rem;
+  margin-bottom: 1.8rem;
 }
 
 .product-title {
   font-family: "Fraunces", serif;
+  font-size: var(--xl);
+  font-weight: 700;
   color: var(--dark-grey);
+  line-height: 1;
 }
 
 .product-img {
+  display: block;
   width: 300px;
 }
 
+.product-description {
+  font-size: var(--s);
+  line-height: 1.5;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+}
+
 .price-discount {
+  display: inline-block;
   font-family: "Fraunces", serif;
+  font-size: var(--xl);
   color: var(--green);
+  margin-right: 2.4rem;
 }
 
 .price-original {
+  display: inline-block;
+  font-size: var(--s);
+  text-decoration: line-through;
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--green);
+  width: 100%;
+  padding: 1.6rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 700;
+  color: var(--off-white);
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: var(--dark-green);
+}
+
+.btn-icon {
+  margin-right: 1rem;
 }
