@@ -18,9 +18,38 @@
   }
 }
 
+@media (max-width: 27.6875em) {
+  body {
+    justify-content: unset;
+  }
+}
+
 /* 350 pixels and below */
 @media (max-width: 21.875em) {
   .product-price {
     flex-direction: column;
+  }
+}
+
+/* 300 pixels and below */
+@media (max-width: 18.75em) {
+  body {
+    justify-content: flex-start;
+  }
+
+  .card-container {
+    overflow-x: scroll;
+  }
+
+  .card {
+    min-width: 200px;
+  }
+}
+
+/* 200 pixels and below */
+@media (max-width: 18.75em) {
+  .card {
+    margin: 0;
+    border-radius: 0;
   }
 }
