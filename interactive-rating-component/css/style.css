@@ -11,7 +11,7 @@
   --light-grey: rgb(149, 158, 172);
   --medium-grey: rgb(124, 135, 152);
   --medium-dark-grey: rgb(59, 66, 75);
-  --dark-grey: rgb(37, 45, 55);
+  --dark-grey: rgb(26, 31, 39);
   --very-dark-grey: rgb(18, 20, 23);
 
   --radius: 2.5rem;
@@ -43,8 +43,9 @@ body {
   margin-bottom: 3rem;
 }
 
-.rating-container {
-  background-color: var(--dark-grey);
+.rating-container,
+.thank-you-container {
+  background: radial-gradient(at 50% 0%, var(--medium-dark-grey), var(--dark-grey));
   padding: 3rem;
   max-width: 40rem;
   border-radius: var(--radius);
@@ -73,28 +74,18 @@ body {
   justify-content: space-between;
 }
 
-.rating {
-  background-color: var(--medium-dark-grey);
-  width: var(--bubble-size);
-  height: var(--bubble-size);
-  border-radius: 50%;
-  font-size: 1.6rem;
-  transition: all 0.3s;
-  cursor: pointer;
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
 }
 
-.rating:hover {
-  background-color: var(--medium-grey);
-  color: var(--white);
-}
-
-.rating .adjacent {
-  background-color: var(--medium-grey);
-  color: var(--white);
-}
-
-.rating:active {
+input[class="rating"]:hover + .rating-text {
   background-color: var(--orange);
+  color: var(--white);
+}
+
+input[class="rating"]:checked + .rating-text {
+  background-color: var(--medium-grey);
   color: var(--white);
 }
 
@@ -104,7 +95,12 @@ body {
   justify-content: center;
   width: var(--bubble-size);
   height: var(--bubble-size);
+  background-color: var(--medium-dark-grey);
+  border-radius: 50%;
+  font-size: 1.6rem;
   font-family: sans-serif;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .btn {
@@ -130,6 +126,35 @@ body {
   color: var(--orange);
 }
 
+.thank-you-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 3rem;
+}
+
+.thank-you-rating-text {
+  display: inline-block;
+  background-color: var(--medium-dark-grey);
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+  font-family: sans-serif;
+  color: var(--orange);
+}
+
+.thank-you-title {
+  color: var(--white);
+}
+
+.thank-you-description {
+  line-height: 1.6;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
 /* 425px */
 @media (max-width: 26.5625em) {
   :root {
@@ -153,7 +178,13 @@ body {
     max-width: 32.5rem;
   }
 
-  .rating-title {
+  .thank-you-container {
+    padding: 3.5rem 2.5rem;
+    max-width: 32.5rem;
+  }
+
+  .rating-title,
+  .thank-you-title {
     font-size: 2.4rem;
   }
 }
