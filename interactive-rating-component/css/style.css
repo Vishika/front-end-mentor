@@ -6,6 +6,7 @@
 
 :root {
   --orange: rgb(251, 116, 19);
+  --dark-orange: rgb(226, 104, 17);
   --white: rgb(255, 255, 255);
   --light-grey: rgb(149, 158, 172);
   --medium-grey: rgb(124, 135, 152);
@@ -78,6 +79,23 @@ body {
   height: var(--bubble-size);
   border-radius: 50%;
   font-size: 1.6rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.rating:hover {
+  background-color: var(--medium-grey);
+  color: var(--white);
+}
+
+.rating .adjacent {
+  background-color: var(--medium-grey);
+  color: var(--white);
+}
+
+.rating:active {
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 .rating-text {
@@ -99,6 +117,17 @@ body {
   font-weight: 700;
   letter-spacing: 0.2rem;
   color: var(--white);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--dark-orange);
+}
+
+.btn:active {
+  background-color: var(--white);
+  color: var(--orange);
 }
 
 /* 425px */
