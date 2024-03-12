@@ -51,6 +51,11 @@ body {
   padding: var(--l);
   max-width: 38.4rem;
   box-shadow: var(--xs) var(--xs) black;
+  transition: all 0.2s ease-in;
+}
+
+.card:hover {
+  box-shadow: var(--s) var(--s) black;
 }
 
 .card-illustration {
