@@ -24,13 +24,18 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: inter;
+  src: url(assets/fonts/inter.ttf);
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   background-color: var(--color-black);
-  font-family: "Inter", sans-serif;
+  font-family: inter, sans-serif;
   font-weight: var(--weight-regular);
   font-size: var(--s);
 }
