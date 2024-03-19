@@ -1,0 +1,202 @@
+:root {
+  --color-brandy-red: hsl(14, 45%, 36%);
+  --color-dark-raspberry: hsl(332, 51%, 32%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-snow: hsl(330, 100%, 98%);
+  --color-eggshell: hsl(30, 54%, 90%);
+  --color-white-coffee: hsl(30, 18%, 87%);
+  --color-wenge-brown: hsl(30, 10%, 34%);
+  --color-dark-charcoal: hsl(24, 5%, 18%);
+
+  --xxl: 4rem;
+  --xl: 3.2rem;
+  --l: 2.4rem;
+  --m: 1.6rem;
+  --s: 1.2rem;
+  --xs: 1rem;
+  --xxs: 0.8rem;
+
+  --bold: 700;
+  --semiBold: 600;
+  --regular: 400;
+}
+
+@font-face {
+  font-family: outfit;
+  src: url(../assets/fonts/outfit.ttf);
+}
+
+@font-face {
+  font-family: youngSerif;
+  src: url(../assets/fonts/youngSerif.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-eggshell);
+  min-height: 100vh;
+
+  font-family: outfit, sans-serif;
+  font-weight: var(--regular);
+  font-size: var(--m);
+  line-height: 150%;
+  color: var(--color-wenge-brown);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recipe {
+  background-color: var(--color-white);
+  max-width: 73.6rem;
+  padding: var(--xxl);
+  margin: var(--xxl);
+  border-radius: var(--l);
+}
+
+.recipe-img {
+  height: 30rem;
+  border-radius: var(--s);
+  margin-bottom: var(--xxl);
+}
+
+h1 {
+  font-family: youngSerif, serif;
+  font-size: var(--xxl);
+  font-weight: var(--regular);
+  line-height: 100%;
+  color: var(--color-dark-charcoal);
+  margin-bottom: var(--l);
+}
+
+h2 {
+  font-family: youngSerif, serif;
+  font-weight: var(--regular);
+  font-size: 2.8rem;
+  line-height: 100%;
+  color: var(--color-brandy-red);
+  margin-bottom: var(--l);
+}
+
+h3 {
+  color: var(--color-dark-raspberry);
+  font-size: 2rem;
+  font-weight: var(--semiBold);
+  line-height: 100%;
+  margin-bottom: var(--m);
+}
+
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xxs);
+  list-style-position: inside;
+  margin-left: var(--xxs);
+}
+
+li::marker {
+  background-color: black;
+  min-width: var(--m);
+  margin: 0;
+}
+
+.recipe-description {
+  margin-bottom: var(--xl);
+}
+
+.line-break {
+  margin-bottom: var(--xl);
+  border-top: 1px solid var(--color-white-coffee);
+}
+
+.table-line-break {
+  margin-top: var(--s);
+  margin-bottom: var(--s);
+  border-top: 1px solid var(--color-white-coffee);
+}
+
+.recipe-section-prep {
+  background-color: var(--color-snow);
+  padding: 2.8rem;
+  border-radius: var(--s);
+  margin-bottom: var(--xl);
+}
+
+.recipe-section-prep li::marker {
+  color: var(--color-dark-raspberry);
+}
+
+.recipe-section-prep li span {
+  margin-left: var(--xxs);
+}
+
+.recipe-section-ingredients {
+  margin-bottom: var(--xl);
+}
+
+.recipe-section-ingredients li::marker {
+  color: var(--color-brandy-red);
+}
+
+.recipe-section-ingredients li span {
+  margin-left: var(--xxs);
+}
+
+.recipe-section-instructions {
+  margin-bottom: var(--xl);
+}
+
+.recipe-section-instructions ol {
+  list-style: none;
+}
+
+.recipe-section-instructions li {
+  display: flex;
+  gap: var(--m);
+}
+
+.recipe-section-instructions li .marker {
+  font-weight: var(--bold);
+  color: var(--color-brandy-red);
+  display: block;
+  min-width: var(--m);
+}
+
+.recipe-section-nutrition p {
+  margin-bottom: var(--l);
+}
+
+.recipe-section-nutrition .table {
+  margin-left: var(--m);
+}
+
+.recipe-section-nutrition .row {
+  display: flex;
+  width: 100%;
+}
+
+.unit,
+.amount {
+  margin-left: var(--m);
+}
+
+.amount {
+  font-weight: var(--bold);
+  color: var(--color-brandy-red);
+}
+
+.recipe-section-nutrition .row span {
+  display: inline-block;
+  min-width: 50%;
+}
