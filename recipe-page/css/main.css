@@ -60,7 +60,7 @@ body {
   background-color: var(--color-white);
   max-width: 73.6rem;
   padding: var(--xxl);
-  margin: var(--xxl);
+  margin: 12rem var(--xxl);
   border-radius: var(--l);
 }
 
@@ -88,14 +88,6 @@ h2 {
   margin-bottom: var(--l);
 }
 
-h3 {
-  color: var(--color-dark-raspberry);
-  font-size: 2rem;
-  font-weight: var(--semiBold);
-  line-height: 100%;
-  margin-bottom: var(--m);
-}
-
 ul,
 ol {
   display: flex;
@@ -110,9 +102,9 @@ li {
 }
 
 li::marker {
-  background-color: black;
-  min-width: var(--m);
   margin: 0;
+  font-weight: var(--bold);
+  color: var(--color-brandy-red);
 }
 
 .recipe-description {
@@ -137,6 +129,15 @@ li::marker {
   margin-bottom: var(--xl);
 }
 
+.recipe-section-prep h2 {
+  color: var(--color-dark-raspberry);
+  font-family: outfit, sans-serif;
+  font-size: 2rem;
+  font-weight: var(--semiBold);
+  line-height: 100%;
+  margin-bottom: var(--m);
+}
+
 .recipe-section-prep li::marker {
   color: var(--color-dark-raspberry);
 }
@@ -145,17 +146,8 @@ li::marker {
   margin-bottom: var(--xl);
 }
 
-.recipe-section-ingredients li::marker {
-  color: var(--color-brandy-red);
-}
-
 .recipe-section-instructions {
   margin-bottom: var(--xl);
-}
-
-.recipe-section-instructions li::marker {
-  color: var(--color-brandy-red);
-  font-weight: var(--bold);
 }
 
 .recipe-section-nutrition p {
@@ -171,8 +163,7 @@ li::marker {
   width: 100%;
 }
 
-.unit,
-.amount {
+.unit {
   margin-left: var(--m);
 }
 
