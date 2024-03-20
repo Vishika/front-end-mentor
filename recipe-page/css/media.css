@@ -1,0 +1,37 @@
+@media (max-width: 52.25em) {
+  .recipe {
+    width: 37.5rem;
+    padding: 3.2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .recipe-img {
+    transition: all 0.3s ease-in-out;
+  }
+
+  h1 {
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 28.4375em) {
+  .recipe {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 23.4375em) {
+  html {
+    overflow-x: scroll;
+  }
+
+  .recipe {
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .recipe-img {
+    border-radius: 0;
+  }
+}
