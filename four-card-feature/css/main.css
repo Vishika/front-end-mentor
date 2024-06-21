@@ -78,10 +78,13 @@ p {
 
 .main {
   margin: var(--space-xxl) var(--space-lg);
+  display: grid;
+  place-items: center;
 }
 
 .header {
   margin-bottom: var(--space-xl);
+  max-width: 54rem;
   text-align: center;
 }
 
@@ -90,11 +93,13 @@ p {
 }
 
 .cards {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-lg);
 }
 
 .card {
+  max-width: 35rem;
   border-top: 0.3rem solid var(--color);
   border-radius: 0.5rem;
   box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.3);
@@ -122,4 +127,17 @@ p {
   margin: var(--space-lg) 0 0 auto;
   width: 5.7rem;
   height: 5.7rem;
+}
+
+@media (min-width: 75em) {
+  .cards {
+    height: 55rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card--1,
+  .card--4 {
+    margin: var(--space-lg) 0;
+  }
 }
