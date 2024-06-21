@@ -57,8 +57,8 @@ I used custom variables to only change the colour of the border accent
 }
 ```
 
-I figured out that flexbox was the best way to go for this design,
-and that it needed a column direction and a little margin to make sure
+I figured out that I could do it using flexbox
+It needed a column direction and a little margin to make sure
 that only one item existed for the first and last column,
 the justify-content was needed to ensure everything lined up on the main axis
 
@@ -79,6 +79,38 @@ the justify-content was needed to ensure everything lined up on the main axis
   .card--1,
   .card--4 {
     margin: var(--space-lg) 0;
+  }
+}
+```
+
+After playing around with grid, I decided that was the best way to go for this design
+It's much more elegant using grid-template-areas
+
+```css
+.cards {
+  @media (min-width: 75em) {
+    display: grid;
+    grid-template-areas:
+      ". . t t . ."
+      "l l t t r r"
+      "l l b b r r"
+      ". . b b . .";
+  }
+
+  .card--1 {
+    grid-area: l;
+  }
+
+  .card--2 {
+    grid-area: t;
+  }
+
+  .card--3 {
+    grid-area: b;
+  }
+
+  .card--4 {
+    grid-area: r;
   }
 }
 ```

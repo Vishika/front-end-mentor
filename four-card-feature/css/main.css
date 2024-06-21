@@ -70,6 +70,7 @@ h2 {
 p {
   font-size: 1.3rem;
   margin-top: var(--space-xs);
+  color: var(--color-gray-blue);
 }
 
 .subdued {
@@ -93,8 +94,7 @@ p {
 }
 
 .cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: var(--space-lg);
 }
 
@@ -131,13 +131,27 @@ p {
 
 @media (min-width: 75em) {
   .cards {
-    height: 55rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-areas:
+      ". . t t . ."
+      "l l t t r r"
+      "l l b b r r"
+      ". . b b . .";
   }
 
-  .card--1,
+  .card--1 {
+    grid-area: l;
+  }
+
+  .card--2 {
+    grid-area: t;
+  }
+
+  .card--3 {
+    grid-area: b;
+  }
+
   .card--4 {
-    margin: var(--space-lg) 0;
+    grid-area: r;
   }
 }
