@@ -1,0 +1,125 @@
+:root {
+  --color-red: hsl(0, 78%, 62%);
+  --color-cyan: hsl(180, 62%, 55%);
+  --color-orange: hsl(34, 97%, 64%);
+  --color-blue: hsl(212, 86%, 64%);
+  --color-gray-blue-dark: hsl(234, 12%, 34%);
+  --color-gray-blue: hsl(229, 6%, 66%);
+  --color-gray-light: hsl(0, 0%, 98%);
+
+  --space-unit: 1.6em;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+}
+
+@font-face {
+  font-family: poppins-extra-light;
+  src: url(../fonts/poppins-extra-light.ttf);
+}
+
+@font-face {
+  font-family: poppins-regular;
+  src: url(../fonts/poppins-regular.ttf);
+}
+
+@font-face {
+  font-family: poppins-semi-bold;
+  src: url(../fonts/poppins-semi-bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: poppins-regular, sans-serif;
+  line-height: 1.5;
+  color: var(--color-gray-blue-dark);
+}
+
+h1,
+h2 {
+  font-family: poppins-semi-bold, sans-serif;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 1.97746rem + 1.1268vi, 3.6rem);
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.3rem;
+  margin-top: var(--space-xs);
+}
+
+.subdued {
+  font-family: poppins-extra-light, sans-serif;
+}
+
+.main {
+  margin: var(--space-xxl) var(--space-lg);
+}
+
+.header {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.header p {
+  font-size: 1.5rem;
+}
+
+.cards {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.card {
+  border-top: 0.3rem solid var(--color);
+  border-radius: 0.5rem;
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.3);
+  padding: var(--space-lg);
+}
+
+.card--1 {
+  --color: var(--color-cyan);
+}
+
+.card--2 {
+  --color: var(--color-red);
+}
+
+.card--3 {
+  --color: var(--color-orange);
+}
+
+.card--4 {
+  --color: var(--color-blue);
+}
+
+.icon {
+  display: block;
+  margin: var(--space-lg) 0 0 auto;
+  width: 5.7rem;
+  height: 5.7rem;
+}
