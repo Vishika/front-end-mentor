@@ -43,12 +43,16 @@ html {
 }
 
 body {
+  min-height: 100vh;
   background: var(--color-light-blue);
   font-family: barlow-medium, sans-serif;
   line-height: 1.5;
+  display: grid;
+  place-content: center;
 }
 
 .testimonials {
+  max-width: 144rem;
   margin: var(--space-md);
   display: grid;
   gap: var(--space-md);

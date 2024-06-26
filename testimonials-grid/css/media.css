@@ -1,0 +1,45 @@
+@media (min-width: calc(720em / 16)) {
+  .testimonials {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .testimonial:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .testimonial:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  .testimonial:nth-child(5) {
+    grid-row: span 2;
+  }
+
+  .testimonial:nth-child(3) {
+    order: 1;
+  }
+
+  .testimonial:nth-child(4) {
+    order: 2;
+  }
+}
+
+@media (min-width: calc(1080em / 16)) {
+  .testimonials {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .testimonial:nth-child(3) {
+    order: 3;
+  }
+}
+
+@media (min-width: calc(1440em / 16)) {
+  .testimonials {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .testimonial:nth-child(3) {
+    order: 1;
+  }
+}
