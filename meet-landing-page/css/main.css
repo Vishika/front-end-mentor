@@ -1,0 +1,44 @@
+:root {
+  --color-teal: #4d96a9;
+  --color-purple: #855fb1;
+  --color--light-teal: #8fe3f9;
+  --color--light-purple: #d9b8ff;
+  --color-black: #28283d;
+  --color-grey: #87879d;
+  --color-white: #fafafa;
+
+  --space-unit: 1.8em;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+}
+
+@font-face {
+  font-family: red-hat-display;
+  src: url(../fonts/red-hat-display.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: red-hat-display, sans-serif;
+  line-height: 1.5;
+}
