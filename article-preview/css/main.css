@@ -1,0 +1,157 @@
+:root {
+  --color-white: #ffffff;
+  --color-white-dark: #ecf2f8;
+  --color-grey-light: #9eafc2;
+  --color-grey: #6d7f97;
+  --color-grey-dark: #48556a;
+
+  --space-unit: 1.6em;
+  --space-xxs: calc(0.25 * var(--space-unit));
+  --space-xs: calc(0.5 * var(--space-unit));
+  --space-sm: calc(0.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-xxxl: calc(8.5 * var(--space-unit));
+}
+
+@font-face {
+  font-family: manrope;
+  src: url(../fonts/manrope.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--color-white-dark);
+  font-family: manrope, sans-serif;
+  font-weight: 500;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 70%;
+}
+
+.card {
+  background-color: var(--color-white);
+  margin: var(--space-md);
+  border-radius: var(--space-sm);
+  overflow-x: hidden;
+}
+
+.content {
+  margin: var(--space-lg);
+}
+
+.content__title {
+  margin-bottom: var(--space-xs);
+  color: var(--color-grey-dark);
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.content__detail {
+  color: var(--color-grey);
+  font-size: 1.3rem;
+}
+
+.author {
+  margin: var(--space-md) var(--space-lg);
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.author__portait {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
+}
+
+.author__details__name {
+  color: var(--color-grey-dark);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.author__details__date {
+  color: var(--color-grey-light);
+  font-size: 1.3rem;
+}
+
+.share__btn {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 100%;
+  margin-left: auto;
+  align-self: center;
+  position: relative;
+}
+
+.share__btn__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.share {
+  background-color: var(--color-grey-dark);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.share__title {
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: var(--color-grey);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.share__link:hover {
+  opacity: 70%;
+}
+
+.share__icon {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+}
+
+.share .share__btn {
+  background-color: var(--color-grey);
+}
+
+.hidden {
+  display: none;
+}
