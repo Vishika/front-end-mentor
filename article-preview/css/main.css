@@ -59,14 +59,27 @@ button:hover {
 }
 
 .card {
+  max-width: 33rem;
   background-color: var(--color-white);
   margin: var(--space-md);
   border-radius: var(--space-sm);
+  box-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.1);
   overflow-x: hidden;
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "content"
+    "footer";
+}
+
+.hero {
+  grid-area: hero;
 }
 
 .content {
   margin: var(--space-lg);
+  margin-bottom: var(--space-md);
+  grid-area: content;
 }
 
 .content__title {
@@ -82,7 +95,8 @@ button:hover {
 }
 
 .author {
-  margin: var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  grid-area: footer;
   display: flex;
   gap: var(--space-sm);
 }
@@ -104,16 +118,18 @@ button:hover {
   font-size: 1.3rem;
 }
 
-.share__btn {
+.share-btn {
+  z-index: 2;
   height: 3.2rem;
   width: 3.2rem;
   border-radius: 100%;
   margin-left: auto;
   align-self: center;
   position: relative;
+  transition: all 0.3s;
 }
 
-.share__btn__icon {
+.share-btn__icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -123,8 +139,10 @@ button:hover {
 }
 
 .share {
+  z-index: 1;
   background-color: var(--color-grey-dark);
   padding: var(--space-md) var(--space-lg);
+  grid-area: footer;
   display: flex;
   align-items: center;
   gap: var(--space-md);
@@ -138,6 +156,10 @@ button:hover {
   font-weight: 500;
 }
 
+.share__link {
+  transition: all 0.3s;
+}
+
 .share__link:hover {
   opacity: 70%;
 }
@@ -148,8 +170,12 @@ button:hover {
   width: 2rem;
 }
 
-.share .share__btn {
+.share-btn--alt {
   background-color: var(--color-grey);
+}
+
+.share-btn--alt path {
+  fill: var(--color-white);
 }
 
 .hidden {
