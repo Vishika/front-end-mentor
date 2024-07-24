@@ -18,3 +18,30 @@
     font-size: 2rem;
   }
 }
+
+@media (min-width: calc(1000em / 16)) {
+  .share-btn {
+    anchor-name: --share-btn;
+  }
+
+  .share {
+    margin-bottom: 2rem;
+    position: absolute;
+    border-radius: var(--space-sm);
+    box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    position-anchor: --share-btn;
+    inset-area: top;
+  }
+
+  .share::after {
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--color-grey-dark);
+    box-shadow: -0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+}

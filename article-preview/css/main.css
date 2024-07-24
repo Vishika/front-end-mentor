@@ -119,7 +119,7 @@ button:hover {
 }
 
 .share-btn {
-  z-index: 2;
+  z-index: 1;
   height: 3.2rem;
   width: 3.2rem;
   border-radius: 100%;
@@ -139,13 +139,20 @@ button:hover {
 }
 
 .share {
-  z-index: 1;
+  opacity: 1;
   background-color: var(--color-grey-dark);
   padding: var(--space-md) var(--space-lg);
   grid-area: footer;
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  transition: all 1s;
+  transition-behavior: allow-discrete;
+  translate: 0 0vh;
+  @starting-style {
+    opacity: 0;
+    translate: 0 -10vh;
+  }
 }
 
 .share__title {
@@ -157,7 +164,7 @@ button:hover {
 }
 
 .share__link {
-  transition: all 0.3s;
+  transition: all 1s;
 }
 
 .share__link:hover {
@@ -180,4 +187,6 @@ button:hover {
 
 .hidden {
   display: none;
+  opacity: 0;
+  translate: 0 -10vh;
 }
