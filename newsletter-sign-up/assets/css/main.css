@@ -53,12 +53,9 @@ html {
 
 body {
   background: var(--color-grey-dark);
-  height: 100dvh;
   font-family: roboto-regular, sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  display: grid;
-  place-content: center;
 }
 
 img {
@@ -66,13 +63,21 @@ img {
   max-width: 100%;
 }
 
-.hidden {
-  display: none;
+strong {
+  font-family: roboto-bold, sans-serif;
+}
+
+.content {
+  height: 100dvh;
+  display: grid;
+  place-content: center;
+  grid-template-areas: "content";
 }
 
 .signup {
   max-width: 37.5rem;
   background: var(--color-white);
+  grid-area: content;
 }
 
 .signup__main {
@@ -84,6 +89,7 @@ img {
 .main__title {
   font-size: var(--space-2x-md);
   font-family: roboto-bold, sans-serif;
+  line-height: 1;
 }
 
 .main__list {
@@ -130,4 +136,28 @@ img {
 
 .btn:hover {
   background: var(--color-primary-gradient);
+}
+
+.success {
+  max-width: 37.5rem;
+  background-color: var(--color-white);
+  padding: var(--space-2x-md) var(--space-2x-sm);
+  grid-area: content;
+  display: grid;
+  align-items: end;
+}
+
+.success__message {
+  display: grid;
+  gap: var(--space-2x-sm);
+}
+
+.message__title {
+  font-size: var(--space-2x-md);
+  font-family: roboto-bold, sans-serif;
+  line-height: 1;
+}
+
+.hidden {
+  display: none;
 }
