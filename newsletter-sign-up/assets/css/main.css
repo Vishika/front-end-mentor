@@ -1,5 +1,6 @@
 :root {
   --color-primary: hsl(4, 100%, 67%);
+  --color-primary-transparent: rgba(255, 98, 87, 0.1);
   --color-primary-gradient: linear-gradient(
     to right top,
     hsl(346, 100%, 66%),
@@ -112,17 +113,33 @@ strong {
   flex-direction: column;
 }
 
-.form__label {
+.form__email {
+  display: grid;
+}
+
+.email__info {
   margin-bottom: var(--space-xs);
   font-family: roboto-bold, sans-serif;
   font-size: var(--space-sm);
+  display: flex;
 }
 
-.form__input {
+.email__error {
+  margin-left: auto;
+  color: var(--color-primary);
+}
+
+.email__input {
   margin-bottom: var(--space-2x-sm);
   border: 0.1rem solid var(--color-grey-light);
   border-radius: var(--space-xs);
   padding: var(--space-sm);
+}
+
+.error {
+  background: var(--color-primary-transparent);
+  border: 0.1rem solid var(--color-primary);
+  color: var(--color-primary);
 }
 
 .btn {
@@ -132,6 +149,7 @@ strong {
   background-color: var(--color-grey-dark);
   color: var(--color-white);
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .btn:hover {
@@ -145,6 +163,12 @@ strong {
   grid-area: content;
   display: grid;
   align-items: end;
+  opacity: 1;
+  transition: all 1s;
+  transition-behavior: allow-discrete;
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 .success__message {
@@ -160,4 +184,5 @@ strong {
 
 .hidden {
   display: none;
+  opacity: 0;
 }
