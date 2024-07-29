@@ -1,0 +1,35 @@
+@media (min-width: calc(950em / 16)) {
+  article[class="signup hidable"] {
+    max-width: 92.8rem;
+    border-radius: var(--space-lg);
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .signup,
+  .success {
+    height: auto;
+  }
+
+  .signup__hero {
+    margin: var(--space-2x-sm);
+    margin-left: 0;
+  }
+
+  .signup__main {
+    margin: var(--space-2x-md) var(--space-2x-lg);
+    align-content: center;
+  }
+
+  .main__title,
+  .message__title {
+    font-size: var(--space-xl);
+  }
+
+  .success {
+    max-width: 50rem;
+    border-radius: var(--space-lg);
+    padding: var(--space-2x-lg);
+    gap: var(--space-2x-md);
+  }
+}

@@ -81,6 +81,11 @@ strong {
   grid-area: content;
 }
 
+.signup,
+.success {
+  height: 81.7rem;
+}
+
 .signup__main {
   margin: var(--space-2x-md) var(--space-2x-sm);
   display: grid;
@@ -163,12 +168,6 @@ strong {
   grid-area: content;
   display: grid;
   align-items: end;
-  opacity: 1;
-  transition: all 1s;
-  transition-behavior: allow-discrete;
-  @starting-style {
-    opacity: 0;
-  }
 }
 
 .success__message {
@@ -185,4 +184,15 @@ strong {
 .hidden {
   display: none;
   opacity: 0;
+}
+
+.hidable {
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 1s;
+  transition-behavior: allow-discrete;
+  transition-timing-function: ease-out;
+  @starting-style {
+    opacity: 0;
+  }
 }
