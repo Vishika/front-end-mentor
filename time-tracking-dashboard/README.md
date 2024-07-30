@@ -1,6 +1,6 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -34,7 +34,7 @@ Users should be able to:
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
 
 Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
@@ -42,8 +42,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/Vishika/front-end-mentor/tree/master/time-tracking-dashboard
+- Live Site URL: https://time-tracking-dashboard-vish.netlify.app/
 
 ## My process
 
@@ -54,29 +54,59 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Javacript
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+When putting a simple border around the image for Jeremy, I noticed that there was a sliver of the background color leaking through so I had to create a white circle and place the image inside it.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.img__border {
+  display: block;
+  width: 6.4rem;
+  height: 6.4rem;
+  background-color: var(--color-white);
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
 }
+
+.subject__img {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* .subject__img {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 100%;
+  border: 2px solid var(--color-white);
+} */
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+For each of the `section.activity`, I couldn't do what I did with the `article.report`, having a sibling element alongside the inner content bubble extend the background of the container bubble.
+Instead each sibling element had its own background color, and the container bubble was positioned relative, so the second sibling could stack a little on top of the first one, making the first sibling into a kind of border. This also allowed the "border sibling" to have an overflow of `hidden` so the illustration was only appeared within it.
+
+```css
+.activity__border {
+  height: var(--space-xxxxl);
+  border-radius: var(--space-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.activity__img {
+  position: absolute;
+  top: calc(var(--space-xs) * -1);
+  right: var(--space-xs);
+}
+
+.activity__info {
+  position: absolute;
+  width: 100%;
+  top: var(--space-xxl);
+  background-color: var(--color-blue-dark);
+  border-radius: var(--space-sm);
 }
 ```
 
@@ -92,18 +122,14 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Subheadings](https://css-tricks.com/html-for-subheadings-and-headings/) - This helped me figure out what html and css classes to use for headings and subheadings, something I've always been indicisive about.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@vishika](https://www.frontendmentor.io/profile/vishika)
 
 ## Acknowledgments
 
