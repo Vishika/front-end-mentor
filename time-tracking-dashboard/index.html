@@ -11,6 +11,7 @@
     />
     <title>Frontend Mentor | Time tracking dashboard</title>
     <link rel="stylesheet" href="css/main.css" />
+    <script defer src="js/main.js"></script>
   </head>
   <body>
     <main>
@@ -27,36 +28,13 @@
             <strong>Report for</strong>Jeremy Robson
           </h1>
         </div>
-        <nav class="time-frames">
+        <nav id="time-frames" class="time-frames">
           <a class="time-frame" id="daily" aria-selected="false">Daily</a>
           <a class="time-frame" id="weekly" aria-selected="true">Weekly</a>
           <a class="time-frame" id="monthly" aria-selected="false">Monthly</a>
         </nav>
       </article>
-      <div id="activities" class="activities">
-        <section class="activity activity--work">
-          <div class="activity__border">
-            <img src="images/icon-work.svg" alt="" class="activity__img" />
-          </div>
-          <div class="activity__info">
-            <p class="actvity__name">Work</p>
-            <svg
-              class="activity__ellipsis"
-              width="21"
-              height="5"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
-                fill="#BBC0FF"
-                fill-rule="evenodd"
-              />
-            </svg>
-            <p class="activity__current">32hrs</p>
-            <p class="activity__previous">Last Week - 36hrs</p>
-          </div>
-        </section>
-      </div>
+      <div id="activities" class="activities"></div>
     </main>
   </body>
 </html>
