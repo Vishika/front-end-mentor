@@ -16,7 +16,7 @@ function getActivityHTML(
             <img src="images/icon-${activityCode}.svg" alt="" class="activity__img" />
           </div>
           <div class="activity__info">
-            <p class="actvity__name">${activityName}</p>
+            <h2 class="actvity__name">${activityName}</h2>
             <img class="activity__ellipsis" src="images/icon-ellipsis.svg" alt="" />
             <p class="activity__current">${currentActivity}hrs</p>
             <p class="activity__previous">${previousPhrase} - ${previousActivity}hrs</p>

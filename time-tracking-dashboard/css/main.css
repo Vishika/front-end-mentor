@@ -153,6 +153,10 @@ main {
   position: relative;
 }
 
+.activity:hover {
+  filter: brightness(150%);
+}
+
 .activity--work .activity__border {
   background: var(--color-work);
 }
