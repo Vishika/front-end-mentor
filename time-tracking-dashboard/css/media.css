@@ -1,0 +1,143 @@
+@media (min-width: calc(600em / 16)) {
+  .cards {
+    position: relative;
+  }
+
+  .cards,
+  .activities {
+    gap: var(--space-xl);
+    grid-template-columns: repeat(2, 25.5rem);
+    grid-template-rows: repeat(4, 24.95rem);
+    grid-template-areas:
+      "report card-1"
+      "report card-2"
+      "card-3 card-4"
+      "card-5 card-6";
+  }
+
+  .report {
+    z-index: 1;
+    position: static;
+    grid-area: report;
+  }
+
+  .subject {
+    gap: var(--space-xxl);
+    flex-direction: column;
+  }
+
+  .img__border {
+    width: 7.8rem;
+    height: 7.8rem;
+    background-color: var(--color-white);
+    border-radius: 100%;
+    box-shadow: 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3);
+    display: grid;
+    place-content: center;
+  }
+
+  .subject__img {
+    width: 7.4rem;
+    height: 7.4rem;
+  }
+
+  .subject__info {
+    line-height: 1.2;
+    font-size: 4rem;
+  }
+
+  .time-frames {
+    margin: var(--space-xl);
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .time-frame {
+    cursor: pointer;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .activities {
+    position: absolute;
+  }
+
+  .activity {
+    height: 24.95rem;
+    max-width: var(--card-width);
+  }
+
+  .activity--work {
+    grid-area: card-1;
+  }
+
+  .activity--play {
+    grid-area: card-2;
+  }
+
+  .activity--study {
+    grid-area: card-3;
+  }
+
+  .activity--exercise {
+    grid-area: card-4;
+  }
+
+  .activity--social {
+    grid-area: card-5;
+  }
+
+  .activity--self-care {
+    grid-area: card-6;
+  }
+
+  .activity__border {
+    height: 6.05rem;
+  }
+
+  .activity__info {
+    padding: var(--space-xl);
+    top: var(--space-xxxl);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .activity__current {
+    margin-top: var(--space-lg);
+    grid-column: 1 / -1;
+    font-size: 5.6rem;
+    line-height: 1;
+  }
+
+  .activity__previous {
+    margin-top: var(--space-xxs);
+    grid-column: 1 / -1;
+    justify-self: flex-start;
+  }
+}
+
+@media (min-width: calc(900em / 16)) {
+  main {
+    height: 100vh;
+  }
+
+  .cards,
+  .activities {
+    grid-template-columns: repeat(3, 25.5rem);
+    grid-template-rows: repeat(3, 24.95rem);
+    grid-template-areas:
+      "report card-1 card-2"
+      "report card-3 card-4"
+      ". card-5 card-6";
+  }
+}
+
+@media (min-width: calc(1200em / 16)) {
+  .cards,
+  .activities {
+    grid-template-columns: repeat(4, 25.5rem);
+    grid-template-rows: repeat(2, 24.95rem);
+    grid-template-areas:
+      "report card-1 card-2 card-3"
+      "report card-4 card-5 card-6";
+  }
+}

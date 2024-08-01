@@ -58,6 +58,11 @@ body {
 }
 
 main {
+  display: grid;
+  place-content: center;
+}
+
+.cards {
   margin: var(--space-xxxxl) var(--space-lg);
   display: grid;
   gap: var(--space-lg);
@@ -73,6 +78,7 @@ main {
   padding: var(--space-xl);
   border-radius: var(--space-sm);
   display: flex;
+  gap: var(--space-md);
   place-content: center;
 }
 
@@ -99,7 +105,6 @@ main {
 } */
 
 .subject__info {
-  margin-left: var(--space-md);
   line-height: 1;
   font-size: 2.4rem;
   font-weight: var(--font-weight-light);
@@ -173,8 +178,8 @@ main {
 }
 
 .activity__border {
-  height: var(--space-xxxxl);
-  border-radius: var(--space-sm);
+  height: 5.6rem;
+  border-radius: var(--space-sm) var(--space-sm) 0 0;
   position: relative;
   overflow: hidden;
 }

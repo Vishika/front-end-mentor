@@ -11,30 +11,33 @@
     />
     <title>Frontend Mentor | Time tracking dashboard</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <script defer src="js/main.js"></script>
   </head>
   <body>
     <main>
-      <article class="report">
-        <div class="subject">
-          <picture class="img__border">
-            <img
-              src="images/image-jeremy.png"
-              alt="headshot of Jeremy"
-              class="subject__img"
-            />
-          </picture>
-          <h1 class="subject__info">
-            <strong>Report for</strong>Jeremy Robson
-          </h1>
-        </div>
-        <nav id="time-frames" class="time-frames">
-          <a class="time-frame" id="daily" aria-selected="false">Daily</a>
-          <a class="time-frame" id="weekly" aria-selected="true">Weekly</a>
-          <a class="time-frame" id="monthly" aria-selected="false">Monthly</a>
-        </nav>
-      </article>
-      <div id="activities" class="activities"></div>
+      <div class="cards">
+        <article class="report">
+          <div class="subject">
+            <picture class="img__border">
+              <img
+                src="images/image-jeremy.png"
+                alt="headshot of Jeremy"
+                class="subject__img"
+              />
+            </picture>
+            <h1 class="subject__info">
+              <strong>Report for</strong>Jeremy Robson
+            </h1>
+          </div>
+          <nav id="time-frames" class="time-frames">
+            <a class="time-frame" id="daily" aria-selected="false">Daily</a>
+            <a class="time-frame" id="weekly" aria-selected="true">Weekly</a>
+            <a class="time-frame" id="monthly" aria-selected="false">Monthly</a>
+          </nav>
+        </article>
+        <div id="activities" class="activities"></div>
+      </div>
     </main>
   </body>
 </html>
