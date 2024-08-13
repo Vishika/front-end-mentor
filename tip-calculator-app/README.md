@@ -65,13 +65,27 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 Learned about the use of the `:has` selector, which was useful for selecting the parent container of my raido inputs if they were selected
 
 ```css
-.tip-btn:has(.tip-radio:checked) {
-  background: var(--color-primary);
-  color: var(--color-neutral-xd);
+.input-field:has(.input-element:focus) {
+  --border-color: var(--color-primary);
 }
 ```
 
-<!-- TODO: collapsing margins -->
+When introducing borders to the custom input within the "tips" section, I noticed that the widths and heights at 100% would not account for the border. at first I calculated the width with `calc(100% - 0.6rem)`, but then I realisd it was because I had unset the everything on the inputs, which included unsetting the `box-sizing: border-box;` I had done as part of my css reset. So i simply did the unsetting earlier, though for specificity reasons I had to include input and button explicitly.
+
+```css
+input,
+button {
+  all: unset;
+}
+
+*,
+*::before,
+*::after,
+input,
+button {
+  box-sizing: border-box;
+}
+```
 
 <!-- TODO width 100% problem, fixed using flexbox -->
 
@@ -105,3 +119,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
 **Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+
+```
+
+```

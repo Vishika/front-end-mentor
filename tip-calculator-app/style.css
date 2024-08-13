@@ -1,5 +1,7 @@
 :root {
+  --color-primary-l: #9fe8df;
   --color-primary: #26c0ab;
+  --color-primary-d: #0d686d;
   --color-neutral-xd: #00494d;
   --color-neutral-d: #5e7a7d;
   --color-neutral: #7f9c9f;
@@ -7,6 +9,7 @@
   --color-neutral-xl: #c5e4e7;
   --color-neutral-xxl: #f4fafa;
   --color-white: #ffffff;
+  --color-error: #e17457;
 
   --space-unit: 1.6rem;
   --space-xxxxs: calc(0.25 * var(--space-unit)); /* 4 */
@@ -27,9 +30,16 @@
   src: url(fonts/space-mono.ttf);
 }
 
+input,
+button {
+  all: unset;
+}
+
 *,
 *::before,
-*::after {
+*::after,
+input,
+button {
   box-sizing: border-box;
 }
 
@@ -38,6 +48,11 @@
   padding: 0;
   font-family: inherit;
   font-size: inherit;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 html {
@@ -74,19 +89,34 @@ body {
   margin-bottom: var(--space-xxxs);
   font-size: 1.6rem;
   color: var(--color-neutral-d);
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-label {
+  color: var(--color-error);
 }
 
 .input-field {
+  --border-color: var(--color-neutral-xxl);
+  max-height: var(--space-xxxl);
+  border: 0.3rem solid var(--border-color);
   background: var(--color-neutral-xxl);
   border-radius: var(--space-xxs);
-  padding: var(--space-xxxs) var(--space-md);
+  padding: var(--space-xxxxs) var(--space-md);
   display: flex;
   align-items: center;
 }
 
+.input-field:has(.error) {
+  --border-color: var(--color-error);
+}
+
+.input-field:has(.input-element:focus) {
+  --border-color: var(--color-primary);
+}
+
 .input-element {
-  all: unset;
-  width: 100%;
   font-size: var(--space-lg);
   text-align: right;
   color: var(--color-neutral-xd);
@@ -116,8 +146,13 @@ body {
   color: var(--color-white);
 }
 
-.tip-btn:has(.tip-radio:checked) {
+.tip-btn[data-selected="true"] {
   background: var(--color-primary);
+  color: var(--color-neutral-xd);
+}
+
+.tip-btn:hover {
+  background: var(--color-primary-l);
   color: var(--color-neutral-xd);
 }
 
@@ -130,13 +165,22 @@ body {
 }
 
 .input-element-tip {
-  all: unset;
   width: 100%;
+  --border-color: var(--color-neutral-xxl);
+  border: 0.3rem solid var(--border-color);
   background: var(--color-neutral-xxl);
   border-radius: var(--space-xxs);
   font-size: var(--space-lg);
   text-align: center;
   color: var(--color-neutral-xd);
+}
+
+.error {
+  --border-color: var(--color-error);
+}
+
+.input-element-tip:focus {
+  --border-color: var(--color-primary);
 }
 
 .input-element-tip::placeholder {
@@ -181,14 +225,23 @@ body {
 }
 
 .reset-btn {
-  all: unset;
   background: var(--color-primary);
   border-radius: var(--space-xxs);
-  padding: var(--space-xxxs) var(--space-md);
+  padding: var(--space-xxs) var(--space-md);
+  cursor: pointer;
   font-size: var(--space-md);
   text-transform: uppercase;
   text-align: center;
   color: var(--color-neutral-xd);
+  transition: all 0.3s;
+}
+
+.reset-btn:hover:not(.inactive) {
+  background: var(--color-primary-l);
+}
+
+.inactive {
+  background: var(--color-primary-d);
 }
 
 @media (min-width: calc(600em / 16)) {

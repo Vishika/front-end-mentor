@@ -18,7 +18,9 @@
     <main class="calculator">
       <section class="inputs">
         <div class="input-item">
-          <p class="input-label">Bill</p>
+          <p class="input-label">
+            Bill<span id="bill-error" class="error-label"></span>
+          </p>
           <div class="input-field">
             <img class="input-icon" src="images/icon-dollar.svg" alt="" />
             <input
@@ -30,49 +32,15 @@
           </div>
         </div>
         <div class="tips">
-          <p class="input-label">Select Tip %</p>
+          <p class="input-label">
+            Select Tip %<span id="tip-error" class="error-label"></span>
+          </p>
           <div class="tip-options">
-            <div class="tip-btn">
-              <input name="tip" type="radio" id="tip-btn-5" class="tip-radio" />
-              <label class="tip-label">5%</label>
-            </div>
-            <div class="tip-btn">
-              <input
-                name="tip"
-                type="radio"
-                id="tip-btn-10"
-                class="tip-radio"
-              />
-              <label class="tip-label">10%</label>
-            </div>
-            <div class="tip-btn">
-              <input
-                name="tip"
-                type="radio"
-                id="tip-btn-15"
-                class="tip-radio"
-                checked
-              />
-              <label class="tip-label">15%</label>
-            </div>
-            <div class="tip-btn">
-              <input
-                name="tip"
-                type="radio"
-                id="tip-btn-25"
-                class="tip-radio"
-              />
-              <label class="tip-label">25%</label>
-            </div>
-            <div class="tip-btn">
-              <input
-                name="tip"
-                type="radio"
-                id="tip-btn-50"
-                class="tip-radio"
-              />
-              <label class="tip-label">50%</label>
-            </div>
+            <div class="tip-btn" id="tip-btn-5" data-selected="false">5%</div>
+            <div class="tip-btn" id="tip-btn-10" data-selected="false">10%</div>
+            <div class="tip-btn" id="tip-btn-15" data-selected="false">15%</div>
+            <div class="tip-btn" id="tip-btn-25" data-selected="false">25%</div>
+            <div class="tip-btn" id="tip-btn-50" data-selected="false">50%</div>
             <input
               id="tip-custom"
               class="input-element-tip"
@@ -82,7 +50,9 @@
           </div>
         </div>
         <div class="input-item">
-          <p class="input-label">Number of People</p>
+          <p class="input-label">
+            Number of People<span id="people-error" class="error-label"></span>
+          </p>
           <div class="input-field">
             <img class="input-icon" src="images/icon-person.svg" alt="" />
             <input
@@ -101,17 +71,17 @@
               <p class="output-label">Tip Amount</p>
               <p class="output-sub-label">/ person</p>
             </div>
-            <p id="output-tip" class="output">$4.27</p>
+            <p id="output-tip" class="output">$0.00</p>
           </div>
           <div class="output-item">
             <div class="output-labels">
               <p class="output-label">Total</p>
               <p class="output-sub-label">/ person</p>
             </div>
-            <p id="output-total" class="output">$32.79</p>
+            <p id="output-total" class="output">$0.00</p>
           </div>
         </div>
-        <button class="btn reset-btn">Reset</button>
+        <button class="btn reset-btn inactive">Reset</button>
       </section>
     </main>
   </body>
