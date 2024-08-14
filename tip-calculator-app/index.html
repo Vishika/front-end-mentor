@@ -35,15 +35,17 @@
           <p class="input-label">
             Select Tip %<span id="tip-error" class="error-label"></span>
           </p>
-          <div class="tip-options">
-            <div class="tip-btn" id="tip-btn-5" data-selected="false">5%</div>
-            <div class="tip-btn" id="tip-btn-10" data-selected="false">10%</div>
-            <div class="tip-btn" id="tip-btn-15" data-selected="false">15%</div>
-            <div class="tip-btn" id="tip-btn-25" data-selected="false">25%</div>
-            <div class="tip-btn" id="tip-btn-50" data-selected="false">50%</div>
+          <div id="tip-options" class="tip-options">
+            <div class="tip-btn" data-tip="5" data-selected="false">5%</div>
+            <div class="tip-btn" data-tip="10" data-selected="false">10%</div>
+            <div class="tip-btn" data-tip="15" data-selected="false">15%</div>
+            <div class="tip-btn" data-tip="25" data-selected="false">25%</div>
+            <div class="tip-btn" data-tip="50" data-selected="false">50%</div>
             <input
-              id="tip-custom"
               class="input-element-tip"
+              id="tip-custom"
+              data-tip="0"
+              data-selected="false"
               type="number"
               placeholder="Custom"
             />
