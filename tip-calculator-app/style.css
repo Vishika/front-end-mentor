@@ -63,6 +63,9 @@ html {
 body {
   font-family: space-mono, monospace;
   background: var(--color-neutral-xl);
+}
+
+.content {
   display: grid;
   justify-items: center;
 }

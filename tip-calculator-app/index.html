@@ -14,77 +14,87 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <h1 class="title-img"><img src="images/logo.svg" alt="splitter" /></h1>
-    <main class="calculator">
-      <section class="inputs">
-        <div class="input-item">
-          <p class="input-label">
-            Bill<span id="bill-error" class="error-label"></span>
-          </p>
-          <div class="input-field">
-            <img class="input-icon" src="images/icon-dollar.svg" alt="" />
-            <input
-              id="bill"
-              class="input-element"
-              type="number"
-              placeholder="0"
-            />
-          </div>
-        </div>
-        <div class="tips">
-          <p class="input-label">
-            Select Tip %<span id="tip-error" class="error-label"></span>
-          </p>
-          <div id="tip-options" class="tip-options">
-            <div class="tip-btn" data-tip="5" data-selected="false">5%</div>
-            <div class="tip-btn" data-tip="10" data-selected="false">10%</div>
-            <div class="tip-btn" data-tip="15" data-selected="false">15%</div>
-            <div class="tip-btn" data-tip="25" data-selected="false">25%</div>
-            <div class="tip-btn" data-tip="50" data-selected="false">50%</div>
-            <input
-              class="input-element-tip"
-              id="tip-custom"
-              data-tip="0"
-              data-selected="false"
-              type="number"
-              placeholder="Custom"
-            />
-          </div>
-        </div>
-        <div class="input-item">
-          <p class="input-label">
-            Number of People<span id="people-error" class="error-label"></span>
-          </p>
-          <div class="input-field">
-            <img class="input-icon" src="images/icon-person.svg" alt="" />
-            <input
-              id="people"
-              class="input-element"
-              type="number"
-              placeholder="0"
-            />
-          </div>
-        </div>
-      </section>
-      <section class="outputs">
-        <div class="output-items">
-          <div class="output-item">
-            <div class="output-labels">
-              <p class="output-label">Tip Amount</p>
-              <p class="output-sub-label">/ person</p>
+    <main class="content">
+      <header>
+        <h1 class="title-img"><img src="images/logo.svg" alt="splitter" /></h1>
+      </header>
+      <article class="calculator">
+        <section class="inputs">
+          <div class="input-item">
+            <label for="bill" class="input-label">
+              Bill<span id="bill-error" class="error-label"></span>
+            </label>
+            <div class="input-field">
+              <img class="input-icon" src="images/icon-dollar.svg" alt="" />
+              <input
+                id="bill"
+                class="input-element"
+                type="number"
+                placeholder="0"
+                aria-describedby="bill-error"
+              />
             </div>
-            <p id="output-tip" class="output">$0.00</p>
           </div>
-          <div class="output-item">
-            <div class="output-labels">
-              <p class="output-label">Total</p>
-              <p class="output-sub-label">/ person</p>
+          <div class="tips">
+            <label for="tip-options" class="input-label">
+              Select Tip %<span id="tip-error" class="error-label"></span>
+            </label>
+            <div id="tip-options" class="tip-options">
+              <div class="tip-btn" data-tip="5" data-selected="false">5%</div>
+              <div class="tip-btn" data-tip="10" data-selected="false">10%</div>
+              <div class="tip-btn" data-tip="15" data-selected="false">15%</div>
+              <div class="tip-btn" data-tip="25" data-selected="false">25%</div>
+              <div class="tip-btn" data-tip="50" data-selected="false">50%</div>
+              <input
+                class="input-element-tip"
+                id="tip-custom"
+                data-tip="0"
+                data-selected="false"
+                type="number"
+                placeholder="Custom"
+                aria-describedby="tip-error"
+              />
             </div>
-            <p id="output-total" class="output">$0.00</p>
           </div>
-        </div>
-        <button id="reset" class="btn reset-btn inactive">Reset</button>
-      </section>
+          <div class="input-item">
+            <label for="people" class="input-label">
+              Number of People<span
+                id="people-error"
+                class="error-label"
+              ></span>
+            </label>
+            <div class="input-field">
+              <img class="input-icon" src="images/icon-person.svg" alt="" />
+              <input
+                id="people"
+                class="input-element"
+                type="number"
+                placeholder="0"
+                aria-describedby="people-error"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="outputs">
+          <div class="output-items">
+            <div class="output-item">
+              <div class="output-labels">
+                <p class="output-label">Tip Amount</p>
+                <p class="output-sub-label">/ person</p>
+              </div>
+              <p id="output-tip" class="output">$0.00</p>
+            </div>
+            <div class="output-item">
+              <div class="output-labels">
+                <p class="output-label">Total</p>
+                <p class="output-sub-label">/ person</p>
+              </div>
+              <p id="output-total" class="output">$0.00</p>
+            </div>
+          </div>
+          <button id="reset" class="btn reset-btn inactive">Reset</button>
+        </section>
+      </article>
     </main>
   </body>
 </html>

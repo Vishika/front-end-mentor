@@ -11,6 +11,8 @@ const tipOutput = document.getElementById("output-tip");
 const totalOutput = document.getElementById("output-total");
 const resetBtn = document.getElementById("reset");
 
+// this function does the work of the calculator
+// by looking at inputs and calculating the two tip outputs
 const calculate = function () {
   // get input
   const billAmount = getBill();
@@ -34,6 +36,8 @@ const calculate = function () {
   resetBtn.classList.remove("inactive");
 };
 
+// to be run when an element inside the "tip group" has been clicked
+// this code mimics what radio options do
 const selectTip = function (event) {
   // exit if no something like white space is accidently clicked
   if (!event.target.hasAttribute("data-selected")) return;
@@ -43,6 +47,7 @@ const selectTip = function (event) {
     tipOption.dataset.selected = event.target === tipOption;
   }
 
+  // reset the custom tip input if one of the preselected tips are pressed
   if (event.target !== tipCustomInput) {
     tipCustomInput.value = "";
     tipError.textContent = "";
@@ -64,6 +69,7 @@ const getNumPeople = function () {
   return +peopleInput.value;
 };
 
+// validates an input as well as updating the associated error label
 const validateNum = function (
   value,
   errorElement,
@@ -80,6 +86,8 @@ const validateNum = function (
   errorElement.textContent = message;
 };
 
+// to be run when an element in the custom tip is edited
+// it will update the dataset and run the calcuator
 const customTipChange = function (event) {
   // update the "tip" data attribute for this input
   event.target.dataset.tip = event.target.value;
@@ -88,6 +96,7 @@ const customTipChange = function (event) {
   calculate();
 };
 
+// resets the whole calculator
 const reset = function () {
   if (resetBtn.classList.contains("inactive")) return;
 
@@ -110,6 +119,7 @@ const reset = function () {
   tipOutput.textContent = "$0.00";
   totalOutput.textContent = "$0.00";
 
+  // make the reset button inactive
   resetBtn.classList.add("inactive");
 };
 
