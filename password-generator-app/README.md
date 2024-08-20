@@ -53,6 +53,20 @@ Users should be able to:
 
 ### What I learned
 
+I hadn't done checkbox styling in a while, I used a resource to scale this polygon when checked.
+
+```css
+input[type="checkbox"]::before {
+  content: "";
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+```
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
@@ -60,6 +74,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 **Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
+
+- [Slider styling](https://css-tricks.com/sliding-nightmare-understanding-range-input/) - This helped me understand how to style sliders.
+- [Checkbox styling](https://moderncss.dev/pure-css-custom-checkbox-style/) - This helped me understand how to style checkboxes.
 
 ## Author
 

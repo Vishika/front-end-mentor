@@ -3,18 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-
+    <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Password generator app</title>
   </head>
   <body>
-    Password Generator P4$5W0rD! Character Length Include Uppercase Letters
-    Include Lowercase Letters Include Numbers Include Symbols Strength Generate
+    <main class="main-container">
+      <h1 class="main-heading">Password Generator</h1>
+      <div class="password-container sub-container">
+        <p id="password">P4$5W0rD!</p>
+        <span id="copy-state">copied</span>
+        <button id="btn-copy">
+          <img src="assets/images/icon-copy.svg" alt="copy icon" />
+        </button>
+      </div>
+      <form id="generator-form" class="sub-container">
+        <div class="input-slider">
+          <label class="label-length" for="length">Character Length</label>
+          <span id="output-length">9</span>
+          <input
+            id="input-length"
+            type="range"
+            min="1"
+            max="20"
+            value="9"
+            class="slider"
+          />
+        </div>
+        <div class="input-checkboxes">
+          <div class="input-checkbox">
+            <input type="checkbox" name="uppercase" id="input-uppercase" />
+            <label for="uppercase">Include Uppercase Letters</label>
+          </div>
+          <div class="input-checkbox">
+            <input type="checkbox" name="lowercase" id="input-lowercase" />
+            <label for="lowercase">Include Lowercase Letters</label>
+          </div>
+          <div class="input-checkbox">
+            <input type="checkbox" name="numbers" id="input-numbers" />
+            <label for="numbers">Include Numbers</label>
+          </div>
+          <div class="input-checkbox">
+            <input type="checkbox" name="symbols" id="input-symbols" />
+            <label for="symbols">Include Symbols</label>
+          </div>
+        </div>
+        <div class="strength-container">
+          <span class="label-strength">Strength</span>
+          <span id="output-strength-string">medium</span>
+          <div id="output-strength-visual">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+        <button id="btn-generate">
+          Generate
+          <img
+            src="assets/images/icon-arrow-right.svg"
+            alt="arrow to the right"
+          />
+        </button>
+      </form>
+    </main>
   </body>
 </html>

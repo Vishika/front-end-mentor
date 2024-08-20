@@ -1,0 +1,219 @@
+:root {
+  --color-primary: #a4ffaf;
+  --color-neutral-xd: #18171f;
+  --color-neutral-d: #24232c;
+  --color-neutral: #817d92;
+  --color-neutral-l: #e6e5ea;
+  --color-strength-1: #f64a4a;
+  --color-strength-2: #fb7c58;
+  --color-strength-3: #f8cd65;
+  --color-strength-4: #a4ffaf;
+
+  --space-unit: 1.6rem;
+  --space-xxxxs: calc(0.25 * var(--space-unit)); /* 4 */
+  --space-xxxs: calc(0.375 * var(--space-unit)); /* 6 */
+  --space-xxs: calc(0.5 * var(--space-unit)); /* 8 */
+  --space-xs: calc(0.75 * var(--space-unit)); /* 12 */
+  --space-sm: calc(1 * var(--space-unit)); /* 16 */
+  --space-md: calc(1.25 * var(--space-unit)); /* 20 */
+  --space-lg: calc(1.5 * var(--space-unit)); /* 24 */
+  --space-xl: calc(2 * var(--space-unit)); /* 32 */
+  --space-xxl: calc(2.5 * var(--space-unit)); /* 40 */
+  --space-xxxl: calc(3 * var(--space-unit)); /* 48 */
+  --space-xxxxl: calc(4 * var(--space-unit)); /* 64 */
+
+  --font-size-xs: 1.6rem;
+  --font-size-sm: 1.8rem;
+  --font-size-md: 2.4rem;
+  --font-size-lg: 3.2rem;
+
+  --line-height-xs: 2rem;
+  --line-height-sm: 2.4rem;
+  --line-height-md: 3.2rem;
+  --line-height-lg: 4.8rem;
+}
+
+@font-face {
+  font-family: jetbrains-mono-bold;
+  src: url(assets/fonts/jetbrains-mono-bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+body {
+  background: var(--color-neutral-xd);
+  display: grid;
+  /* for desktop view */
+  /* justify-content: center; */
+}
+
+.main-container {
+  margin: var(--space-xxxxl) var(--space-sm) var(--space-xxxxl) var(--space-sm);
+  max-width: 54rem;
+  font-family: jetbrains-mono-bold, monospace;
+  font-size: var(--font-size-xs);
+  line-height: 1;
+  color: var(--color-neutral-l);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.main-heading {
+  font-size: var(--font-size-sm);
+  line-height: 1;
+  text-align: center;
+  color: var(--color-neutral);
+}
+
+.sub-container {
+  background: var(--color-neutral-d);
+  padding: var(--space-sm);
+}
+
+.password-container {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+#password {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+  color: var(--color-neutral-l);
+}
+
+#copy-state {
+  margin-inline-start: auto;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+#btn-copy {
+  cursor: pointer;
+}
+
+.input-slider {
+  margin-block-end: var(--space-xl);
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 2fr 1fr;
+}
+
+#output-length {
+  font-size: var(--font-size-md);
+  color: var(--color-primary);
+  justify-self: end;
+}
+
+#input-length {
+  grid-column: span 2;
+  /* https://css-tricks.com/sliding-nightmare-understanding-range-input/ */
+  appearance: none;
+  background: var(--color-neutral-xd);
+}
+
+.input-checkboxes {
+  margin-block-end: var(--space-xl);
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.input-checkbox {
+  display: flex;
+  align-content: center;
+  gap: var(--space-md);
+}
+
+input[type="checkbox"] {
+  --checkbox-border-color: var(--color-neutral-l);
+  appearance: none;
+  cursor: pointer;
+  width: var(--space-md);
+  height: var(--space-md);
+  border: 0.2rem solid var(--checkbox-border-color);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  background-color: var(--color-neutral-xd);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked {
+  --checkbox-border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.strength-container {
+  margin-block-end: var(--space-sm);
+  background: var(--color-neutral-xd);
+  padding: var(--space-sm);
+  text-transform: uppercase;
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.label-strength {
+  color: var(--color-neutral);
+}
+
+#output-strength-string {
+  margin-inline-start: auto;
+}
+
+#output-strength-visual {
+  display: flex;
+  gap: var(--space-xxs);
+}
+
+.bar {
+  --bar-border-color: var(--color-neutral-l);
+  --bar-background-color: var(--color-neutral-xd);
+  height: 2.8rem;
+  width: 1rem;
+  border: 0.2rem solid var(--bar-border-color);
+  background: var(--bar-background-color);
+}
+
+.btn-container {
+  display: flex;
+}
+
+#btn-generate {
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+  background: var(--color-primary);
+  padding: var(--space-sm);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-neutral-xd);
+}
