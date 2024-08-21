@@ -67,6 +67,26 @@ input[type="checkbox"]:checked::before {
 }
 ```
 
+At first I tried using the `:has` selector for the password strength visual, but figured out it was just a child selector with `:nth-child` that had a negative
+
+```css
+.strength-3 > .bar:nth-child(-n + 3) {
+  --bar-border-color: var(--color-strength-3);
+  --bar-background-color: var(--color-strength-3);
+}
+```
+
+I find that SVGs that appear directly in HTML overly clutter the code, and so I like to use `img` tags, however this makes the fill inaccessible. I recently discovered how to colour them anyway using `filter`.
+
+```css
+#btn-generate:hover > .svg {
+  filter: brightness(0) saturate(100%) invert(76%) sepia(5%) saturate(2472%) hue-rotate(
+      76deg
+    )
+    brightness(116%) contrast(107%);
+}
+```
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
@@ -77,6 +97,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [Slider styling](https://css-tricks.com/sliding-nightmare-understanding-range-input/) - This helped me understand how to style sliders.
 - [Checkbox styling](https://moderncss.dev/pure-css-custom-checkbox-style/) - This helped me understand how to style checkboxes.
+- [SVG img tag styling](https://medium.com/@union_io/swapping-fill-color-on-image-tag-svgs-using-css-filters-fa4818bf7ec6) - This helped me understand style svgs
+- [Filter colours](https://angel-rs.github.io/css-color-filter-generator/) - This helped me convert hex colours to filters
 
 ## Author
 

@@ -110,6 +110,11 @@ body {
   cursor: pointer;
 }
 
+#btn-copy:hover > .svg {
+  filter: brightness(0) saturate(100%) invert(98%) sepia(28%) saturate(389%)
+    hue-rotate(182deg) brightness(96%) contrast(90%);
+}
+
 .input-slider {
   margin-block-end: var(--space-xl);
   display: grid;
@@ -151,6 +156,10 @@ input[type="checkbox"] {
   border: 0.2rem solid var(--checkbox-border-color);
   display: grid;
   place-content: center;
+}
+
+input[type="checkbox"]:hover {
+  --checkbox-border-color: var(--color-primary);
 }
 
 input[type="checkbox"]::before {
@@ -227,9 +236,20 @@ input[type="checkbox"]:checked::before {
   box-sizing: border-box;
   cursor: pointer;
   width: 100%;
+  border: 0.2rem solid var(--color-primary);
   background: var(--color-primary);
   padding: var(--space-sm);
   text-transform: uppercase;
   text-align: center;
   color: var(--color-neutral-xd);
+}
+
+#btn-generate:hover {
+  background: var(--color-neutral-d);
+  color: var(--color-primary);
+}
+
+#btn-generate:hover > .svg {
+  filter: brightness(0) saturate(100%) invert(76%) sepia(5%) saturate(2472%)
+    hue-rotate(76deg) brightness(116%) contrast(107%);
 }
