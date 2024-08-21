@@ -203,8 +203,24 @@ input[type="checkbox"]:checked::before {
   background: var(--bar-background-color);
 }
 
-.btn-container {
-  display: flex;
+.strength-1 > .bar:nth-child(1) {
+  --bar-border-color: var(--color-strength-1);
+  --bar-background-color: var(--color-strength-1);
+}
+
+.strength-2 > .bar:nth-child(-n + 2) {
+  --bar-border-color: var(--color-strength-2);
+  --bar-background-color: var(--color-strength-2);
+}
+
+.strength-3 > .bar:nth-child(-n + 3) {
+  --bar-border-color: var(--color-strength-3);
+  --bar-background-color: var(--color-strength-3);
+}
+
+.strength-4 > .bar {
+  --bar-border-color: var(--color-strength-4);
+  --bar-background-color: var(--color-strength-4);
 }
 
 #btn-generate {
