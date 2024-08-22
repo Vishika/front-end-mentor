@@ -95,10 +95,10 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Slider styling](https://css-tricks.com/sliding-nightmare-understanding-range-input/) - This helped me understand how to style sliders.
 - [Checkbox styling](https://moderncss.dev/pure-css-custom-checkbox-style/) - This helped me understand how to style checkboxes.
 - [SVG img tag styling](https://medium.com/@union_io/swapping-fill-color-on-image-tag-svgs-using-css-filters-fa4818bf7ec6) - This helped me understand style svgs
 - [Filter colours](https://angel-rs.github.io/css-color-filter-generator/) - This helped me convert hex colours to filters
+- [Slider styling](https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/) - This helped me understand how to style sliders at a basic level.
 
 ## Author
 
