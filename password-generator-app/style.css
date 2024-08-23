@@ -65,8 +65,6 @@ html {
 body {
   background: var(--color-neutral-xd);
   display: grid;
-  /* for desktop view */
-  /* justify-content: center; */
 }
 
 .main-container {
@@ -291,4 +289,47 @@ input[type="checkbox"]:checked::before {
 #btn-generate:hover > .svg {
   filter: brightness(0) saturate(100%) invert(76%) sepia(5%) saturate(2472%)
     hue-rotate(76deg) brightness(116%) contrast(107%);
+}
+
+@media (min-width: calc(572em / 16)) {
+  :root {
+    --font-size-xs: 1.8rem;
+    --font-size-sm: 2.4rem;
+    --font-size-md: 3.2rem;
+
+    --line-height-xs: 2.4rem;
+    --line-height-sm: 3.2rem;
+    --line-height-md: 4rem;
+  }
+
+  body {
+    height: 100dvh;
+    place-content: center;
+  }
+
+  .main-container {
+    width: var(--max-width);
+  }
+
+  .sub-container {
+    padding: var(--space-xl);
+  }
+
+  .input-slider {
+    margin-block-end: var(--space-xxl);
+    gap: var(--space-lg);
+  }
+
+  .input-checkboxes {
+    gap: var(--space-lg);
+  }
+
+  .strength-container {
+    margin-block-end: var(--space-xl);
+    padding: var(--space-md);
+  }
+
+  #btn-generate {
+    padding: var(--space-md);
+  }
 }
