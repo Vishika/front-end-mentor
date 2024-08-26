@@ -17,8 +17,8 @@
     <main class="main-container">
       <h1 class="main-heading">Password Generator</h1>
       <div class="password-container sub-container">
-        <p id="password">P4$5W0rD!</p>
-        <span id="copy-state">copied</span>
+        <p id="password" class="default">P4$5W0rD!</p>
+        <span id="copy-state"></span>
         <button id="btn-copy">
           <img class="svg" src="assets/images/icon-copy.svg" alt="copy icon" />
         </button>
@@ -26,13 +26,14 @@
       <form id="generator-form" class="sub-container">
         <div class="input-slider">
           <label class="label-length" for="length">Character Length</label>
-          <span id="output-length">9</span>
+          <span id="output-length">1</span>
           <input
             id="input-length"
+            name="input-length"
             type="range"
             min="1"
-            max="20"
-            value="9"
+            max="18"
+            value="1"
             class="slider"
           />
         </div>
@@ -56,8 +57,8 @@
         </div>
         <div class="strength-container">
           <span class="label-strength">Strength</span>
-          <span id="output-strength-string">medium</span>
-          <div id="output-strength-visual" class="strength-3">
+          <span id="output-strength-string"></span>
+          <div id="output-strength-visual">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>

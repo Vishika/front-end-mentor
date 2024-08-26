@@ -94,12 +94,17 @@ body {
   display: flex;
   gap: var(--space-sm);
   align-items: center;
+  flex-wrap: wrap;
 }
 
 #password {
   font-size: var(--font-size-md);
   line-height: var(--line-height-md);
   color: var(--color-neutral-l);
+}
+
+#password.default {
+  color: var(--color-neutral);
 }
 
 #copy-state {
