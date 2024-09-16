@@ -1,0 +1,64 @@
+:root {
+  --color-primary: #a729f5;
+  --color-neutral-xl: #f4f6fa;
+  --color-neutral-l: #abc1a1;
+  --color-neutral: #626c7f;
+  --color-neutral-d: #3b4d66;
+  --color-neutral-xd: #313e51;
+  --color-white: #fff;
+  --color-right: #26d782;
+  --color-wrong: #ee5454;
+
+  --space-unit: 1.6rem;
+  --space-xxxxs: calc(0.25 * var(--space-unit)); /* 4 */
+  --space-xxxs: calc(0.375 * var(--space-unit)); /* 6 */
+  --space-xxs: calc(0.5 * var(--space-unit)); /* 8 */
+  --space-xs: calc(0.75 * var(--space-unit)); /* 12 */
+  --space-sm: calc(1 * var(--space-unit)); /* 16 */
+  --space-md: calc(1.25 * var(--space-unit)); /* 20 */
+  --space-lg: calc(1.5 * var(--space-unit)); /* 24 */
+  --space-xl: calc(2 * var(--space-unit)); /* 32 */
+  --space-xxl: calc(2.5 * var(--space-unit)); /* 40 */
+  --space-xxxl: calc(3 * var(--space-unit)); /* 48 */
+  --space-xxxxl: calc(4 * var(--space-unit)); /* 64 */
+
+  --font-size-xs: 1.6rem;
+  --font-size-sm: 1.8rem;
+  --font-size-md: 2.4rem;
+  --font-size-lg: 3.2rem;
+
+  --line-height-xs: 2rem;
+  --line-height-sm: 2.4rem;
+  --line-height-md: 3.2rem;
+  --line-height-lg: 4.8rem;
+}
+
+@font-face {
+  font-family: rubik;
+  src: url(assets/fonts/rubik.ttf);
+}
+
+@font-face {
+  font-family: rubik-italic;
+  src: url(assets/fonts/rubik-italic.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+
+body {
+  font-family: rubik, sans-serif;
+}
