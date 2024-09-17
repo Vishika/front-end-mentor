@@ -13,28 +13,71 @@
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
   <body>
-    <!-- Quiz menu start -->
-
-    Welcome to the Frontend Quiz! Pick a subject to get started. HTML CSS
-    JavaScript Accessibility
-
-    <!-- Quiz menu end -->
-
-    <!-- Quiz question start -->
-
-    Question
-    <!-- number -->
-    of 10 A B C D Submit answer
-
-    <!-- Quiz question end -->
-
-    <!-- Quiz completed start -->
-
-    Quiz completed You scored...
-
-    <!-- score -->
-    out of 10
-
-    <!-- Quiz completed end -->
+    <article id="page">
+      <header class="header">
+        <div id="subject"></div>
+        <div class="theme">
+          <img
+            class="theme__icon"
+            src="assets/images/icon-sun-dark.svg"
+            alt="sun icon"
+          />
+          <input type="checkbox" class="toggle" />
+          <img
+            class="theme__icon"
+            src="assets/images/icon-moon-dark.svg"
+            alt="moon icon"
+          />
+        </div>
+      </header>
+      <main id="content">
+        <section class="welcome">
+          <h1 class="welcome__title">Welcome to the Frontend Quiz!</h1>
+          <p class="welcome__instruction">Pick a subject to get started.</p>
+        </section>
+        <section class="topic-btns">
+          <button class="topic-btn">
+            <div class="topic-btn__icon orange">
+              <img
+                class="topic-btn__img"
+                src="assets/images/icon-html.svg"
+                alt=""
+              />
+            </div>
+            HTML
+          </button>
+          <button class="topic-btn">
+            <div class="topic-btn__icon green">
+              <img
+                class="topic-btn__img"
+                src="assets/images/icon-css.svg"
+                alt=""
+              />
+            </div>
+            CSS
+          </button>
+          <button class="topic-btn">
+            <div class="topic-btn__icon blue">
+              <img
+                class="topic-btn__img"
+                src="assets/images/icon-js.svg"
+                alt=""
+              />
+            </div>
+            Javascript
+          </button>
+          <button class="topic-btn">
+            <div class="topic-btn__icon purple">
+              <img
+                class="topic-btn__img"
+                src="assets/images/icon-accessibility.svg"
+                alt=""
+              />
+            </div>
+            Accessibility
+          </button>
+        </section>
+      </main>
+    </article>
   </body>
 </html>
