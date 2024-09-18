@@ -38,6 +38,10 @@
   --line-height-lg: 4.8rem;
 
   --theme: light;
+
+  --theme-icon-dimension: 1.6rem;
+  --toggle-nib-dimension: 1.2rem;
+  --topic-btn-dimension: 4rem;
 }
 
 @font-face {
@@ -103,8 +107,8 @@ body {
 }
 
 .theme__icon {
-  height: 1.6rem;
-  width: 1.6rem;
+  height: var(--theme-icon-dimension);
+  width: var(--theme-icon-dimension);
 }
 
 .toggle {
@@ -121,15 +125,15 @@ body {
 .toggle:before {
   content: "";
   position: absolute;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: var(--toggle-nib-dimension);
+  height: var(--toggle-nib-dimension);
   background: var(--color-white);
   border-radius: 100rem;
   transition: transform cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
 }
 
 .toggle:checked:before {
-  transform: translateX(1.2rem);
+  transform: translateX(var(--toggle-nib-dimension));
 }
 
 .welcome {
@@ -179,8 +183,8 @@ body {
 
 .topic-btn__icon {
   margin-right: var(--space-sm);
-  height: 4rem;
-  width: 4rem;
+  height: var(--topic-btn-dimension);
+  width: var(--topic-btn-dimension);
   border-radius: var(--space-xxxs);
   display: grid;
   place-content: center;
@@ -204,4 +208,66 @@ body {
 
 .topic-btn__img {
   scale: 0.7;
+}
+
+@media (min-height: calc(1024em / 16)) and (min-width: calc(768em / 16)) {
+  :root {
+    --theme-icon-dimension: 2.8rem;
+    --toggle-nib-dimension: 2rem;
+    --topic-btn-dimension: 5.6rem;
+  }
+
+  #page {
+    height: 102.4rem;
+    width: 76.8rem;
+    background-image: url(assets/images/pattern-background-tablet-light.svg);
+  }
+
+  .header {
+    padding: var(--space-xxxxl);
+  }
+
+  #content {
+    padding: var(--space-xxxxl);
+    padding-top: var(--space-sm);
+  }
+
+  .theme {
+    gap: var(--space-xs);
+  }
+
+  .toggle {
+    width: 4.8rem;
+    height: 2.8rem;
+  }
+
+  .welcome {
+    margin-bottom: var(--space-xxxxl);
+  }
+
+  .welcome__title {
+    font-size: 6.4rem;
+  }
+
+  .welcome__instruction {
+    font-size: 2rem;
+  }
+
+  .topic-btns {
+    gap: var(--space-lg);
+  }
+
+  .topic-btn {
+    font-size: 2.8rem;
+    border-radius: var(--space-lg);
+  }
+
+  .topic-btn__icon {
+    margin-right: var(--space-xl);
+    border-radius: var(--space-xs);
+  }
+
+  .topic-btn__img {
+    scale: 1;
+  }
 }
