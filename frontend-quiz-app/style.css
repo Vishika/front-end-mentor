@@ -1,7 +1,7 @@
 :root {
   --color-primary: #a729f5;
   --color-neutral-xl: #f4f6fa;
-  --color-neutral-l: #abc1a1;
+  --color-neutral-l: #abc1e1;
   --color-neutral: #626c7f;
   --color-neutral-d: #3b4d66;
   --color-neutral-xd: #313e51;
@@ -74,9 +74,14 @@ html {
 body {
   height: 100dvh;
   width: 100dvw;
+  background: var(--color-white);
   display: grid;
   align-items: center;
   justify-content: center;
+}
+
+.dark {
+  background: var(--color-neutral);
 }
 
 #page {
@@ -87,6 +92,13 @@ body {
   background-repeat: no-repeat;
   font-family: rubik, sans-serif;
   color: var(--color-neutral-xd);
+}
+
+.dark #page {
+  background: var(--color-neutral-xd);
+  background-image: url(assets/images/pattern-background-mobile-dark.svg);
+  background-repeat: no-repeat;
+  color: var(--color-white);
 }
 
 .header {
@@ -105,6 +117,26 @@ body {
   display: flex;
   gap: var(--space-xxs);
   align-items: center;
+}
+
+.theme__icon--sun {
+  background: url(assets/images/icon-sun-dark.svg);
+  background-size: var(--theme-icon-dimension);
+}
+
+.theme__icon--moon {
+  background: url(assets/images/icon-moon-dark.svg);
+  background-size: var(--theme-icon-dimension);
+}
+
+.dark .theme__icon--sun {
+  background: url(assets/images/icon-sun-light.svg);
+  background-size: var(--theme-icon-dimension);
+}
+
+.dark .theme__icon--moon {
+  background: url(assets/images/icon-moon-light.svg);
+  background-size: var(--theme-icon-dimension);
 }
 
 .theme__icon {
@@ -157,6 +189,10 @@ body {
   font-size: 1.4rem;
 }
 
+.dark .welcome__instruction {
+  color: var(--color-neutral-l);
+}
+
 .topic-btns {
   display: flex;
   flex-direction: column;
@@ -176,6 +212,11 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   transition: opacity 0.3s;
+}
+
+.dark .topic-btn {
+  background: var(--color-neutral-d);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
 .topic-btn:hover {
@@ -222,6 +263,10 @@ body {
     height: 102.4rem;
     width: 76.8rem;
     background-image: url(assets/images/pattern-background-tablet-light.svg);
+  }
+
+  .dark #page {
+    background-image: url(assets/images/pattern-background-tablet-dark.svg);
   }
 
   .header {
@@ -277,6 +322,10 @@ body {
     width: 144rem;
     height: 96rem;
     background-image: url(assets/images/pattern-background-desktop-light.svg);
+  }
+
+  .dark #page {
+    background-image: url(assets/images/pattern-background-desktop-dark.svg);
   }
 
   .header {

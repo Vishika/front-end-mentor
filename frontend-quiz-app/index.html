@@ -10,24 +10,17 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
-  <body>
+  <body id="body">
     <article id="page">
       <header class="header">
         <div id="subject"></div>
         <div class="theme">
-          <img
-            class="theme__icon"
-            src="assets/images/icon-sun-dark.svg"
-            alt="sun icon"
-          />
-          <input type="checkbox" class="toggle" />
-          <img
-            class="theme__icon"
-            src="assets/images/icon-moon-dark.svg"
-            alt="moon icon"
-          />
+          <div class="theme__icon theme__icon--sun"></div>
+          <input id="theme-toggle" type="checkbox" class="toggle" />
+          <div class="theme__icon theme__icon--moon"></div>
         </div>
       </header>
       <main id="content">
