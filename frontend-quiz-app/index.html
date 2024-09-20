@@ -14,7 +14,7 @@
     <title>Frontend Mentor | Frontend quiz app</title>
   </head>
   <body id="body">
-    <article id="page">
+    <div class="parent-container">
       <header class="header">
         <div id="subject"></div>
         <div class="theme">
@@ -23,47 +23,45 @@
           <div class="theme__icon theme__icon--moon"></div>
         </div>
       </header>
-      <main id="content">
-        <div class="sections">
+      <main class="content">
+        <article id="welcome-page" class="page">
           <section class="welcome">
-            <h1 class="welcome__title">Welcome to the Frontend Quiz!</h1>
-            <p class="welcome__instruction">Pick a subject to get started.</p>
+            <h1 class="heading heading--primary">
+              Welcome to the Frontend Quiz!
+            </h1>
+            <p class="emphasis">Pick a subject to get started.</p>
           </section>
-          <section class="topic-btns">
-            <button class="topic-btn">
-              <div class="topic-btn__icon orange">
+          <section class="btns">
+            <button class="btn">
+              <div class="icon orange">
                 <img
-                  class="topic-btn__img"
+                  class="icon__img"
                   src="assets/images/icon-html.svg"
                   alt=""
                 />
               </div>
               HTML
             </button>
-            <button class="topic-btn">
-              <div class="topic-btn__icon green">
+            <button class="btn">
+              <div class="icon green">
                 <img
-                  class="topic-btn__img"
+                  class="icon__img"
                   src="assets/images/icon-css.svg"
                   alt=""
                 />
               </div>
               CSS
             </button>
-            <button class="topic-btn">
-              <div class="topic-btn__icon blue">
-                <img
-                  class="topic-btn__img"
-                  src="assets/images/icon-js.svg"
-                  alt=""
-                />
+            <button class="btn">
+              <div class="icon blue">
+                <img class="icon__img" src="assets/images/icon-js.svg" alt="" />
               </div>
               Javascript
             </button>
-            <button class="topic-btn">
-              <div class="topic-btn__icon purple">
+            <button class="btn">
+              <div class="icon purple">
                 <img
-                  class="topic-btn__img"
+                  class="icon__img"
                   src="assets/images/icon-accessibility.svg"
                   alt=""
                 />
@@ -71,8 +69,8 @@
               Accessibility
             </button>
           </section>
-        </div>
+        </article>
       </main>
-    </article>
+    </div>
   </body>
 </html>

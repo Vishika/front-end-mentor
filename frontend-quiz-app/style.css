@@ -42,7 +42,7 @@
 
   --theme-icon-dimension: 1.6rem;
   --toggle-nib-dimension: 1.2rem;
-  --topic-btn-dimension: 4rem;
+  --btn-dimension: 4rem;
 }
 
 @font-face {
@@ -84,7 +84,7 @@ body {
   background: var(--color-neutral);
 }
 
-#page {
+.parent-container {
   height: 100%;
   width: 100%;
   background: var(--color-neutral-xl);
@@ -94,7 +94,7 @@ body {
   color: var(--color-neutral-xd);
 }
 
-.dark #page {
+.dark .parent-container {
   background: var(--color-neutral-xd);
   background-image: url(assets/images/pattern-background-mobile-dark.svg);
   background-repeat: no-repeat;
@@ -109,7 +109,7 @@ body {
   justify-content: space-between;
 }
 
-#content {
+.content {
   margin: var(--space-lg);
 }
 
@@ -169,37 +169,41 @@ body {
   transform: translateX(var(--toggle-nib-dimension));
 }
 
-.welcome {
-  margin-bottom: var(--space-xxl);
+.page {
+  display: grid;
+  gap: var(--space-xxl);
 }
 
-.welcome__title {
+.heading {
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.heading--primary {
   margin-bottom: var(--space-sm);
   font-size: 4rem;
-  font-weight: 500;
-  line-height: 1.1;
 }
 
-.welcome__title::first-line {
+.heading--primary::first-line {
   font-weight: 300;
 }
 
-.welcome__instruction {
+.emphasis {
   font-family: rubik-italic;
   font-size: 1.4rem;
 }
 
-.dark .welcome__instruction {
+.dark .emphasis {
   color: var(--color-neutral-l);
 }
 
-.topic-btns {
+.btns {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
 }
 
-.topic-btn {
+.btn {
   all: unset;
   box-sizing: border-box;
   padding: var(--space-xs);
@@ -214,58 +218,63 @@ body {
   transition: opacity 0.3s;
 }
 
-.dark .topic-btn {
+.dark .btn {
   background: var(--color-neutral-d);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
-.topic-btn:hover {
+.btn:hover {
   opacity: 50%;
 }
 
-.topic-btn__icon {
+.icon {
   margin-right: var(--space-sm);
-  height: var(--topic-btn-dimension);
-  width: var(--topic-btn-dimension);
+  height: var(--btn-dimension);
+  width: var(--btn-dimension);
+  background: var(--color-neutral-xl);
   border-radius: var(--space-xxxs);
   display: grid;
   place-content: center;
 }
 
-.topic-btn__icon.orange {
+.icon.orange {
   background: var(--color-orange-l);
 }
 
-.topic-btn__icon.green {
+.icon.green {
   background: var(--color-green-l);
 }
 
-.topic-btn__icon.blue {
+.icon.blue {
   background: var(--color-blue-l);
 }
 
-.topic-btn__icon.purple {
+.icon.purple {
   background: var(--color-purple-l);
 }
 
-.topic-btn__img {
+.icon__img {
   scale: 0.7;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-height: calc(1024em / 16)) and (min-width: calc(768em / 16)) {
   :root {
     --theme-icon-dimension: 2.8rem;
     --toggle-nib-dimension: 2rem;
-    --topic-btn-dimension: 5.6rem;
+    --btn-dimension: 5.6rem;
   }
 
-  #page {
+  .parent-container {
     height: 102.4rem;
     width: 76.8rem;
     background-image: url(assets/images/pattern-background-tablet-light.svg);
   }
 
-  .dark #page {
+  .dark .parent-container {
     background-image: url(assets/images/pattern-background-tablet-dark.svg);
   }
 
@@ -273,7 +282,7 @@ body {
     margin: var(--space-xxxxl);
   }
 
-  #content {
+  .content {
     margin: var(--space-xxxxl);
   }
 
@@ -286,45 +295,45 @@ body {
     height: 2.8rem;
   }
 
-  .welcome {
-    margin-bottom: var(--space-xxxxl);
+  .page {
+    gap: var(--space-xxxxl);
   }
 
-  .welcome__title {
+  .heading--primary {
     font-size: 6.4rem;
   }
 
-  .welcome__instruction {
+  .emphasis {
     font-size: 2rem;
   }
 
-  .topic-btns {
+  .btns {
     gap: var(--space-lg);
   }
 
-  .topic-btn {
+  .btn {
     font-size: 2.8rem;
     border-radius: var(--space-lg);
   }
 
-  .topic-btn__icon {
+  .icon {
     margin-right: var(--space-xl);
     border-radius: var(--space-xs);
   }
 
-  .topic-btn__img {
+  .icon__img {
     scale: 1;
   }
 }
 
 @media (min-width: calc(1440em / 16)) and (min-height: calc(960em / 16)) {
-  #page {
+  .parent-container {
     width: 144rem;
     height: 96rem;
     background-image: url(assets/images/pattern-background-desktop-light.svg);
   }
 
-  .dark #page {
+  .dark .parent-container {
     background-image: url(assets/images/pattern-background-desktop-dark.svg);
   }
 
@@ -332,20 +341,20 @@ body {
     margin: var(--space-xxxxl) var(--space-xxxxxl);
   }
 
-  #content {
+  .content {
     margin: var(--space-xxxxl) var(--space-xxxxxl);
   }
 
-  .sections {
-    display: grid;
+  .page {
+    gap: 0;
     grid-template-columns: 1fr 1fr;
   }
 
-  .welcome__title {
+  .heading--primary {
     margin-bottom: var(--space-xxxl);
   }
 
-  .topic-btn {
+  .btn {
     padding: var(--space-md);
   }
 }
