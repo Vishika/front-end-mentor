@@ -16,7 +16,7 @@
   <body id="body">
     <div class="parent-container">
       <header class="header">
-        <div id="subject"></div>
+        <div class="topic heading" id="topic"></div>
         <div class="theme">
           <div class="theme__icon theme__icon--sun"></div>
           <input id="theme-toggle" type="checkbox" class="toggle" />
@@ -31,8 +31,8 @@
             </h1>
             <p class="emphasis">Pick a subject to get started.</p>
           </section>
-          <section class="btns">
-            <button class="btn">
+          <section id="topics" class="btns">
+            <button class="btn" data-topic="HTML">
               <div class="icon orange">
                 <img
                   class="icon__img"
@@ -42,7 +42,7 @@
               </div>
               HTML
             </button>
-            <button class="btn">
+            <button class="btn" data-topic="CSS">
               <div class="icon green">
                 <img
                   class="icon__img"
@@ -52,13 +52,13 @@
               </div>
               CSS
             </button>
-            <button class="btn">
+            <button class="btn" data-topic="Javascript">
               <div class="icon blue">
                 <img class="icon__img" src="assets/images/icon-js.svg" alt="" />
               </div>
               Javascript
             </button>
-            <button class="btn">
+            <button class="btn" data-topic="Accessibility">
               <div class="icon purple">
                 <img
                   class="icon__img"
@@ -67,6 +67,36 @@
                 />
               </div>
               Accessibility
+            </button>
+          </section>
+        </article>
+        <article id="question-page" class="page hidden">
+          <section class="question">
+            <p class="emphasis" id="question-progress"></p>
+            <h2 class="heading heading--secondary" id="question"></h2>
+            <div class="progress-bar">
+              <div class="progress" id="progress"></div>
+            </div>
+          </section>
+          <section id="questions" class="btns">
+            <button class="btn">
+              <div class="icon">A</div>
+              <span id="option-0"></span>
+            </button>
+            <button class="btn">
+              <div class="icon">B</div>
+              <span id="option-1"></span>
+            </button>
+            <button class="btn">
+              <div class="icon">C</div>
+              <span id="option-2"></span>
+            </button>
+            <button class="btn">
+              <div class="icon">D</div>
+              <span id="option-3"></span>
+            </button>
+            <button class="btn btn--submit" id="submit-answer">
+              Submit Answer
             </button>
           </section>
         </article>
