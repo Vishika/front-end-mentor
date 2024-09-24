@@ -30,6 +30,7 @@
 
   --theme-icon-dimension: 1.6rem;
   --toggle-nib-dimension: 1.2rem;
+  --answer-icon-dimension: 3.2rem;
   --btn-dimension: 4rem;
 }
 
@@ -225,12 +226,17 @@ body {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover {
+.btn--topic:hover,
+.btn--submit:hover {
   opacity: 50%;
 }
 
+.btn--option {
+  padding: 0.9rem;
+}
+
 .btn--submit {
-  padding: var(--space-xl);
+  padding: var(--space-md);
   display: grid;
   justify-content: center;
   line-height: 1;
@@ -240,6 +246,57 @@ body {
 .dark .btn--submit {
   background: var(--color-primary);
   color: var(--color-white);
+}
+
+.btn--option {
+  border: 0.3rem solid var(--color-white);
+}
+
+.dark .btn--option {
+  border: 0.3rem solid var(--color-neutral-d);
+}
+
+.btn--option:hover .icon {
+  background: var(--color-purple-l);
+  color: var(--color-primary);
+}
+
+.option-status {
+  margin-left: auto;
+  display: flex;
+}
+
+.answer-img {
+  height: var(--answer-icon-dimension);
+  width: var(--answer-icon-dimension);
+}
+
+.answer-img--right {
+  display: none;
+}
+
+.answer-img--wrong {
+  display: none;
+}
+
+.btn--option[data-selected="true"] {
+  border: 0.3rem solid var(--color-primary);
+}
+
+.btn--option.option-status--right {
+  border: 0.3rem solid var(--color-green);
+}
+
+.btn--option.option-status--wrong {
+  border: 0.3rem solid var(--color-red);
+}
+
+.option-status--answer .answer-img--right {
+  display: block;
+}
+
+.option-status--wrong .answer-img--wrong {
+  display: block;
 }
 
 .btn .icon {
@@ -255,6 +312,21 @@ body {
   display: grid;
   place-content: center;
   flex-shrink: 0;
+}
+
+.btn--option[data-selected="true"] .icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btns .option-status--right .icon {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.btns .option-status--wrong .icon {
+  background: var(--color-red);
+  color: var(--color-white);
 }
 
 .icon.orange {
@@ -295,6 +367,19 @@ body {
   border-radius: 100rem;
 }
 
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xxs);
+  font-size: 1.8rem;
+}
+
+.error-message__icon {
+  height: var(--answer-icon-dimension);
+  width: var(--answer-icon-dimension);
+}
+
 .hidden {
   display: none;
 }
@@ -313,6 +398,7 @@ body {
   :root {
     --theme-icon-dimension: 2.8rem;
     --toggle-nib-dimension: 2rem;
+    --answer-icon-dimension: 4rem;
     --btn-dimension: 5.6rem;
   }
 
@@ -378,12 +464,20 @@ body {
     margin-right: var(--space-xl);
   }
 
+  .btn--submit {
+    padding: var(--space-xl);
+  }
+
   .icon {
     border-radius: var(--space-xs);
   }
 
   .icon__img {
     scale: 1;
+  }
+
+  .error-message {
+    font-size: 2.4rem;
   }
 }
 
@@ -423,8 +517,8 @@ body {
     padding: var(--space-md);
   }
 
-  #questions .btn {
-    padding: 1.8rem var(--space-md);
+  .btn--option {
+    padding: 1.5rem 1.7rem;
   }
 
   .btn--submit {

@@ -32,7 +32,7 @@
             <p class="emphasis">Pick a subject to get started.</p>
           </section>
           <section id="topics" class="btns">
-            <button class="btn" data-topic="HTML">
+            <button class="btn btn--topic" data-topic="HTML">
               <div class="icon orange">
                 <img
                   class="icon__img"
@@ -42,7 +42,7 @@
               </div>
               HTML
             </button>
-            <button class="btn" data-topic="CSS">
+            <button class="btn btn--topic" data-topic="CSS">
               <div class="icon green">
                 <img
                   class="icon__img"
@@ -52,13 +52,13 @@
               </div>
               CSS
             </button>
-            <button class="btn" data-topic="Javascript">
+            <button class="btn btn--topic" data-topic="Javascript">
               <div class="icon blue">
                 <img class="icon__img" src="assets/images/icon-js.svg" alt="" />
               </div>
               Javascript
             </button>
-            <button class="btn" data-topic="Accessibility">
+            <button class="btn btn--topic" data-topic="Accessibility">
               <div class="icon purple">
                 <img
                   class="icon__img"
@@ -79,25 +79,68 @@
             </div>
           </section>
           <section id="questions" class="btns">
-            <button class="btn">
+            <button data-selected="false" class="btn btn--option">
               <div class="icon">A</div>
               <span id="option-0"></span>
+              <span class="option-status"
+                ><img
+                  class="answer-img answer-img--right"
+                  src="assets/images/icon-correct.svg"
+                  alt="right option" /><img
+                  class="answer-img answer-img--wrong"
+                  src="assets/images/icon-error.svg"
+                  alt="wrong option"
+              /></span>
             </button>
-            <button class="btn">
+            <button data-selected="false" class="btn btn--option">
               <div class="icon">B</div>
               <span id="option-1"></span>
+              <span class="option-status"
+                ><img
+                  class="answer-img answer-img--right"
+                  src="assets/images/icon-correct.svg"
+                  alt="right option" /><img
+                  class="answer-img answer-img--wrong"
+                  src="assets/images/icon-error.svg"
+                  alt="wrong option"
+              /></span>
             </button>
-            <button class="btn">
+            <button data-selected="false" class="btn btn--option">
               <div class="icon">C</div>
               <span id="option-2"></span>
+              <span class="option-status"
+                ><img
+                  class="answer-img answer-img--right"
+                  src="assets/images/icon-correct.svg"
+                  alt="right option" /><img
+                  class="answer-img answer-img--wrong"
+                  src="assets/images/icon-error.svg"
+                  alt="wrong option"
+              /></span>
             </button>
-            <button class="btn">
+            <button data-selected="false" class="btn btn--option">
               <div class="icon">D</div>
               <span id="option-3"></span>
+              <span class="option-status"
+                ><img
+                  class="answer-img answer-img--right"
+                  src="assets/images/icon-correct.svg"
+                  alt="right option" /><img
+                  class="answer-img answer-img--wrong"
+                  src="assets/images/icon-error.svg"
+                  alt="wrong option"
+              /></span>
             </button>
             <button class="btn btn--submit" id="submit-answer">
               Submit Answer
             </button>
+            <p class="error-message hidden">
+              <img
+                class="error-message__icon"
+                src="assets/images/icon-error.svg"
+                alt="error icon"
+              />Please select an answer
+            </p>
           </section>
         </article>
       </main>
