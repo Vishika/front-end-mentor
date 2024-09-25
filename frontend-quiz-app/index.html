@@ -79,9 +79,13 @@
             </div>
           </section>
           <section id="questions" class="btns">
-            <button data-selected="false" class="btn btn--option">
+            <button
+              data-selected="false"
+              data-option="0"
+              class="btn btn--option"
+            >
               <div class="icon">A</div>
-              <span id="option-0"></span>
+              <span class="option-text" id="option-0"></span>
               <span class="option-status"
                 ><img
                   class="answer-img answer-img--right"
@@ -92,9 +96,13 @@
                   alt="wrong option"
               /></span>
             </button>
-            <button data-selected="false" class="btn btn--option">
+            <button
+              data-selected="false"
+              data-option="1"
+              class="btn btn--option"
+            >
               <div class="icon">B</div>
-              <span id="option-1"></span>
+              <span class="option-text" id="option-1"></span>
               <span class="option-status"
                 ><img
                   class="answer-img answer-img--right"
@@ -105,9 +113,13 @@
                   alt="wrong option"
               /></span>
             </button>
-            <button data-selected="false" class="btn btn--option">
+            <button
+              data-selected="false"
+              data-option="2"
+              class="btn btn--option"
+            >
               <div class="icon">C</div>
-              <span id="option-2"></span>
+              <span class="option-text" id="option-2"></span>
               <span class="option-status"
                 ><img
                   class="answer-img answer-img--right"
@@ -118,9 +130,13 @@
                   alt="wrong option"
               /></span>
             </button>
-            <button data-selected="false" class="btn btn--option">
+            <button
+              data-selected="false"
+              data-option="3"
+              class="btn btn--option"
+            >
               <div class="icon">D</div>
-              <span id="option-3"></span>
+              <span class="option-text" id="option-3"></span>
               <span class="option-status"
                 ><img
                   class="answer-img answer-img--right"
@@ -131,10 +147,16 @@
                   alt="wrong option"
               /></span>
             </button>
-            <button class="btn btn--submit" id="submit-answer">
+            <button class="btn btn--primary" id="submit-answer">
               Submit Answer
             </button>
-            <p class="error-message hidden">
+            <button class="btn btn--primary hidden" id="next-question">
+              Next Question
+            </button>
+            <button class="btn btn--primary hidden" id="complete-quiz">
+              Complete Quiz
+            </button>
+            <p class="error-message hidden" id="error-message">
               <img
                 class="error-message__icon"
                 src="assets/images/icon-error.svg"

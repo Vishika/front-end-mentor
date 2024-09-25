@@ -65,24 +65,15 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+I found an easy way to show trusted html content in html as text from stack overflow
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+function htmlEncode(string) {
+  const el = document.createElement("div");
+  el.innerText = el.textContent = string;
+  const encoded = el.innerHTML;
+  return encoded;
+}
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.

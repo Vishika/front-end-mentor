@@ -227,7 +227,7 @@ body {
 }
 
 .btn--topic:hover,
-.btn--submit:hover {
+.btn--primary:hover {
   opacity: 50%;
 }
 
@@ -235,15 +235,15 @@ body {
   padding: 0.9rem;
 }
 
-.btn--submit {
+.btn--primary {
   padding: var(--space-md);
   display: grid;
   justify-content: center;
   line-height: 1;
 }
 
-.btn--submit,
-.dark .btn--submit {
+.btn--primary,
+.dark .btn--primary {
   background: var(--color-primary);
   color: var(--color-white);
 }
@@ -464,7 +464,7 @@ body {
     margin-right: var(--space-xl);
   }
 
-  .btn--submit {
+  .btn--primary {
     padding: var(--space-xl);
   }
 
@@ -521,7 +521,7 @@ body {
     padding: 1.5rem 1.7rem;
   }
 
-  .btn--submit {
+  .btn--primary {
     margin-top: var(--space-xxs);
     padding: var(--space-xl);
   }
