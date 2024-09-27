@@ -15,6 +15,11 @@ const errorMessageEl = document.getElementById("error-message");
 const nextQuestionBtn = document.getElementById("next-question");
 const completeQuizBtn = document.getElementById("complete-quiz");
 const progressEl = document.getElementById("progress");
+const scorePage = document.getElementById("score-page");
+const scoreCardTopicEl = document.getElementById("score-card-topic");
+const scoreEl = document.getElementById("score");
+const totalEl = document.getElementById("total");
+const playAgainBtn = document.getElementById("play-again");
 
 let questions;
 let currentQuestion = 0;
@@ -39,6 +44,14 @@ const toggleTheme = function () {
 };
 
 const populateQuestionsPage = function () {
+  // reset options
+  for (const option of optionEls) {
+    option.classList.remove("option-status--answer");
+    option.classList.remove("option-status--right");
+    option.classList.remove("option-status--wrong");
+    option.dataset.selected = "false";
+  }
+
   const question = questions[currentQuestion];
 
   // show the question progress
@@ -62,7 +75,9 @@ const askTopicQuestions = async function (event) {
 
   if (!btn) return;
 
+  // copy the selected topic
   topicEl.innerHTML = btn.innerHTML;
+  scoreCardTopicEl.innerHTML = btn.innerHTML;
 
   // transition from welcome page to question page
   welcomePage.classList.toggle("hidden");
@@ -131,14 +146,6 @@ const submitAnswer = function () {
 };
 
 const nextQuestion = function () {
-  // reset options
-  for (const option of optionEls) {
-    option.classList.remove("option-status--answer");
-    option.classList.remove("option-status--right");
-    option.classList.remove("option-status--wrong");
-    option.dataset.selected = "false";
-  }
-
   // increment current question
   currentQuestion++;
 
@@ -150,7 +157,21 @@ const nextQuestion = function () {
 
 const completeQuiz = function () {
   questionPage.classList.add("hidden");
-  // TODO show final page
+  scorePage.classList.remove("hidden");
+  scoreEl.innerText = correctAnswers;
+  totalEl.innerText = questions.length;
+};
+
+const playAgain = function () {
+  scorePage.classList.add("hidden");
+  welcomePage.classList.remove("hidden");
+
+  // reset quiz state
+  currentQuestion = 0;
+  correctAnswers = 0;
+
+  submitAnswerBtn.classList.remove("hidden");
+  completeQuizBtn.classList.add("hidden");
 };
 
 // event listeners
@@ -160,6 +181,7 @@ questionsEl.addEventListener("click", selectQuestion);
 submitAnswerBtn.addEventListener("click", submitAnswer);
 nextQuestionBtn.addEventListener("click", nextQuestion);
 completeQuizBtn.addEventListener("click", completeQuiz);
+playAgainBtn.addEventListener("click", playAgain);
 
 // if the user prefers dark theme, apply it
 if (window?.matchMedia("(prefers-color-scheme: dark)")?.matches) {

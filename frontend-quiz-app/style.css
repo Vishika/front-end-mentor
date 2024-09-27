@@ -380,6 +380,40 @@ body {
   width: var(--answer-icon-dimension);
 }
 
+.score-section {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.score-card {
+  padding: var(--space-xl);
+  background: var(--color-white);
+  border-radius: var(--space-xs);
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.dark .score-card {
+  background: var(--color-neutral-d);
+}
+
+.score {
+  margin-top: var(--space-sm);
+  font-size: 8.8rem;
+  font-weight: 500;
+}
+
+.out-of {
+  margin-top: var(--space-sm);
+  font-size: 1.8rem;
+}
+
+.dark .out-of {
+  color: var(--color-neutral-l);
+}
+
 .hidden {
   display: none;
 }
@@ -477,6 +511,23 @@ body {
   }
 
   .error-message {
+    font-size: 2.4rem;
+  }
+
+  .score-section {
+    gap: var(--space-xl);
+  }
+
+  .score-card {
+    padding: var(--space-xxxl);
+  }
+
+  .score {
+    margin-top: var(--space-xxl);
+    font-size: 14.4rem;
+  }
+
+  .out-of {
     font-size: 2.4rem;
   }
 }
