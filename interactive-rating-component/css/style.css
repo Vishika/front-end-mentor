@@ -45,7 +45,11 @@ body {
 
 .rating-container,
 .thank-you-container {
-  background: radial-gradient(at 50% 0%, var(--medium-dark-grey), var(--dark-grey));
+  background: radial-gradient(
+    at 50% 0%,
+    var(--medium-dark-grey),
+    var(--dark-grey)
+  );
   padding: 3rem;
   max-width: 40rem;
   border-radius: var(--radius);
@@ -74,22 +78,7 @@ body {
   justify-content: space-between;
 }
 
-input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-}
-
-input[class="rating"]:hover + .rating-text {
-  background-color: var(--orange);
-  color: var(--white);
-}
-
-input[class="rating"]:checked + .rating-text {
-  background-color: var(--medium-grey);
-  color: var(--white);
-}
-
-.rating-text {
+.rating {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,6 +90,16 @@ input[class="rating"]:checked + .rating-text {
   font-family: sans-serif;
   transition: all 0.3s;
   cursor: pointer;
+}
+
+.rating:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.rating[aria-checked="true"] {
+  background-color: var(--medium-grey);
+  color: var(--white);
 }
 
 .btn {

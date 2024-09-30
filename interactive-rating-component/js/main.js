@@ -4,14 +4,83 @@ const ratingContainer = document.querySelector(".rating-container");
 const thankYouContainer = document.querySelector(".thank-you-container");
 const thankYouRating = document.querySelector(".thank-you-rating");
 const form = document.querySelector("form");
+const ratingsContainer = document.querySelector(".ratings");
+const ratingOptions = document.querySelectorAll(".rating");
 
 const submit = function (event) {
   event.preventDefault();
+
+  const ratingValue = document.querySelector(".rating[aria-checked='true'");
+
+  if (!ratingValue) return;
+
   ratingContainer.classList.add("hidden");
   thankYouContainer.classList.remove("hidden");
-  const data = new FormData(event.target);
-  const values = Object.fromEntries(data);
-  thankYouRating.innerHTML = values.rating;
+  thankYouRating.innerHTML = ratingValue.dataset.rating;
 };
 
+const checkRating = function (rating) {
+  for (const option of ratingOptions) {
+    option.setAttribute("aria-checked", `${rating === option}`);
+  }
+};
+
+const checkPreviousRating = function (rating) {
+  const index = Array.from(ratingOptions).indexOf(rating);
+  if (index === 0) {
+    checkRating(ratingOptions[ratingOptions.length - 1]);
+  } else {
+    checkRating(ratingOptions[index - 1]);
+  }
+};
+
+const checkNextRating = function (rating) {
+  const index = Array.from(ratingOptions).indexOf(rating);
+  if (index === ratingOptions.length - 1) {
+    checkRating(ratingOptions[0]);
+  } else {
+    checkRating(ratingOptions[index + 1]);
+  }
+};
+
+const ratingClicked = function (event) {
+  const rating = event.target.closest(".rating");
+
+  if (!rating) return;
+
+  checkRating(rating);
+};
+
+const ratingPress = function (event) {
+  const rating = event.target.closest(".rating");
+
+  if (!rating) return;
+
+  switch (event.key) {
+    case " ":
+      checkRating(rating);
+      break;
+    case "Up":
+    case "ArrowUp":
+    case "Left":
+    case "ArrowLeft":
+      checkPreviousRating(rating);
+      break;
+
+    case "Down":
+    case "ArrowDown":
+    case "Right":
+    case "ArrowRight":
+      checkNextRating(rating);
+      break;
+    case "Enter":
+      submit(event);
+      break;
+    default:
+      break;
+  }
+};
+
+ratingsContainer.addEventListener("click", ratingClicked);
+ratingContainer.addEventListener("keydown", ratingPress);
 form.addEventListener("submit", submit);
