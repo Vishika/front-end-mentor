@@ -6,7 +6,6 @@
 
 :root {
   --orange: rgb(251, 116, 19);
-  --dark-orange: rgb(226, 104, 17);
   --white: rgb(255, 255, 255);
   --light-grey: rgb(149, 158, 172);
   --medium-grey: rgb(124, 135, 152);
@@ -88,18 +87,19 @@ body {
   border-radius: 50%;
   font-size: 1.6rem;
   font-family: sans-serif;
+  font-weight: 700;
   transition: all 0.3s;
   cursor: pointer;
 }
 
 .rating:hover {
   background-color: var(--orange);
-  color: var(--white);
+  color: var(--very-dark-grey);
 }
 
 .rating[aria-checked="true"] {
-  background-color: var(--medium-grey);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--very-dark-grey);
 }
 
 .btn {
@@ -117,7 +117,8 @@ body {
 }
 
 .btn:hover {
-  background-color: var(--dark-orange);
+  background-color: var(--white);
+  color: var(--very-dark-grey);
 }
 
 .btn:active {
@@ -154,8 +155,7 @@ body {
   display: none;
 }
 
-/* 425px */
-@media (max-width: 26.5625em) {
+@media (max-width: calc(425em / 16)) {
   :root {
     --bubble-size: 4rem;
   }

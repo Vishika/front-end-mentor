@@ -10,7 +10,7 @@ const ratingOptions = document.querySelectorAll(".rating");
 const submit = function (event) {
   event.preventDefault();
 
-  const ratingValue = document.querySelector(".rating[aria-checked='true'");
+  const ratingValue = document.querySelector(".rating[aria-checked='true']");
 
   if (!ratingValue) return;
 
@@ -21,12 +21,19 @@ const submit = function (event) {
 
 const checkRating = function (rating) {
   for (const option of ratingOptions) {
-    option.setAttribute("aria-checked", `${rating === option}`);
+    option.setAttribute("aria-checked", `${option === rating}`);
+
+    if (option === rating) {
+      option.focus();
+    }
   }
 };
 
 const checkPreviousRating = function (rating) {
-  const index = Array.from(ratingOptions).indexOf(rating);
+  const target =
+    document.querySelector(".rating[aria-checked='true']") || rating;
+  const index = Array.from(ratingOptions).indexOf(target);
+
   if (index === 0) {
     checkRating(ratingOptions[ratingOptions.length - 1]);
   } else {
@@ -35,7 +42,10 @@ const checkPreviousRating = function (rating) {
 };
 
 const checkNextRating = function (rating) {
-  const index = Array.from(ratingOptions).indexOf(rating);
+  const target =
+    document.querySelector(".rating[aria-checked='true']") || rating;
+  const index = Array.from(ratingOptions).indexOf(target);
+
   if (index === ratingOptions.length - 1) {
     checkRating(ratingOptions[0]);
   } else {
