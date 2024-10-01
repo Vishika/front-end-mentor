@@ -40,4 +40,89 @@ html {
   font-size: 62.5%;
   font-family: work-sans, sans-serif;
   line-height: 1.5;
+  color: var(--color-purple-d);
+}
+
+body {
+  background-color: var(--color-pink-l);
+  background-image: url(images/background-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  min-height: 100dvh;
+  display: grid;
+  align-items: center;
+}
+
+main {
+  margin: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--space-xxs);
+  background: var(--color-white);
+  display: grid;
+  gap: var(--space-lg);
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.icon-star {
+  height: var(--space-lg);
+  width: var(--space-lg);
+}
+
+.faqs {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.faq {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.accordion {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question {
+  max-width: 22.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.icon-minus {
+  display: none;
+}
+
+.open .icon-minus {
+  display: block;
+}
+
+.open .icon-plus {
+  display: none;
+}
+
+.answer {
+  display: none;
+  font-size: 1.4rem;
+  color: var(--color-purple-l);
+}
+
+.open .answer {
+  display: block;
+}
+
+.separator {
+  border-top: 0.1rem solid var(--color-pink-l);
 }
