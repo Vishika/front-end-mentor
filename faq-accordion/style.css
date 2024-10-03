@@ -95,15 +95,19 @@ h1 {
   justify-content: space-between;
 }
 
+.accordion:hover .question {
+  color: var(--color-pink);
+}
+
+.accordion:focus {
+  color: var(--color-pink);
+}
+
 .question {
   flex-basis: 80%;
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.2;
-}
-
-.accordion:hover .question {
-  color: var(--color-pink);
 }
 
 .icon {
