@@ -1,0 +1,59 @@
+:root {
+  --color-green-l: hsl(148, 38%, 91%);
+  --color-green: hsl(169, 82%, 27%);
+  --color-red: hsl(0, 66%, 54%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey: hsl(186, 15%, 59%);
+  --color-grey-d: hsl(187, 24%, 22%);
+
+  --space-xs: 0.8rem;
+  --space-sm: 1.2rem;
+  --space-md: 1.6rem;
+  --space-lg: 2.4rem;
+  --space-xl: 3.2rem;
+  --space-xxl: 4rem;
+  --space-xxxl: 12.8rem;
+}
+
+@font-face {
+  font-family: karla;
+  src: url(fonts/karla.ttf);
+}
+
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: karla, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+  letter-spacing: 0rem;
+}
+
+.heading {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.1rem;
+}
+
+.body-md {
+  font-size: 1.8rem;
+}
+
+.body-md-b {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.body-sm {
+  font-size: 1.6rem;
+}
