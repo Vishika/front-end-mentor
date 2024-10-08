@@ -10,36 +10,134 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
-    <!-- prettier-ignore -->
-    Contact Us
+    <main>
+      <form action="" novalidate>
+        <h1 class="heading">Contact Us</h1>
+        <div class="fields">
+          <div class="name">
+            <div class="field">
+              <label class="label" for="first_name"
+                >First Name<span class="required">*</span
+                ><span class="sr-only">required</span></label
+              >
+              <input
+                class="input"
+                type="text"
+                id="first_name"
+                name="first_name"
+                autocomplete="given-name"
+                required
+                aria-invalid="false"
+                aria-describedby="error-first_name"
+              />
+              <p class="error_message" id="error-first_name"></p>
+            </div>
+            <div class="field">
+              <label class="label" for="last_name"
+                >Last Name<span class="required">*</span
+                ><span class="sr-only">required</span></label
+              >
+              <input
+                class="input"
+                type="text"
+                id="last_name"
+                name="last_name"
+                autocomplete="family-name"
+                required
+                aria-invalid="false"
+                aria-describedby="error-last_name"
+              />
+              <p class="error_message" id="error-last_name"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="email"
+              >Email Address<span class="required">*</span
+              ><span class="sr-only">required</span></label
+            >
+            <input
+              class="input"
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              aria-invalid="false"
+              aria-describedby="error-email"
+            />
+            <p class="error_message" id="error-email"></p>
+          </div>
+          <fieldset>
+            <legend class="label">
+              Query Type<span class="required">*</span
+              ><span class="sr-only">required</span>
+            </legend>
+            <div class="radio">
+              <input
+                type="radio"
+                id="general_enquiry"
+                name="query_type"
+                value="general_enquiry"
+              />
+              <!-- TODO: required? aria-invalid? aria-describedby? -->
+              <label class="label" for="general_enquiry">General Enquiry</label>
+            </div>
+            <div class="radio">
+              <input
+                type="radio"
+                id="support_request"
+                name="query_type"
+                value="support_request"
+              />
+              <label class="label" for="support_request">Support Request</label>
+            </div>
+            <p class="error_message" id="error-query_type"></p>
+          </fieldset>
+          <div class="field">
+            <label class="label" for="message"
+              >Message<span class="required">*</span
+              ><span class="sr-only">required</span></label
+            >
+            <textarea
+              class="input"
+              id="message"
+              name="message"
+              required
+              aria-invalid="false"
+              aria-describedby="error-message"
+              rows="8"
+            ></textarea>
+            <p class="error_message" id="error-message"></p>
+          </div>
+        </div>
 
-    First Name
-    This field is required
-
-    Last Name
-    This field is required
-
-    Email Address
-    Please enter a valid email address
-    This field is required
-
-    Query Type
-    General Enquiry
-    Support Request
-    Please select a query type
-
-    Message
-    This field is required
-
-    I consent to being contacted by the team
-    To submit this form, please consent to being contacted
-
-    Submit
-
-    Message Sent!
-    Thanks for completing the form. We'll be in touch soon!
+        <div class="checkbox-input">
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              name="conset"
+              id="consent"
+              aria-invalid="false"
+              aria-describedby="error-consent"
+            />
+            <label class="label" for="consent"
+              >I consent to being contacted by the team<span class="required"
+                >*</span
+              ></label
+            >
+          </div>
+          <p class="error_message" id="error-consent"></p>
+        </div>
+        <button class="btn">Submit</button>
+      </form>
+    </main>
+    <div class="modal">
+      <h2>Message Sent!</h2>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
   </body>
 </html>

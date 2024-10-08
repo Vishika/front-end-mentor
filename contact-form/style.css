@@ -1,6 +1,7 @@
 :root {
   --color-green-l: hsl(148, 38%, 91%);
   --color-green: hsl(169, 82%, 27%);
+  --color-green-d: hsl(169, 82%, 13.5%);
   --color-red: hsl(0, 66%, 54%);
   --color-white: hsl(0, 0%, 100%);
   --color-grey: hsl(186, 15%, 59%);
@@ -36,6 +37,18 @@ html {
   font-size: 62.5%;
   line-height: 1.5;
   letter-spacing: 0rem;
+  color: var(--color-grey-d);
+}
+
+body {
+  background: var(--color-green-l);
+}
+
+main {
+  margin: var(--space-xl) var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--space-md);
+  background: var(--color-white);
 }
 
 .heading {
@@ -56,4 +69,122 @@ html {
 
 .body-sm {
   font-size: 1.6rem;
+}
+
+form {
+  display: grid;
+  gap: var(--space-xxl);
+}
+
+.fields {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.name {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.label {
+  font-size: 1.6rem;
+}
+
+.required {
+  margin-left: var(--space-xs);
+  color: var(--color-green);
+}
+
+.input,
+.radio {
+  --input-color: var(--color-grey);
+  border: 0.1rem solid var(--input-color);
+  border-radius: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+.input:active,
+.input:focus,
+.input:hover,
+.input:focus-visible,
+.input:focus-within {
+  --input-color: var(--color-grey);
+}
+
+.error .input {
+  --input-color: var(--color-red);
+}
+
+.error_message {
+  font-size: 1.6rem;
+  color: var(--color-red);
+}
+
+fieldset {
+  all: unset;
+  display: grid;
+  gap: var(--space-md);
+}
+
+legend {
+  margin-bottom: var(--space-md);
+}
+
+.radio {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.checkbox {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--space-xs);
+  background: var(--color-green);
+  padding: var(--space-md);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-white);
+}
+
+.btn:hover {
+  background: var(--color-green-d);
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  display: none;
+  margin: var(--space-lg);
+  border-radius: var(--space-md);
+  background: var(--color-grey-d);
+  padding: var(--space-lg);
+  color: var(--color-white);
+  font-size: 1.6rem;
+}
+
+h2 {
+  margin-bottom: var(--space-xs);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.sr-only {
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
