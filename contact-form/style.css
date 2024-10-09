@@ -102,18 +102,61 @@ form {
 
 .input,
 .radio {
-  --input-color: var(--color-grey);
-  border: 0.1rem solid var(--input-color);
+  border: 0.1rem solid var(--color-grey);
   border-radius: var(--space-xs);
   padding: var(--space-sm) var(--space-lg);
 }
 
-.input:active,
 .input:focus,
-.input:hover,
-.input:focus-visible,
-.input:focus-within {
-  --input-color: var(--color-grey);
+.input:hover {
+  outline: none;
+  border: 0.1rem solid var(--color-green);
+  box-shadow: 0 0 0 0.1rem var(--color-green);
+}
+
+.radio {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.radio input[type="radio"] {
+  appearance: none;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border: 0.2rem solid var(--color-green-l);
+  border-radius: 50%;
+  transform: translateY(0.2rem);
+  display: grid;
+  place-content: center;
+}
+
+.radio input[type="radio"]::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1rem 1rem var(--color-green);
+}
+
+.radio input[type="radio"]:checked {
+  border: 0.2rem solid var(--color-green);
+}
+
+.radio:has(input[type="radio"]:checked) {
+  border: 0.1rem solid var(--color-green);
+  background: var(--color-green-l);
+}
+
+.radio input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.radio input[type="radio"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--color-green-d);
 }
 
 .error .input {
@@ -133,11 +176,6 @@ fieldset {
 
 legend {
   margin-bottom: var(--space-md);
-}
-
-.radio {
-  display: flex;
-  gap: var(--space-sm);
 }
 
 .checkbox {
