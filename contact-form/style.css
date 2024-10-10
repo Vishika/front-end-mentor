@@ -114,6 +114,10 @@ form {
   box-shadow: 0 0 0 0.1rem var(--color-green);
 }
 
+.error .input {
+  border: 0.1rem solid var(--color-red);
+}
+
 .radio {
   display: flex;
   gap: var(--space-sm);
@@ -234,8 +238,10 @@ legend {
 .modal {
   position: absolute;
   top: 0;
-  display: none;
+  left: 50%;
+  transform: translateX(-50%);
   margin: var(--space-lg);
+  border: none;
   border-radius: var(--space-md);
   background: var(--color-grey-d);
   padding: var(--space-lg);

@@ -15,7 +15,7 @@
   </head>
   <body>
     <main>
-      <form action="" novalidate>
+      <form id="contact-form" action="" novalidate>
         <h1 class="heading">Contact Us</h1>
         <div class="fields">
           <div class="name">
@@ -71,7 +71,7 @@
             />
             <p class="error_message" id="error-email"></p>
           </div>
-          <fieldset>
+          <fieldset role="radiogroup" aria-describedby="error-query_type">
             <legend class="label">
               Query Type<span class="required">*</span
               ><span class="sr-only">required</span>
@@ -82,8 +82,8 @@
                 id="general_enquiry"
                 name="query_type"
                 value="general_enquiry"
+                required
               />
-              <!-- TODO: required? aria-invalid? aria-describedby? -->
               <label class="label" for="general_enquiry">General Enquiry</label>
             </div>
             <div class="radio">
@@ -114,12 +114,11 @@
             <p class="error_message" id="error-message"></p>
           </div>
         </div>
-
-        <div class="checkbox-input">
+        <div class="field">
           <div class="checkbox">
             <input
               type="checkbox"
-              name="conset"
+              name="consent"
               id="consent"
               aria-invalid="false"
               aria-describedby="error-consent"
@@ -135,9 +134,9 @@
         <button class="btn">Submit</button>
       </form>
     </main>
-    <div class="modal">
+    <dialog id="modal" class="modal">
       <h2>Message Sent!</h2>
       <p>Thanks for completing the form. We'll be in touch soon!</p>
-    </div>
+    </dialog>
   </body>
 </html>
