@@ -73,7 +73,7 @@ main {
 
 form {
   display: grid;
-  gap: var(--space-xxl);
+  gap: var(--space-xl);
 }
 
 .fields {
@@ -235,11 +235,16 @@ legend {
   background: var(--color-green-d);
 }
 
-.modal {
-  position: absolute;
+.modal-container {
+  position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  position: relative;
   margin: var(--space-lg);
   border: none;
   border-radius: var(--space-md);
@@ -253,6 +258,9 @@ h2 {
   margin-bottom: var(--space-xs);
   font-size: 1.8rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
 }
 
 .sr-only {
@@ -263,4 +271,24 @@ h2 {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+@media (min-width: calc(768em / 16)) {
+  body {
+    height: 100dvh;
+    display: grid;
+    place-content: center;
+  }
+
+  main {
+    width: 73.6rem;
+    max-width: 73.6rem;
+    padding: var(--space-xxl);
+  }
+
+  .name,
+  .query_type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
