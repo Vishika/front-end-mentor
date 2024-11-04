@@ -1,0 +1,34 @@
+:root {
+  --color-yellow: hsl(35, 77%, 62%);
+  --color-red: hsl(5, 85%, 63%);
+  --color-grey-vl: hsl(36, 100%, 99%);
+  --color-grey-l: hsl(233, 8%, 79%);
+  --color-grey: hsl(236, 13%, 42%);
+  --color-grey-d: hsl(240, 100%, 5%);
+}
+
+@font-face {
+  font-family: inter;
+  src: url(fonts/inter.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: inter, sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+  letter-spacing: 0rem;
+}
+
+body {
+}
