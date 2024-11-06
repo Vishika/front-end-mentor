@@ -10,25 +10,29 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Frontend Mentor | News homepage</title>
   </head>
-  <body>
+  <body class="cover">
     <div class="container">
       <header class="header">
         <img class="img-logo" src="images/logo.svg" alt="W logo" />
-        <img class="img-menu--open" src="images/icon-menu.svg" alt="" />
-        <nav class="navigation" aria-label="main menu">
-          <ul class="list-nav">
-            <img
-              class="img-menu--close"
-              src="images/icon-menu-close.svg"
-              alt=""
-            />
-            <li class="item-nav"><a href="#home">Home</a></li>
-            <li class="item-nav"><a href="#new">New</a></li>
-            <li class="item-nav"><a href="#popular">Popular</a></li>
-            <li class="item-nav"><a href="#trending">Trending</a></li>
-            <li class="item-nav"><a href="#categories">Categories</a></li>
+        <img id="nav-open" class="nav-open" src="images/icon-menu.svg" alt="" />
+        <nav id="nav" class="nav open" aria-label="main menu">
+          <img
+            id="nav-close"
+            class="nav-close"
+            src="images/icon-menu-close.svg"
+            alt=""
+          />
+          <ul class="nav__list">
+            <li class="nav__list__item"><a href="#home">Home</a></li>
+            <li class="nav__list__item"><a href="#new">New</a></li>
+            <li class="nav__list__item"><a href="#popular">Popular</a></li>
+            <li class="nav__list__item"><a href="#trending">Trending</a></li>
+            <li class="nav__list__item">
+              <a href="#categories">Categories</a>
+            </li>
           </ul>
         </nav>
       </header>
