@@ -46,6 +46,7 @@ body {
   margin: 2.8rem 1.6rem;
   display: grid;
   gap: 3.2rem;
+  justify-content: center;
 }
 
 .header {
@@ -105,6 +106,7 @@ body {
 }
 
 .main-content {
+  max-width: 111rem;
   display: grid;
   gap: 6.4rem;
 }
@@ -121,13 +123,13 @@ body {
   line-height: 1;
 }
 
-.home__text {
+.home__aside__text {
   margin-bottom: 2.4rem;
   line-height: 2.6rem;
   color: var(--color-grey);
 }
 
-.home__btn {
+.home__aside__btn {
   border: none;
   background: var(--color-red);
   padding: 1.6rem 3.2rem;
@@ -170,11 +172,13 @@ body {
 }
 
 .trending__list {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: 3.2rem;
 }
 
 .trending__list__item {
+  max-width: 35rem;
   display: flex;
   gap: 2.4rem;
 }
@@ -204,4 +208,116 @@ body {
   font-weight: 400;
   line-height: 2.6rem;
   color: var(--color-grey);
+}
+
+@media (min-width: calc(700em / 16)) {
+  .container {
+    margin: 9rem 4.5rem;
+    gap: 6rem;
+  }
+
+  .main-content {
+    gap: 3rem;
+    grid-template-columns: 1fr 35rem;
+    grid-template-areas:
+      "home new"
+      "trending trending";
+  }
+
+  .img-logo {
+    max-height: 4rem;
+  }
+
+  .nav-open {
+    display: none;
+  }
+
+  .nav-close {
+    display: none;
+  }
+
+  .nav {
+    all: unset;
+  }
+
+  .open {
+    transform: unset;
+    box-shadow: none;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .article--home {
+    grid-area: home;
+  }
+
+  .home__img {
+    content: url(images/image-web-3-desktop.jpg);
+  }
+
+  .article--new {
+    grid-area: new;
+  }
+
+  .new__title {
+    font-size: 4rem;
+  }
+
+  .article--trending {
+    margin-top: 4rem;
+    grid-area: trending;
+  }
+
+  .trending__list {
+    justify-content: center;
+  }
+}
+
+@media (min-width: calc(1140em / 16)) {
+  .main-content {
+    grid-template-columns: 1fr 1fr 35rem;
+    grid-template-areas:
+      "home home new"
+      "trending trending trending";
+  }
+
+  .article--home {
+    grid-area: home;
+    display: grid;
+    gap: 2.8rem;
+    grid-template-areas:
+      "img img"
+      "title aside";
+  }
+
+  .home__img {
+    margin-bottom: 0;
+    grid-area: img;
+  }
+
+  .home__title {
+    grid-area: title;
+    font-size: 5.6rem;
+  }
+
+  .home__aside {
+    grid-area: aside;
+  }
+
+  .article--new {
+    grid-area: new;
+  }
+
+  .article--trending {
+    margin-top: 4rem;
+    grid-area: trending;
+  }
+
+  .trending__list {
+    gap: 0;
+    justify-content: space-between;
+  }
 }
