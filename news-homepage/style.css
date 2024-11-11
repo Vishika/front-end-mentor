@@ -96,13 +96,16 @@ body {
 
 .nav__list__item a:link,
 .nav__list__item a:visited,
-.nav__list__item a:focus,
-.nav__list__item a:hover,
-.nav__list__item a:active {
+.nav__list__item a:focus {
   text-decoration: none;
   font-size: 1.8rem;
   line-height: 2.4rem;
   color: var(--color-grey-d);
+}
+
+.nav__list__item a:hover,
+.nav__list__item a:active {
+  color: var(--color-red);
 }
 
 .main-content {
@@ -130,6 +133,7 @@ body {
 }
 
 .home__aside__btn {
+  cursor: pointer;
   border: none;
   background: var(--color-red);
   padding: 1.6rem 3.2rem;
@@ -141,9 +145,15 @@ body {
   color: inherit;
 }
 
+.home__aside__btn:hover,
+.home__aside__btn:active {
+  background: var(--color-grey-d);
+  color: var(--color-white);
+}
+
 .article--new {
   background: var(--color-grey-d);
-  padding: 2.4rem;
+  padding: 3.2rem 2.4rem;
 }
 
 .new__title {
@@ -154,14 +164,24 @@ body {
   color: var(--color-yellow);
 }
 
-.new__list__item h3 {
+.new__list__item__link:link,
+.new__list__item__link:visited,
+.new__list__item__link:focus {
+  text-decoration: none;
+  cursor: pointer;
   margin-bottom: 0.8rem;
+  font-weight: 800;
   font-size: 2rem;
   line-height: 2.4rem;
   color: var(--color-grey-vl);
 }
 
-.new__list__item p {
+.new__list__item__link:hover,
+.new__list__item__link:active {
+  color: var(--color-yellow);
+}
+
+.new__list__item__text {
   line-height: 2.6rem;
   color: var(--color-grey-l);
 }
@@ -196,14 +216,24 @@ body {
   color: var(--color-red);
 }
 
-.trending__list__item__detail__title {
-  margin-bottom: 0.9rem;
+.trending__list__item__detail__link:link,
+.trending__list__item__detail__link:visited,
+.trending__list__item__detail__link:focus {
+  text-decoration: none;
+  cursor: pointer;
   font-size: 1.8rem;
   font-weight: 800;
   line-height: 2.4rem;
+  color: var(--color-grey-d);
+}
+
+.trending__list__item__detail__link:hover,
+.trending__list__item__detail__link:active {
+  color: var(--color-red);
 }
 
 .trending__list__item__detail__description {
+  margin-top: 0.9rem;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 2.6rem;
