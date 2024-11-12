@@ -13,18 +13,23 @@
     <script defer src="script.js"></script>
     <title>Frontend Mentor | News homepage</title>
   </head>
-  <body class="cover">
+  <body>
     <div class="container">
       <header class="header">
         <img class="img-logo" src="images/logo.svg" alt="W logo" />
-        <img id="nav-open" class="nav-open" src="images/icon-menu.svg" alt="" />
-        <nav id="nav" class="nav" aria-label="main menu">
-          <img
-            id="nav-close"
-            class="nav-close"
-            src="images/icon-menu-close.svg"
-            alt=""
-          />
+        <span id="nav-label" hidden>Navigation</span>
+        <button
+          id="nav-open"
+          class="nav-btn nav-open"
+          aria-expanded="false"
+          aria-labelledby="nav-label"
+        >
+          <img src="images/icon-menu.svg" alt="" />
+        </button>
+        <nav id="nav" class="nav" role="dialog" aria-labelledby="nav-label">
+          <button id="nav-close" class="nav-btn nav-close" aria-label="Close">
+            <img src="images/icon-menu-close.svg" alt="" />
+          </button>
           <ul class="nav__list">
             <li class="nav__list__item"><a href="#home">Home</a></li>
             <li class="nav__list__item"><a href="#new">New</a></li>
@@ -36,7 +41,7 @@
           </ul>
         </nav>
       </header>
-      <main class="main-content">
+      <main id="main" class="main-content">
         <article id="home" class="article article--home">
           <img
             class="home__img"
