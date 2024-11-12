@@ -171,12 +171,16 @@ body {
   color: var(--color-yellow);
 }
 
+.new__list__item {
+  display: grid;
+  gap: 0.8rem;
+}
+
 .new__list__item__link:link,
 .new__list__item__link:visited,
 .new__list__item__link:focus {
   text-decoration: none;
   cursor: pointer;
-  margin-bottom: 0.8rem;
   font-weight: 800;
   font-size: 2rem;
   line-height: 2.4rem;
