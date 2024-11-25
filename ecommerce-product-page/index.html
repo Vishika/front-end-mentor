@@ -1,44 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  Sneaker Company
-
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <span id="nav-label" hidden>Navigation</span>
+      <button
+        id="nav-open"
+        class="nav-btn nav-open"
+        aria-expanded="false"
+        aria-labelledby="nav-label"
+      >
+        <img src="images/icon-menu.svg" alt="" />
+      </button>
+      <img src="images/logo.svg" alt="sneakers logo" />
+      <span id="cart-label" hidden>Shopping cart</span>
+      <button
+        id="cart-open"
+        class="cart-btn cart-open"
+        aria-expanded="false"
+        aria-labelledby="cart-label"
+      >
+        <img src="images/icon-cart.svg" alt="" />
+      </button>
+      <span id="profile-label" hidden>Profile</span>
+      <button
+        id="profile-btn"
+        class="profile-btn"
+        aria-labelledby="profile-label"
+      >
+        <img height="24" width="24" src="images/image-avatar.png" alt="" />
+      </button>
+      <nav id="nav" class="nav" aria-labelledby="nav-label">
+        <button id="nav-close" class="nav-btn nav-close" aria-label="Close">
+          <img src="images/icon-close.svg" alt="" />
+        </button>
+        <ul class="nav__list">
+          <li class="nav__list__item"><a href="#">Collections</a></li>
+          <li class="nav__list__item"><a href="#">Men</a></li>
+          <li class="nav__list__item"><a href="#">Women</a></li>
+          <li class="nav__list__item"><a href="#">About</a></li>
+          <li class="nav__list__item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <p class="subtitle">Sneaker Company</p>
+        <h1 class="product__title">Fall Limited Edition Sneakers</h1>
+        <p class="product__description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they'll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-continer">
+          <p class="price">$125.00</p>
+          <p class="discount">50%</p>
+          <p class="previous-price">$250.00</p>
+        </div>
+        <div class="amount-container">
+          <button
+            id="decrement-amount"
+            class="amount-btn minus-amount"
+            aria-label="decrement amount"
+          >
+            <img src="images/icon-minus.svg" alt="" />
+          </button>
+          <p class="amount">0</p>
+          <button
+            id="increment-amount"
+            class="amount-btn plus-amount"
+            aria-label="increment amount"
+          >
+            <img src="images/icon-plus.svg" alt="" />
+          </button>
+        </div>
+        <button id="add-to-cart-btn" class="add-to-cart-btn">
+          <img src="images/icon-cart-btn.svg" alt="" />Add to cart
+        </button>
+      </div>
+    </main>
+  </body>
 </html>
