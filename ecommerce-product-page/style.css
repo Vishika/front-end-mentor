@@ -44,6 +44,7 @@ html {
 }
 
 body {
+  min-height: 100dvh;
   position: relative;
   overflow-x: hidden;
 }
@@ -65,20 +66,24 @@ button img {
   width: 1.5rem;
 }
 
+.nav-close {
+  margin-bottom: 5.4rem;
+}
+
 .cart-btn {
   margin-left: auto;
   margin-right: 2.2rem;
 }
 
 .nav {
-  transform: translateX(100%);
+  transform: translateX(-100%);
   position: absolute;
   width: 25.6rem;
   height: 100%;
-  padding: 2.8rem 2.4rem;
+  padding: 2.4rem;
   background: var(--color-white);
   top: 0;
-  right: 0;
+  left: 0;
   transition: transform 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -87,6 +92,27 @@ button img {
 .nav-open[aria-expanded="true"] + .nav {
   transform: translateX(0);
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.7);
+}
+
+.nav__list {
+  display: grid;
+  gap: 2rem;
+}
+
+.nav__list__item a:link,
+.nav__list__item a:visited,
+.nav__list__item a:focus {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--color-grey-vd);
+}
+
+.nav__list__item a:hover,
+.nav__list__item a:active {
+  color: var(--color-orange);
 }
 
 .container {

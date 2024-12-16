@@ -11,6 +11,7 @@
     />
     <title>Frontend Mentor | E-commerce product page</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <header class="header">
@@ -23,6 +24,18 @@
       >
         <img src="images/icon-menu.svg" alt="" />
       </button>
+      <nav id="nav" class="nav" aria-labelledby="nav-label">
+        <button id="nav-close" class="nav-btn nav-close" aria-label="Close">
+          <img src="images/icon-close.svg" alt="" />
+        </button>
+        <ul class="nav__list">
+          <li class="nav__list__item"><a href="#">Collections</a></li>
+          <li class="nav__list__item"><a href="#">Men</a></li>
+          <li class="nav__list__item"><a href="#">Women</a></li>
+          <li class="nav__list__item"><a href="#">About</a></li>
+          <li class="nav__list__item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
       <img src="images/logo.svg" alt="sneakers logo" />
       <span id="cart-label" hidden>Shopping cart</span>
       <button
@@ -41,20 +54,8 @@
       >
         <img height="24" width="24" src="images/image-avatar.png" alt="" />
       </button>
-      <nav id="nav" class="nav" aria-labelledby="nav-label">
-        <button id="nav-close" class="nav-btn nav-close" aria-label="Close">
-          <img src="images/icon-close.svg" alt="" />
-        </button>
-        <ul class="nav__list">
-          <li class="nav__list__item"><a href="#">Collections</a></li>
-          <li class="nav__list__item"><a href="#">Men</a></li>
-          <li class="nav__list__item"><a href="#">Women</a></li>
-          <li class="nav__list__item"><a href="#">About</a></li>
-          <li class="nav__list__item"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
     </header>
-    <main>
+    <main id="main" class="main">
       <div class="container">
         <p class="subtitle">Sneaker Company</p>
         <h1 class="product__title">Fall Limited Edition Sneakers</h1>
