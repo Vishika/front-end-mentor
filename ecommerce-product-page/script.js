@@ -5,7 +5,7 @@ const navOpen = document.getElementById("nav-open");
 const navClose = document.getElementById("nav-close");
 const cartOpen = document.getElementById("cart-open");
 const profileBtn = document.getElementById("profile-btn");
-const media = window.matchMedia("(min-width: 43.75em)");
+const media = window.matchMedia("(min-width: 69.375em)");
 const main = document.getElementById("main");
 
 function setupNav(event) {
