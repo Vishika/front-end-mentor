@@ -87,6 +87,7 @@ button img {
   transition: transform 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .nav-open[aria-expanded="true"] ~ .nav {
@@ -131,6 +132,66 @@ button img {
 
 .container {
   margin: 2.4rem;
+}
+
+.carousel {
+  margin-bottom: 2.4rem;
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide__img {
+  width: 100%;
+  height: 80vw;
+  object-fit: cover;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.slide-btn:hover {
+  scale: 1.2;
+}
+
+.btn--prev {
+  left: 1.6rem;
+}
+
+.btn--next {
+  right: 1.6rem;
 }
 
 .subtitle {
