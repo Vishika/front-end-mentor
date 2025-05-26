@@ -38,14 +38,17 @@
         </ul>
       </nav>
       <span id="cart-label" hidden>Shopping cart</span>
-      <button
-        id="cart-open"
-        class="cart-btn cart-open"
-        aria-expanded="false"
-        aria-labelledby="cart-label"
-      >
-        <img src="images/icon-cart.svg" alt="" />
-      </button>
+      <div class="cart-btn-container">
+        <button
+          id="cart-open"
+          class="cart-btn cart-open"
+          aria-expanded="false"
+          aria-labelledby="cart-label"
+        >
+          <img src="images/icon-cart.svg" alt="shopping cart" />
+        </button>
+        <span id="cart-amount-bubble" class="cart-amount-bubble"></span>
+      </div>
       <span id="profile-label" hidden>Profile</span>
       <button
         id="profile-btn"
@@ -104,7 +107,7 @@
           >
             <img src="images/icon-minus.svg" alt="" />
           </button>
-          <p class="amount">0</p>
+          <p id="amount" class="amount">0</p>
           <button
             id="increment-amount"
             class="amount-btn plus-amount"
@@ -113,9 +116,36 @@
             <img src="images/icon-plus.svg" alt="" />
           </button>
         </div>
-        <button id="add-to-cart-btn" class="add-to-cart-btn">
+        <button id="add-to-cart-btn" class="primary-btn add-to-cart-btn">
           <img src="images/icon-cart-btn.svg" alt="" />Add to cart
         </button>
+      </div>
+      <div id="cart" class="cart">
+        <p class="cart-title">Cart</p>
+        <div class="cart-container">
+          <p id="cart-empty" class="cart-empty active">Your cart is empty.</p>
+          <div id="cart-not-empty" class="cart-not-empty">
+            <div class="cart-product">
+              <img
+                class="cart-img"
+                src="images/image-product-1-thumbnail.jpg"
+                alt="pair of shoes"
+              />
+              <div class="cart-detail">
+                <p>Fall Limited Edition Sneakers</p>
+                <p>
+                  <span id="cart-product-price"></span> x
+                  <span id="cart-amount"></span>
+                  <span id="cart-total" class="cart-total"></span>
+                </p>
+              </div>
+              <button id="cart-delete">
+                <img src="images/icon-delete.svg" alt="trashcan" />
+              </button>
+            </div>
+            <button id="checkout-btn" class="primary-btn">Checkout</button>
+          </div>
+        </div>
       </div>
     </main>
   </body>
