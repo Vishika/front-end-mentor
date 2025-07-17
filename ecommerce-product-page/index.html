@@ -13,140 +13,152 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
   </head>
-  <body>
-    <header class="header">
-      <span id="nav-label" hidden>Navigation</span>
-      <button
-        id="nav-open"
-        class="nav-btn nav-open"
-        aria-expanded="false"
-        aria-labelledby="nav-label"
-      >
-        <img src="images/icon-menu.svg" alt="" />
-      </button>
-      <img src="images/logo.svg" alt="sneakers logo" />
-      <nav id="nav" class="nav" aria-labelledby="nav-label">
-        <button id="nav-close" class="nav-btn nav-close" aria-label="Close">
-          <img src="images/icon-close.svg" alt="" />
-        </button>
-        <ul class="nav__list">
-          <li class="nav__list__item"><a href="#">Collections</a></li>
-          <li class="nav__list__item"><a href="#">Men</a></li>
-          <li class="nav__list__item"><a href="#">Women</a></li>
-          <li class="nav__list__item"><a href="#">About</a></li>
-          <li class="nav__list__item"><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <span id="cart-label" hidden>Shopping cart</span>
-      <div class="cart-btn-container">
+  <body class="body">
+    <div class="outer-card">
+      <header class="header">
+        <span id="nav-label" hidden>Navigation</span>
         <button
-          id="cart-open"
-          class="cart-btn cart-open"
+          id="nav-open"
+          class="nav-btn nav-open"
           aria-expanded="false"
-          aria-labelledby="cart-label"
+          aria-labelledby="nav-label"
         >
-          <img src="images/icon-cart.svg" alt="shopping cart" />
+          <img src="images/icon-menu.svg" alt="" />
         </button>
-        <span id="cart-amount-bubble" class="cart-amount-bubble"></span>
-      </div>
-      <span id="profile-label" hidden>Profile</span>
-      <button
-        id="profile-btn"
-        class="profile-btn"
-        aria-labelledby="profile-label"
-      >
-        <img height="24" width="24" src="images/image-avatar.png" alt="" />
-      </button>
-    </header>
-    <main id="main" class="main">
-      <div class="carousel">
-        <div class="slide fade active">
-          <img
-            src="images/image-product-1.jpg"
-            alt="pair of shoes angle 1"
-            class="slide__img"
-          />
-        </div>
-        <div class="slide fade">
-          <img src="images/image-product-2.jpg"" alt="pair of shoes angle 2"
-          class="slide__img" />
-        </div>
-        <div class="slide fade">
-          <img src="images/image-product-3.jpg"" alt="pair of shoes angle 3"
-          class="slide__img" />
-        </div>
-        <div class="slide fade">
-          <img src="images/image-product-4.jpg"" alt="pair of shoes angle 4"
-          class="slide__img" />
-        </div>
-        <a id="slide-prev" class="slide-btn btn--prev"
-          ><img src="images/icon-previous.svg" alt="arrow to left"
-        /></a>
-        <a id="slide-next" class="slide-btn btn--next"
-          ><img src="images/icon-next.svg" alt="arrow to right"
-        /></a>
-      </div>
-      <div class="container">
-        <p class="subtitle">Sneaker Company</p>
-        <h1 class="product__title">Fall Limited Edition Sneakers</h1>
-        <p class="product__description">
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything
-          the weather can offer.
-        </p>
-        <div class="price-continer">
-          <p class="price">$125.00</p>
-          <p class="discount">50%</p>
-          <p class="previous-price">$250.00</p>
-        </div>
-        <div class="amount-container">
-          <button
-            id="decrement-amount"
-            class="amount-btn minus-amount"
-            aria-label="decrement amount"
-          >
-            <img src="images/icon-minus.svg" alt="" />
+        <img src="images/logo.svg" alt="sneakers logo" />
+        <nav id="nav" class="nav" aria-labelledby="nav-label">
+          <button id="nav-close" class="nav-btn nav-close" aria-label="Close">
+            <img src="images/icon-close.svg" alt="" />
           </button>
-          <p id="amount" class="amount">0</p>
-          <button
-            id="increment-amount"
-            class="amount-btn plus-amount"
-            aria-label="increment amount"
-          >
-            <img src="images/icon-plus.svg" alt="" />
-          </button>
-        </div>
-        <button id="add-to-cart-btn" class="primary-btn add-to-cart-btn">
-          <img src="images/icon-cart-btn.svg" alt="" />Add to cart
-        </button>
-      </div>
-      <div id="cart" class="cart">
-        <p class="cart-title">Cart</p>
-        <div class="cart-container">
-          <p id="cart-empty" class="cart-empty active">Your cart is empty.</p>
-          <div id="cart-not-empty" class="cart-not-empty">
-            <div class="cart-product">
-              <img
-                class="cart-img"
-                src="images/image-product-1-thumbnail.jpg"
-                alt="pair of shoes"
-              />
-              <div class="cart-detail">
-                <p>Fall Limited Edition Sneakers</p>
-                <p>
-                  <span id="cart-product-price"></span> x
-                  <span id="cart-amount"></span>
-                  <span id="cart-total" class="cart-total"></span>
-                </p>
+          <ul class="nav__list">
+            <li class="nav__list__item"><a href="#">Collections</a></li>
+            <li class="nav__list__item"><a href="#">Men</a></li>
+            <li class="nav__list__item"><a href="#">Women</a></li>
+            <li class="nav__list__item"><a href="#">About</a></li>
+            <li class="nav__list__item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <span id="cart-label" hidden>Shopping cart</span>
+        <div class="cart-btn-with-cart">
+          <div class="cart-btn-container">
+            <button
+              id="cart-open"
+              class="cart-btn cart-open"
+              aria-expanded="false"
+              aria-labelledby="cart-label"
+            >
+              <img src="images/icon-cart.svg" alt="shopping cart" />
+            </button>
+            <span id="cart-amount-bubble" class="cart-amount-bubble"></span>
+          </div>
+          <div id="cart" class="cart">
+            <p class="cart-title">Cart</p>
+            <div class="cart-container">
+              <p id="cart-empty" class="cart-empty active">
+                Your cart is empty.
+              </p>
+              <div id="cart-not-empty" class="cart-not-empty">
+                <div class="cart-product">
+                  <img
+                    class="cart-img"
+                    src="images/image-product-1-thumbnail.jpg"
+                    alt="pair of shoes"
+                  />
+                  <div class="cart-detail">
+                    <p>Fall Limited Edition Sneakers</p>
+                    <p>
+                      <span id="cart-product-price"></span> x
+                      <span id="cart-amount"></span>
+                      <span id="cart-total" class="cart-total"></span>
+                    </p>
+                  </div>
+                  <button id="cart-delete">
+                    <img src="images/icon-delete.svg" alt="trashcan" />
+                  </button>
+                </div>
+                <button id="checkout-btn" class="primary-btn">Checkout</button>
               </div>
-              <button id="cart-delete">
-                <img src="images/icon-delete.svg" alt="trashcan" />
-              </button>
             </div>
-            <button id="checkout-btn" class="primary-btn">Checkout</button>
           </div>
         </div>
-      </div>
-    </main>
+        <span id="profile-label" hidden>Profile</span>
+        <button
+          id="profile-btn"
+          class="profile-btn"
+          aria-labelledby="profile-label"
+        >
+          <img height="24" width="24" src="images/image-avatar.png" alt="" />
+        </button>
+      </header>
+      <main id="main" class="main">
+        <div class="inner-card">
+          <div class="carousel">
+            <div class="slide fade active">
+              <img
+                src="images/image-product-1.jpg"
+                alt="pair of shoes angle 1"
+                class="slide__img"
+              />
+            </div>
+            <div class="slide fade">
+              <img src="images/image-product-2.jpg"" alt="pair of shoes angle 2"
+              class="slide__img" />
+            </div>
+            <div class="slide fade">
+              <img src="images/image-product-3.jpg"" alt="pair of shoes angle 3"
+              class="slide__img" />
+            </div>
+            <div class="slide fade">
+              <img src="images/image-product-4.jpg"" alt="pair of shoes angle 4"
+              class="slide__img" />
+            </div>
+            <a id="slide-prev" class="slide-btn btn--prev"
+              ><img src="images/icon-previous.svg" alt="arrow to left"
+            /></a>
+            <a id="slide-next" class="slide-btn btn--next"
+              ><img src="images/icon-next.svg" alt="arrow to right"
+            /></a>
+          </div>
+          <div class="container">
+            <p class="subtitle">Sneaker Company</p>
+            <h1 class="product__title">Fall Limited Edition Sneakers</h1>
+            <p class="product__description">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they'll withstand
+              everything the weather can offer.
+            </p>
+            <div class="price-container">
+              <div class="price-with-discount">
+                <p class="price">$125.00</p>
+                <p class="discount">50%</p>
+              </div>
+              <p class="previous-price">$250.00</p>
+            </div>
+            <div class="control-container">
+              <div class="amount-container">
+                <button
+                  id="decrement-amount"
+                  class="amount-btn minus-amount"
+                  aria-label="decrement amount"
+                >
+                  <img src="images/icon-minus.svg" alt="" />
+                </button>
+                <p id="amount" class="amount">0</p>
+                <button
+                  id="increment-amount"
+                  class="amount-btn plus-amount"
+                  aria-label="increment amount"
+                >
+                  <img src="images/icon-plus.svg" alt="" />
+                </button>
+              </div>
+              <button id="add-to-cart-btn" class="primary-btn add-to-cart-btn">
+                <img src="images/icon-cart-btn.svg" alt="" />Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
