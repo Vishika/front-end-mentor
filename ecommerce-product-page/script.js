@@ -25,6 +25,7 @@ const cartAmountOutput = document.getElementById("cart-amount");
 const cartTotalOutput = document.getElementById("cart-total");
 const cartDeleteBtn = document.getElementById("cart-delete");
 const cartAmountBubble = document.getElementById("cart-amount-bubble");
+const thumbnailNav = document.getElementById("thumbnail-nav");
 
 function setupNav(event) {
   if (media.matches) {
@@ -141,6 +142,42 @@ const deleteCart = function () {
   updateCart();
 };
 
+const changeView = function (index) {
+  const slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    const slide = slides[i];
+    slide.classList.remove("active");
+    if (slide.getAttribute("view") == index) {
+      slide.classList.add("active");
+    }
+  }
+};
+
+const thumbNavClicked = function (event) {
+  let index;
+  if (event.target.nodeName == "BUTTON") {
+    index = event.target.getAttribute("view");
+  }
+
+  if (event.target.nodeName == "IMG") {
+    index = event.target.parentNode.getAttribute("view");
+  }
+
+  if (typeof index == "undefined") {
+    return;
+  }
+
+  const thumbs = document.getElementsByClassName("thumbnail");
+  for (let i = 0; i < thumbs.length; i++) {
+    const thumb = thumbs[i];
+    thumb.classList.remove("thumbnail--active");
+    if (thumb.getAttribute("view") == index) {
+      thumb.classList.add("thumbnail--active");
+    }
+  }
+  changeView(index);
+};
+
 navOpen.addEventListener("click", openNav);
 navClose.addEventListener("click", closeNav);
 nav.addEventListener("click", navLinkClicked);
@@ -153,5 +190,6 @@ incrementAmountBtn.addEventListener("click", incrementAmount);
 addToCartBtn.addEventListener("click", addToCart);
 cartOpenBtn.addEventListener("click", toggleCart);
 cartDeleteBtn.addEventListener("click", deleteCart);
+thumbnailNav.addEventListener("click", thumbNavClicked);
 
 setupNav();
