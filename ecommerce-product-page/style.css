@@ -182,7 +182,7 @@ button img {
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   to {
     opacity: 1;
@@ -264,7 +264,6 @@ button img {
   top: 0;
   left: 0;
   background-color: var(--color-black-transparent);
-  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -563,6 +562,10 @@ button img {
     max-width: 44.5rem;
   }
 
+  .slide {
+    cursor: pointer;
+  }
+
   .slide__img {
     max-height: unset;
     border-radius: 1.5rem;
@@ -570,6 +573,15 @@ button img {
 
   .slide-btn {
     display: none;
+  }
+
+  @keyframes fade {
+    from {
+      scale: 0.8;
+    }
+    to {
+      scale: 1;
+    }
   }
 
   .lightbox .slide-btn {

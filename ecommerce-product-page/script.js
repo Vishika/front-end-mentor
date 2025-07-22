@@ -11,8 +11,8 @@ const cartOpenBtn = document.getElementById("cart-open");
 const profileBtn = document.getElementById("profile-btn");
 const media = window.matchMedia("(min-width: 69.375em)");
 const main = document.getElementById("main");
-const slidePrev = document.getElementById("slide-prev");
-const slideNext = document.getElementById("slide-next");
+const slidePrevCarousel = document.getElementById("slide-prev--carousel");
+const slideNextCarousel = document.getElementById("slide-next--carousel");
 const decrementAmountBtn = document.getElementById("decrement-amount");
 const incrementAmountBtn = document.getElementById("increment-amount");
 const amountOutput = document.getElementById("amount");
@@ -25,7 +25,13 @@ const cartAmountOutput = document.getElementById("cart-amount");
 const cartTotalOutput = document.getElementById("cart-total");
 const cartDeleteBtn = document.getElementById("cart-delete");
 const cartAmountBubble = document.getElementById("cart-amount-bubble");
-const thumbnailNav = document.getElementById("thumbnail-nav");
+const thumbnailNavCarousel = document.getElementById("thumbnail-nav--carousel");
+const closeLightboxBtn = document.getElementById("close-lightbox-btn");
+const lightbox = document.getElementById("lightbox");
+const carousel = document.getElementById("carousel");
+const slidePrevLightbox = document.getElementById("slide-prev--lightbox");
+const slideNextLightbox = document.getElementById("slide-next--lightbox");
+const thumbnailNavLightbox = document.getElementById("thumbnail-nav--lightbox");
 
 function setupNav(event) {
   if (media.matches) {
@@ -68,40 +74,62 @@ const navLinkPressed = function (event) {
   }
 };
 
-const prevSlide = function () {
-  const slides = document.getElementsByClassName("slide");
+const changeSlide = function (index, className) {
+  const slides = document.getElementsByClassName(`slide--${className}`);
+  for (let i = 0; i < slides.length; i++) {
+    if (slides[i].getAttribute("view") == index) {
+      slides[i].classList.add("active");
+    }
+  }
+};
+
+const prev = function (className) {
+  const slides = document.getElementsByClassName(`slide--${className}`);
   let index;
   for (let i = 0; i < slides.length; i++) {
     if (slides[i].classList.contains("active")) {
       slides[i].classList.remove("active");
-      index = i;
+      index = slides[i].getAttribute("view");
     }
   }
   let previous;
-  if (index == 0) {
-    previous = 3;
+  if (index == 1) {
+    previous = 4;
   } else {
     previous = --index;
   }
-  slides[previous].classList.add("active");
+
+  changeSlide(previous, className);
+  changeThumb(previous, className);
 };
 
-const nextSlide = function () {
-  const slides = document.getElementsByClassName("slide");
+const next = function (className) {
+  const slides = document.getElementsByClassName(`slide--${className}`);
   let index;
   for (let i = 0; i < slides.length; i++) {
     if (slides[i].classList.contains("active")) {
       slides[i].classList.remove("active");
-      index = i;
+      index = slides[i].getAttribute("view");
     }
   }
+
   let next;
-  if (index == 3) {
-    next = 0;
+  if (index == 4) {
+    next = 1;
   } else {
     next = ++index;
   }
-  slides[next].classList.add("active");
+
+  changeSlide(next, className);
+  changeThumb(next, className);
+};
+
+const prevSlideCarousel = function () {
+  prev("carousel");
+};
+
+const nextSlideCarousel = function () {
+  next("carousel");
 };
 
 const decrementAmount = function () {
@@ -142,8 +170,9 @@ const deleteCart = function () {
   updateCart();
 };
 
-const changeView = function (index) {
-  const slides = document.getElementsByClassName("slide");
+const changeView = function (index, className) {
+  const slides = document.getElementsByClassName(`slide--${className}`);
+
   for (let i = 0; i < slides.length; i++) {
     const slide = slides[i];
     slide.classList.remove("active");
@@ -153,7 +182,20 @@ const changeView = function (index) {
   }
 };
 
-const thumbNavClicked = function (event) {
+const changeThumb = function (index, className) {
+  console.log(`changing thumbs for ${className} at ${index}`);
+
+  const thumbs = document.getElementsByClassName(`thumbnail--${className}`);
+  for (let i = 0; i < thumbs.length; i++) {
+    const thumb = thumbs[i];
+    thumb.classList.remove("thumbnail--active");
+    if (thumb.getAttribute("view") == index) {
+      thumb.classList.add("thumbnail--active");
+    }
+  }
+};
+
+const thumbNavClicked = function (event, className) {
   let index;
   if (event.target.nodeName == "BUTTON") {
     index = event.target.getAttribute("view");
@@ -167,15 +209,37 @@ const thumbNavClicked = function (event) {
     return;
   }
 
-  const thumbs = document.getElementsByClassName("thumbnail");
-  for (let i = 0; i < thumbs.length; i++) {
-    const thumb = thumbs[i];
-    thumb.classList.remove("thumbnail--active");
-    if (thumb.getAttribute("view") == index) {
-      thumb.classList.add("thumbnail--active");
-    }
+  changeThumb(index, className);
+  changeView(index, className);
+};
+
+const thumbNavCarouselClicked = function (event) {
+  thumbNavClicked(event, "carousel");
+};
+
+const thumbNavLightboxClicked = function (event) {
+  thumbNavClicked(event, "lightbox");
+};
+
+const closeLightbox = function () {
+  lightbox.classList.remove("active");
+};
+
+const carouselClicked = function (event) {
+  if (window.innerWidth < 1110) return;
+
+  const parent = event.target.parentNode;
+  if (parent.classList.contains("slide")) {
+    lightbox.classList.add("active");
   }
-  changeView(index);
+};
+
+const prevSlideLightbox = function () {
+  prev("lightbox");
+};
+
+const nextSlideLightbox = function () {
+  next("lightbox");
 };
 
 navOpen.addEventListener("click", openNav);
@@ -183,13 +247,18 @@ navClose.addEventListener("click", closeNav);
 nav.addEventListener("click", navLinkClicked);
 nav.addEventListener("keyup", navLinkPressed);
 media.addEventListener("change", setupNav);
-slidePrev.addEventListener("click", prevSlide);
-slideNext.addEventListener("click", nextSlide);
+slidePrevCarousel.addEventListener("click", prevSlideCarousel);
+slideNextCarousel.addEventListener("click", nextSlideCarousel);
 decrementAmountBtn.addEventListener("click", decrementAmount);
 incrementAmountBtn.addEventListener("click", incrementAmount);
 addToCartBtn.addEventListener("click", addToCart);
 cartOpenBtn.addEventListener("click", toggleCart);
 cartDeleteBtn.addEventListener("click", deleteCart);
-thumbnailNav.addEventListener("click", thumbNavClicked);
+thumbnailNavCarousel.addEventListener("click", thumbNavCarouselClicked);
+closeLightboxBtn.addEventListener("click", closeLightbox);
+carousel.addEventListener("click", carouselClicked);
+slidePrevLightbox.addEventListener("click", prevSlideLightbox);
+slideNextLightbox.addEventListener("click", nextSlideLightbox);
+thumbnailNavLightbox.addEventListener("click", thumbNavLightboxClicked);
 
 setupNav();
