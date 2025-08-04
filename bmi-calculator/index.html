@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Body Mass Index Calculator</title>
+  </head>
+  <body>
+    <div class="gradient"></div>
+    <div>
+      <main class="main">
+        <article>
+          <img class="logo" src="images/logo.svg" alt="logo" />
+          <h1 class="title-main">Body Mass Index Calculator</h1>
+          <p class="description">
+            Better understand your weight in relation to your height using our
+            body mass index (BM) calculator. While BMI is not the sole
+            determinant of a healthy weight, it offers a valuable starting point
+            to evaluate your overall health and well-being.
+          </p>
+        </article>
+        <article class="calculator">
+          <h2 class="title-calc">Enter your details below</h2>
+          <section class="units">
+            <label class="radio" for="metric"
+              ><input
+                type="radio"
+                name="units"
+                id="metric-option"
+                value="metric-option"
+                checked
+              />Metric</label
+            >
+            <label class="radio" for="imperial"
+              ><input
+                type="radio"
+                name="units"
+                id="imperial-option"
+                value="imperial-option"
+              />Imperial</label
+            >
+          </section>
+          <section class="measurements">
+            <div id="metric" class="unit metric">
+              <div class="measurement">
+                <label class="measurement__label" for="metric-height-cm"
+                  >Height</label
+                >
+                <div class="measurement__input">
+                  <input
+                    type="number"
+                    name="metric-height-cm"
+                    min="0"
+                    max="300"
+                    id="metric-height-cm"
+                    placeholder="0"
+                  />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement">
+                <label class="measurement__label" for="metric-weight-kg"
+                  >Weight</label
+                >
+                <div class="measurement__input">
+                  <input
+                    type="number"
+                    name="metric-weight-kg"
+                    min="0"
+                    max="700"
+                    id="metric-weight-kg"
+                    placeholder="0"
+                  />
+                  <span>kg</span>
+                </div>
+              </div>
+            </div>
+            <div id="imperial" class="unit imperial hidden">
+              <div class="measurement">
+                <label class="measurement__label" for="imperial-height"
+                  >Height</label
+                >
+                <div class="measurement__inputs">
+                  <div class="measurement__input">
+                    <input
+                      type="number"
+                      name="imperial-height-ft"
+                      min="0"
+                      max="9"
+                      id="imperial-height-ft"
+                      placeholder="0"
+                    />
+                    <span>ft</span>
+                  </div>
+                  <div class="measurement__input">
+                    <input
+                      type="number"
+                      name="imperial-height-in"
+                      min="0"
+                      max="11"
+                      id="imperial-height-in"
+                      placeholder="0"
+                    />
+                    <span>in</span>
+                  </div>
+                </div>
+              </div>
+              <div class="measurement">
+                <label class="measurement__label" for="metric-weight-kg"
+                  >Weight</label
+                >
+                <div class="measurement__inputs">
+                  <div class="measurement__input">
+                    <input
+                      type="number"
+                      name="metric-weight-st"
+                      min="0"
+                      max="100"
+                      id="metric-weight-st"
+                      placeholder="0"
+                    />
+                    <span>st</span>
+                  </div>
+                  <div class="measurement__input">
+                    <input
+                      type="number"
+                      name="metric-weight-lbs"
+                      min="0"
+                      max="13"
+                      id="metric-weight-lbs"
+                      placeholder="0"
+                    />
+                    <span>lbs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="bmi--welcome" class="bmi">
+            <h2 class="bmi__title">Welcome!</h2>
+            <p class="bmi__description">
+              Enter your height and weight and you'll see your BMI result here
+            </p>
+          </section>
+          <section id="bmi--result" class="bmi hidden">
+            <div class="bmi__result">
+              <p class="bmi__result__prefix">Your BMI is...</p>
+              <p class="bmi__result__actual"></p>
+            </div>
+            <p class="bmi__explanation">
+              Your BMI suggests you're a healthy weight. Your ideal weight is
+              between <strong></strong>.
+            </p>
+          </section>
+        </article>
+      </main>
+    </div>
+  </body>
+</html>
