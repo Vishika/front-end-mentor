@@ -11,6 +11,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Frontend Mentor | Body Mass Index Calculator</title>
   </head>
   <body>
@@ -29,6 +30,7 @@
             </p>
           </article>
           <article class="calculator">
+            <form action="submit"></form>
             <h2 class="title-calc">Enter your details below</h2>
             <section class="units">
               <label class="radio" for="metric-option"
@@ -49,101 +51,103 @@
                 />Imperial</label
               >
             </section>
-            <section class="measurements">
-              <div id="metric" class="unit metric">
-                <div class="measurement">
-                  <label class="measurement__label" for="metric-height-cm"
-                    >Height</label
-                  >
-                  <div class="measurement__input">
-                    <input
-                      type="number"
-                      name="metric-height-cm"
-                      min="0"
-                      max="300"
-                      id="metric-height-cm"
-                      placeholder="0"
-                    />
-                    <span>cm</span>
-                  </div>
-                </div>
-                <div class="measurement">
-                  <label class="measurement__label" for="metric-weight-kg"
-                    >Weight</label
-                  >
-                  <div class="measurement__input">
-                    <input
-                      type="number"
-                      name="metric-weight-kg"
-                      min="0"
-                      max="700"
-                      id="metric-weight-kg"
-                      placeholder="0"
-                    />
-                    <span>kg</span>
-                  </div>
-                </div>
-              </div>
-              <div id="imperial" class="unit imperial hidden">
-                <div class="measurement">
-                  <label class="measurement__label" for="imperial-height-in"
-                    >Height</label
-                  >
-                  <div class="measurement__inputs">
+            <section id="measurements" class="measurements">
+              <form id="calc-form" action="">
+                <div id="metric" class="unit metric">
+                  <div class="measurement">
+                    <label class="measurement__label" for="metric-height-cm"
+                      >Height</label
+                    >
                     <div class="measurement__input">
                       <input
                         type="number"
-                        name="imperial-height-ft"
+                        name="metric-height-cm"
                         min="0"
-                        max="9"
-                        id="imperial-height-ft"
+                        max="300"
+                        id="metric-height-cm"
                         placeholder="0"
                       />
-                      <span>ft</span>
+                      <span>cm</span>
                     </div>
+                  </div>
+                  <div class="measurement">
+                    <label class="measurement__label" for="metric-weight-kg"
+                      >Weight</label
+                    >
                     <div class="measurement__input">
                       <input
                         type="number"
-                        name="imperial-height-in"
+                        name="metric-weight-kg"
                         min="0"
-                        max="11"
-                        id="imperial-height-in"
+                        max="700"
+                        id="metric-weight-kg"
                         placeholder="0"
                       />
-                      <span>in</span>
+                      <span>kg</span>
                     </div>
                   </div>
                 </div>
-                <div class="measurement">
-                  <label class="measurement__label" for="imperial-weight-lbs"
-                    >Weight</label
-                  >
-                  <div class="measurement__inputs">
-                    <div class="measurement__input">
-                      <input
-                        type="number"
-                        name="imperial-weight-st"
-                        min="0"
-                        max="100"
-                        id="imperial-weight-st"
-                        placeholder="0"
-                      />
-                      <span>st</span>
+                <div id="imperial" class="unit imperial hidden">
+                  <div class="measurement">
+                    <label class="measurement__label" for="imperial-height-in"
+                      >Height</label
+                    >
+                    <div class="measurement__inputs">
+                      <div class="measurement__input">
+                        <input
+                          type="number"
+                          name="imperial-height-ft"
+                          min="0"
+                          max="9"
+                          id="imperial-height-ft"
+                          placeholder="0"
+                        />
+                        <span>ft</span>
+                      </div>
+                      <div class="measurement__input">
+                        <input
+                          type="number"
+                          name="imperial-height-in"
+                          min="0"
+                          max="11"
+                          id="imperial-height-in"
+                          placeholder="0"
+                        />
+                        <span>in</span>
+                      </div>
                     </div>
-                    <div class="measurement__input">
-                      <input
-                        type="number"
-                        name="imperial-weight-lbs"
-                        min="0"
-                        max="13"
-                        id="imperial-weight-lbs"
-                        placeholder="0"
-                      />
-                      <span>lbs</span>
+                  </div>
+                  <div class="measurement">
+                    <label class="measurement__label" for="imperial-weight-lbs"
+                      >Weight</label
+                    >
+                    <div class="measurement__inputs">
+                      <div class="measurement__input">
+                        <input
+                          type="number"
+                          name="imperial-weight-st"
+                          min="0"
+                          max="100"
+                          id="imperial-weight-st"
+                          placeholder="0"
+                        />
+                        <span>st</span>
+                      </div>
+                      <div class="measurement__input">
+                        <input
+                          type="number"
+                          name="imperial-weight-lbs"
+                          min="0"
+                          max="13"
+                          id="imperial-weight-lbs"
+                          placeholder="0"
+                        />
+                        <span>lbs</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </form>
             </section>
             <section id="bmi--welcome" class="bmi">
               <h2 class="bmi__title">Welcome!</h2>
@@ -154,11 +158,11 @@
             <section id="bmi--result" class="bmi hidden">
               <div class="bmi__result">
                 <p class="bmi__result__prefix">Your BMI is...</p>
-                <p class="bmi__result__actual"></p>
+                <p id="bmi-actual" class="bmi__result__actual"></p>
               </div>
               <p class="bmi__explanation">
-                Your BMI suggests you're a healthy weight. Your ideal weight is
-                between <strong id="bmi-range"></strong>.
+                Your BMI suggests you're <span id="bmi-description"></span>.
+                Your ideal weight is between <strong id="bmi-range"></strong>.
               </p>
             </section>
           </article>
