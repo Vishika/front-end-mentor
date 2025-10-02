@@ -19,7 +19,7 @@
     <div class="container">
       <div class="content">
         <main class="main">
-          <article>
+          <article class="title-description">
             <img class="logo" src="images/logo.svg" alt="logo" />
             <h1 class="title-main">Body Mass Index Calculator</h1>
             <p class="description">
@@ -149,13 +149,13 @@
                 </div>
               </form>
             </section>
-            <section id="bmi--welcome" class="bmi">
+            <section id="bmi--welcome" class="bmi bmi--welcome">
               <h2 class="bmi__title">Welcome!</h2>
               <p class="bmi__description">
                 Enter your height and weight and you'll see your BMI result here
               </p>
             </section>
-            <section id="bmi--result" class="bmi hidden">
+            <section id="bmi--result" class="bmi bmi--result hidden">
               <div class="bmi__result">
                 <p class="bmi__result__prefix">Your BMI is...</p>
                 <p id="bmi-actual" class="bmi__result__actual"></p>
@@ -167,22 +167,26 @@
             </section>
           </article>
         </main>
-        <img
-          class="hero-image"
-          src="images/image-man-eating.webp"
-          alt="man with a tatoo, wearing a t-shirt and watch eating sushi"
-        />
         <aside class="meaning-aside">
-          <h2 class="meaning__title">What your BMI result means</h2>
-          <p class="meaning_description">
-            A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
-            Maintaining a healthy weight may lower your chances of experiencing
-            health issues later on, such as obesity and type 2 diabetes. Aim for
-            a nutritious diet with reduced fat and sugar content, incorporating
-            ample fruits and vegetables. Additionally, strive for regular
-            physical activity, ideally about 30 minutes daily for five days a
-            week.
-          </p>
+          <div class="meaning-inner">
+            <img
+              class="hero-image"
+              src="images/image-man-eating.webp"
+              alt="man with a tatoo, wearing a t-shirt and watch eating sushi"
+            />
+            <div class="meaning">
+              <h2 class="meaning__title">What your BMI result means</h2>
+              <p class="meaning_description">
+                A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+                Maintaining a healthy weight may lower your chances of
+                experiencing health issues later on, such as obesity and type 2
+                diabetes. Aim for a nutritious diet with reduced fat and sugar
+                content, incorporating ample fruits and vegetables.
+                Additionally, strive for regular physical activity, ideally
+                about 30 minutes daily for five days a week.
+              </p>
+            </div>
+          </div>
         </aside>
         <aside class="tips-aside">
           <section class="tip">
@@ -238,7 +242,7 @@
               may not be beneficial to use.
             </p>
           </section>
-          <div class="limitation">
+          <div class="limitation limit--1">
             <div class="limitation__header">
               <img
                 src="images/icon-gender.svg"
@@ -253,7 +257,7 @@
               when evaluating their BMI.
             </p>
           </div>
-          <div class="limitation">
+          <div class="limitation limit--2">
             <div class="limitation__header">
               <img
                 src="images/icon-age.svg"
@@ -267,7 +271,7 @@
               BMI to underestimate body fat content.
             </p>
           </div>
-          <div class="limitation">
+          <div class="limitation limit--3">
             <div class="limitation__header">
               <img
                 src="images/icon-muscle.svg"
@@ -281,7 +285,7 @@
               as it doesn't differentiate muscle from fat.
             </p>
           </div>
-          <div class="limitation">
+          <div class="limitation limit--4">
             <div class="limitation__header">
               <img
                 src="images/icon-pregnancy.svg"
@@ -296,7 +300,7 @@
               minimise health risks for both mother and child.
             </p>
           </div>
-          <div class="limitation">
+          <div class="limitation limit--5">
             <div class="limitation__header">
               <img
                 src="images/icon-race.svg"
