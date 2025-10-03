@@ -19,9 +19,11 @@
     <div class="container">
       <div class="content">
         <main class="main">
+          <img class="logo" src="images/logo.svg" alt="logo" />
           <article class="title-description">
-            <img class="logo" src="images/logo.svg" alt="logo" />
-            <h1 class="title-main">Body Mass Index Calculator</h1>
+            <h1 class="title-main">
+              Body Mass <span class="title-break"></span>Index Calculator
+            </h1>
             <p class="description">
               Better understand your weight in relation to your height using our
               body mass index (BM) calculator. While BMI is not the sole
@@ -30,7 +32,6 @@
             </p>
           </article>
           <article class="calculator">
-            <form action="submit"></form>
             <h2 class="title-calc">Enter your details below</h2>
             <section class="units">
               <label class="radio" for="metric-option"
@@ -167,7 +168,12 @@
             </section>
           </article>
         </main>
-        <aside class="meaning-aside">
+        <aside aria-label="BMI explanation" class="meaning-aside">
+          <img
+            class="curve curve--left"
+            src="images/pattern-curved-line-left.svg"
+            alt=""
+          />
           <div class="meaning-inner">
             <img
               class="hero-image"
@@ -188,7 +194,7 @@
             </div>
           </div>
         </aside>
-        <aside class="tips-aside">
+        <aside aria-label="BMI tips" class="tips-aside">
           <section class="tip">
             <img
               class="tip__icon"
@@ -232,7 +238,12 @@
             </div>
           </section>
         </aside>
-        <aside class="limitations-aside">
+        <aside aria-label="BMI limitations" class="limitations-aside">
+          <img
+            class="curve curve--right"
+            src="images/pattern-curved-line-right.svg"
+            alt=""
+          />
           <section class="limitations-text">
             <h2 class="limitations-text__title">Limitations of BMI</h2>
             <p class="limitations-text-description">
@@ -257,6 +268,7 @@
               when evaluating their BMI.
             </p>
           </div>
+          <div class="limitation limit--blank"></div>
           <div class="limitation limit--2">
             <div class="limitation__header">
               <img

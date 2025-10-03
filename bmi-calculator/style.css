@@ -29,59 +29,6 @@ input {
   cursor: pointer;
 }
 
-.text-1 {
-  font-size: 6.4rem;
-  font-weight: 600;
-  line-height: 110%;
-  letter-spacing: -0.05em;
-}
-
-.text-2 {
-  font-size: 4.8rem;
-  font-weight: 600;
-  line-height: 110%;
-  letter-spacing: -0.05em;
-}
-
-.text-3 {
-  font-size: 3.2rem;
-  font-weight: 600;
-  line-height: 110%;
-  letter-spacing: -0.05em;
-}
-
-.text-4 {
-  font-size: 2.4rem;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: -0.05em;
-}
-
-.text-5 {
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 120%;
-  letter-spacing: -0.05em;
-}
-
-.text-6 {
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 150%;
-}
-
-.text-7 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 150%;
-}
-
-.text-8 {
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 150%;
-}
-
 html {
   font-family: inter;
   font-size: 62.5%;
@@ -153,7 +100,7 @@ html {
   box-shadow: 0 1.2rem 2.4rem var(--color-blue-shadow);
   width: 100%;
   user-select: none;
-  text-align: left;
+  text-align: start;
 }
 
 .title-calc {
@@ -447,6 +394,17 @@ input[type="radio"]:checked::before {
   line-height: 150%;
 }
 
+.limit--blank {
+  display: none;
+  box-shadow: none;
+}
+
+.curve {
+  display: none;
+  z-index: -1;
+  position: absolute;
+}
+
 .hidden {
   display: none;
 }
@@ -502,6 +460,7 @@ input[type="radio"]:checked::before {
   }
 
   .meaning-aside {
+    position: relative;
     max-width: 76.8rem;
     overflow: hidden;
     margin-bottom: 9.6rem;
@@ -543,6 +502,7 @@ input[type="radio"]:checked::before {
   }
 
   .limitations-aside {
+    position: relative;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
   }
@@ -558,5 +518,122 @@ input[type="radio"]:checked::before {
 
   .limitation {
     padding: 3.2rem;
+  }
+}
+
+@media (min-width: calc(1440em / 16)) {
+  .gradient {
+    width: 70%;
+    height: 73.7rem;
+  }
+
+  .main {
+    margin-bottom: 0;
+    height: 73.7rem;
+    width: 116rem;
+    padding-top: 8.8rem;
+    padding-bottom: 8.8rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+    align-items: start;
+  }
+
+  .logo {
+    margin-bottom: 2.4rem;
+    grid-column: span 2;
+  }
+
+  .title-main {
+    font-size: 6.4rem;
+    max-width: 50rem;
+  }
+
+  .title-break::before {
+    content: "\A";
+    white-space: pre;
+  }
+
+  .title-description {
+    max-width: 46.5rem;
+    margin-top: 7.2rem;
+    justify-items: start;
+  }
+
+  .title-main,
+  .title-description {
+    text-align: start;
+  }
+
+  .meaning-aside {
+    margin-bottom: 8.6rem;
+    padding-top: 5.2rem;
+    max-width: 116rem;
+  }
+
+  .meaning-inner {
+    width: 116rem;
+    grid-template-columns: 564fr 465fr;
+    gap: 13.1rem;
+    flex-shrink: unset;
+  }
+
+  .meaning {
+    margin-top: 18.4rem;
+    align-content: flex-start;
+  }
+
+  .meaning__title {
+    overflow: unset;
+    font-size: 4.8rem;
+  }
+
+  .tips-aside {
+    border-radius: 3.5rem;
+    flex-direction: row;
+    gap: 3.2rem;
+  }
+
+  .tip {
+    max-width: 36.5rem;
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .limitations-aside {
+    max-width: 116rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .limitations-text {
+    max-width: 56.4rem;
+    text-align: start;
+  }
+
+  .limitation {
+    width: 36.5rem;
+  }
+
+  .limit--5 {
+    max-width: unset;
+  }
+
+  .limit--blank {
+    display: block;
+  }
+
+  .curve {
+    display: block;
+  }
+
+  .curve--left {
+    transform: translateY(-5.2rem);
+  }
+
+  .curve--right {
+    top: 25rem;
+    left: 15rem;
   }
 }
