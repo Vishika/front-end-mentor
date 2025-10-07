@@ -11,6 +11,7 @@
       href="./assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="js/script.js" type="module"></script>
     <title>Frontend Mentor | Tic Tac Toe</title>
   </head>
   <body>
@@ -21,23 +22,23 @@
           <div class="top">
             <img class="logo" src="images/logo.svg" alt="" />
             <div class="turn">
-              <div class="turn__icon x"></div>
+              <div id="turn__icon" class="turn__icon x"></div>
               <span class="turn__text">turn</span>
             </div>
             <button class="reset">
               <img src="images/icon-restart.svg" alt="restart" />
             </button>
           </div>
-          <div class="board">
-            <button class="square square--1 x"></button>
-            <button class="square square--2 o"></button>
-            <button class="square square--3"></button>
-            <button class="square square--4"></button>
-            <button class="square square--5"></button>
-            <button class="square square--6"></button>
-            <button class="square square--7"></button>
-            <button class="square square--8"></button>
-            <button class="square square--9"></button>
+          <div id="board" class="board">
+            <button id="s-0" class="square"></button>
+            <button id="s-1" class="square"></button>
+            <button id="s-2" class="square"></button>
+            <button id="s-3" class="square"></button>
+            <button id="s-4" class="square"></button>
+            <button id="s-5" class="square"></button>
+            <button id="s-6" class="square"></button>
+            <button id="s-7" class="square"></button>
+            <button id="s-8" class="square"></button>
           </div>
           <div class="score">
             <div class="p1">
