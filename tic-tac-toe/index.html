@@ -17,8 +17,43 @@
   <body>
     <div class="outer">
       <main class="content">
-        <div class="menu hidden"></div>
-        <div class="game">
+        <div id="menu" class="menu">
+          <img class="menu__logo" src="images/logo.svg" alt="" />
+          <div class="choose-token">
+            <p class="choose__top">pick player 1's mark</p>
+            <div class="choose__tokens">
+              <div class="choose__token">
+                <input
+                  id="x"
+                  class="token x"
+                  type="radio"
+                  name="token"
+                  value="x"
+                  checked
+                />
+              </div>
+              <div class="choose__token">
+                <input
+                  id="o"
+                  class="token o"
+                  type="radio"
+                  name="token"
+                  value="o"
+                />
+              </div>
+            </div>
+            <p class="choose__bottom">remember : x goes first</p>
+          </div>
+          <div class="menu__buttons">
+            <button id="btn-pve" class="btn btn--primary">
+              new game (vs cpu)
+            </button>
+            <button id="btn-pvp" class="btn btn--tertiary">
+              new game (vs player)
+            </button>
+          </div>
+        </div>
+        <div id="game" class="game hidden">
           <div class="top">
             <img class="logo" src="images/logo.svg" alt="" />
             <div class="turn">

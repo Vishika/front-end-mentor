@@ -100,19 +100,25 @@ export const reset = function () {
   state.board = clearBoard();
 };
 
-export const quit = function () {
-  state.turn = 1;
-  state.status = "";
-  state.board = clearBoard();
+export const newPve = function (p1Token) {
+  reset();
   state.ties = 0;
-  state.x.wins = 0;
-  state.o.wins = 0;
+  state.x = {
+    wins: 0,
+    human: p1Token === "x",
+    p1: p1Token === "x",
+  };
+  state.o = {
+    wins: 0,
+    human: p1Token === "o",
+    p1: p1Token === "o",
+  };
 };
 
-export const next = function () {
-  state.turn = 1;
-  state.status = "";
-  state.board = clearBoard();
+export const newPvp = function (p1Token) {
+  newPve(p1Token);
+  state.x.human = true;
+  state.o.human = true;
 };
 
 export const isCpuTurn = function () {
