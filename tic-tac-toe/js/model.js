@@ -1,16 +1,22 @@
 export const state = {
   turn: 1,
-  status: "",
+  status: "", // x | o | ""
   ties: 0,
   x: {
     wins: 0,
     human: true,
+    p1: true,
   },
   o: {
     wins: 0,
     human: false,
+    p1: false,
   },
-  board: [],
+  board: Array(9).fill(""),
+};
+
+const clearBoard = function () {
+  return Array(9).fill("");
 };
 
 const same = function (a, b, c) {
@@ -39,9 +45,9 @@ const checkWinner = function () {
   if (winner) {
     state[winner].wins++;
     state.status = winner;
-  } else if (state.board.length === 9 && !state.board.includes(undefined)) {
+  } else if (state.turn > 9) {
     state.ties++;
-    state.status = "tie";
+    state.status = "t";
   }
 };
 
@@ -55,4 +61,25 @@ export const takeMove = function (squareNum) {
   state.board[squareNum] = currentToken();
   state.turn++;
   checkWinner();
+};
+
+export const reset = function () {
+  state.turn = 1;
+  state.status = "";
+  state.board = clearBoard();
+};
+
+export const quit = function () {
+  state.turn = 1;
+  state.status = "";
+  state.board = clearBoard();
+  state.ties = 0;
+  state.x.wins = 0;
+  state.o.wins = 0;
+};
+
+export const next = function () {
+  state.turn = 1;
+  state.status = "";
+  state.board = clearBoard();
 };

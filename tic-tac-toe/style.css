@@ -100,10 +100,7 @@ html {
   letter-spacing: 0.1rem;
 }
 
-.reset {
-  justify-self: flex-end;
-  height: 3.6rem;
-  width: 4rem;
+.btn--reset {
   background-color: var(--color-grey);
   border: none;
   border-radius: 0.5rem;
@@ -111,6 +108,9 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  justify-self: flex-end;
+  height: 3.6rem;
+  width: 4rem;
 }
 
 .reset img {
@@ -160,15 +160,15 @@ html {
   align-items: center;
 }
 
-.p1 {
+.score-x {
   background-color: var(--color-green);
 }
 
-.ties {
+.score-t {
   background-color: var(--color-grey);
 }
 
-.p2 {
+.score-o {
   background-color: var(--color-orange);
 }
 
@@ -185,6 +185,95 @@ html {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.125rem;
+}
+
+.modal {
+  margin: auto;
+  max-width: 100%;
+  border: none;
+  padding: 6.4rem 0;
+  width: 100%;
+  background-color: var(--color-grey-d);
+  color: var(--color-grey);
+}
+
+.modal-container {
+  display: grid;
+  justify-items: center;
+}
+
+.modal__winner {
+  margin-bottom: 1.6rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: 0.088rem;
+}
+
+.modal__outcome {
+  margin-bottom: 2.4rem;
+  font-weight: bold;
+  font-size: 2.4rem;
+  letter-spacing: 0.15rem;
+}
+
+.outcome {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.outcome img {
+  height: 2.8rem;
+  width: 2.8rem;
+}
+
+.outcome--x {
+  color: var(--color-green);
+}
+
+.outcome--o {
+  color: var(--color-orange);
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__buttons {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.modal__reset {
+  margin-bottom: 2.4rem;
+  font-weight: bold;
+  font-size: 2.4rem;
+  letter-spacing: 0.15rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 1rem;
+  padding: 1.6rem;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-grey-vd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn--primary {
+  background-color: var(--color-orange);
+  box-shadow: 0 0.4rem var(--color-orange-s);
+}
+
+.btn--secondary {
+  background-color: var(--color-grey);
+  box-shadow: 0 0.4rem var(--color-grey-s);
 }
 
 .hidden {

@@ -25,7 +25,7 @@
               <div id="turn__icon" class="turn__icon x"></div>
               <span class="turn__text">turn</span>
             </div>
-            <button class="reset">
+            <button id="btn-reset" class="btn--reset">
               <img src="images/icon-restart.svg" alt="restart" />
             </button>
           </div>
@@ -41,22 +41,52 @@
             <button id="s-8" class="square"></button>
           </div>
           <div class="score">
-            <div class="p1">
-              <span class="score__text">x (you)</span
-              ><span class="score__number">14</span>
+            <div class="score-x">
+              <span id="score-x-text" class="score__text">x (you)</span
+              ><span id="score-x" class="score__number">0</span>
             </div>
-            <div class="ties">
+            <div class="score-t">
               <span class="score__text">ties</span
-              ><span class="score__number">32</span>
+              ><span id="score-t" class="score__number">0</span>
             </div>
-            <div class="p2">
-              <span class="score__text">o (cpu)</span
-              ><span class="score__number">11</span>
+            <div class="score-o">
+              <span id="score-o-text" class="score__text">o (cpu)</span
+              ><span id="score-o" class="score__number">0</span>
             </div>
           </div>
         </div>
       </main>
     </div>
-    <div class="modal hidden"></div>
+    <dialog id="end-modal" class="modal">
+      <div class="modal-container">
+        <p id="modal__winner" class="modal__winner"></p>
+        <div class="modal__outcome">
+          <div id="outcome--x" class="outcome outcome--x hidden">
+            <img src="images/icon-x.svg" id="modal__token" />
+            <p>takes the round</p>
+          </div>
+          <div id="outcome--o" class="outcome outcome--o hidden">
+            <img src="images/icon-o.svg" id="modal__token" />
+            <p>takes the round</p>
+          </div>
+          <div id="outcome--t" class="outcome outcome--t hidden">
+            <p>round tied</p>
+          </div>
+        </div>
+        <div class="modal__buttons">
+          <button id="btn-quit" class="btn btn--secondary">quit</button>
+          <button id="btn-next" class="btn btn--primary">next round</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="reset-modal" class="modal">
+      <div class="modal-container">
+        <p class="modal__reset">restart game?</p>
+        <div class="modal__buttons">
+          <button id="btn-no" class="btn btn--secondary">no, cancel</button>
+          <button id="btn-yes" class="btn btn--primary">yes, restart</button>
+        </div>
+      </div>
+    </dialog>
   </body>
 </html>
