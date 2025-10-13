@@ -28,7 +28,7 @@ const updateView = function () {
 };
 
 const chooseSquare = function (square) {
-  model.takeMove(square.id.slice(-1));
+  model.takeMove(square);
   view.updateBoard(model.state.board);
 
   if (gameOver()) {
@@ -48,7 +48,18 @@ const chooseSquare = function (square) {
       model.state.status
     );
     endDi.showModal();
-  } else view.updatePlayerForNextTurn(model.currentToken());
+  } else {
+    view.updatePlayerForNextTurn(model.currentToken());
+    if (model.isCpuTurn()) {
+      let square = model.takeCpuTurn();
+      if (square !== "") {
+        chooseSquare(square);
+      } else {
+        console.log("error couldn't figure out a move");
+      }
+      view.updateBoard(model.state.board);
+    }
+  }
 };
 
 const boardClicked = function (event) {
@@ -58,7 +69,7 @@ const boardClicked = function (event) {
 
   if (square.contains("x") || square.contains("o")) return;
 
-  chooseSquare(event.target);
+  chooseSquare(event.target.id.slice(-1));
 };
 
 const resetClicked = function () {
