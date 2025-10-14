@@ -30,10 +30,12 @@
 
 button {
   cursor: pointer;
+  font-family: outfit;
 }
 
 input[type="radio"] {
   appearance: none;
+  cursor: pointer;
 }
 
 html {
@@ -181,6 +183,8 @@ html {
 }
 
 .btn--reset {
+  height: 3.6rem;
+  width: 4rem;
   background-color: var(--color-grey);
   border: none;
   border-radius: 0.5rem;
@@ -189,8 +193,6 @@ html {
   justify-content: center;
   align-items: center;
   justify-self: flex-end;
-  height: 3.6rem;
-  width: 4rem;
 }
 
 .reset img {
@@ -224,14 +226,14 @@ html {
   background-color: var(--color-grey-d);
 }
 
-.score {
+.scores {
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   color: var(--color-grey-vd);
 }
 
-.score div {
+.score {
   height: 6.4rem;
   width: 9.6rem;
   border-radius: 1rem;
@@ -275,6 +277,7 @@ html {
   width: 100%;
   background-color: var(--color-grey-d);
   color: var(--color-grey);
+  user-select: none;
 }
 
 .modal-container {
@@ -324,6 +327,11 @@ html {
   gap: 1.6rem;
 }
 
+.modal__buttons .btn {
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+}
+
 .modal__reset {
   margin-bottom: 2.4rem;
   font-weight: bold;
@@ -344,6 +352,11 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn:hover,
+.btn--reset:hover {
+  opacity: 70%;
 }
 
 .btn--primary {
@@ -377,8 +390,124 @@ html {
     align-items: center;
   }
 
+  .menu {
+    gap: 4rem;
+  }
+
+  .content,
   .choose-token,
   .menu__buttons {
     width: 46rem;
+  }
+
+  .menu__buttons {
+    gap: 2rem;
+  }
+
+  .btn {
+    font-size: 2rem;
+    letter-spacing: 0.125rem;
+  }
+
+  .top {
+    margin-bottom: 2.4rem;
+  }
+
+  .game {
+    gap: 0;
+  }
+
+  .turn {
+    padding: 1.4rem 3rem;
+    border-radius: 1rem;
+    gap: 1.3rem;
+  }
+
+  .turn__icon {
+    height: 2rem;
+    width: 2rem;
+    background-size: 2rem 2rem;
+  }
+
+  .turn__text {
+    font-size: 1.6rem;
+  }
+
+  .btn--reset {
+    height: 4.8rem;
+    width: 5.2rem;
+    border-radius: 1rem;
+  }
+
+  .board {
+    margin-bottom: 2.8rem;
+  }
+
+  .square {
+    height: 13.2rem;
+    width: 14rem;
+    border-radius: 1.5rem;
+    background-size: 6.4rem 6.4rem;
+  }
+
+  .square:not(.x):not(.o):hover {
+    background-size: 6.4rem 6.4rem;
+  }
+
+  .score {
+    height: 7.2rem;
+    width: 14rem;
+    border-radius: 1rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .score-x {
+    background-color: var(--color-green);
+  }
+
+  .score-t {
+    background-color: var(--color-grey);
+  }
+
+  .score-o {
+    background-color: var(--color-orange);
+  }
+
+  .score__text {
+    margin-bottom: 0.2rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.088rem;
+  }
+
+  .score__number {
+    font-size: 2.4rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .modal {
+    min-height: 26.6rem;
+  }
+
+  .modal__winner {
+    font-size: 1.6rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .modal__outcome {
+    font-size: 4rem;
+    letter-spacing: 0.25rem;
+  }
+
+  .outcome img {
+    height: 6.4rem;
+    width: 6.4rem;
+  }
+
+  .modal__reset {
+    margin-bottom: 3.2rem;
+    font-size: 4rem;
+    letter-spacing: 0.25rem;
   }
 }
