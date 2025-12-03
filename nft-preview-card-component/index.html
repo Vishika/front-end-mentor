@@ -12,57 +12,55 @@
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | NFT preview card component</title>
   </head>
-  <body class="body">
-    <div class="l-centered">
-      <main class="c-card l-col l-gap--m">
-        <div class="u-pic-hover">
+  <body class="body l-centered">
+    <article class="c-card l-col l-gap--m">
+      <div class="u-pic-hover">
+        <img
+          class="u-pic-hover__view"
+          src="assets/images/icon-view.svg"
+          alt="eye"
+        />
+        <img
+          class="c-card__pic u-pic-hover__img"
+          src="assets/images/image-equilibrium.jpg"
+          alt="a NFT picture of a cube"
+        />
+      </div>
+      <div class="l-col l-gap--s">
+        <h1 class="c-card__title u-text-hover">Equilibrium #3429</h1>
+        <p class="c-card__copy">
+          Our Equilibrium collection promotes balance and calm.
+        </p>
+      </div>
+      <ul class="l-row l-between">
+        <li class="l-row l-gap--xs">
           <img
-            class="u-pic-hover__view"
-            src="assets/images/icon-view.svg"
-            alt="eye"
+            class="c-card__icn c-card__icn--eth"
+            src="assets/images/icon-ethereum.svg"
+            alt="etherium"
           />
+          <p class="c-card__info c-card__info--eth">0.041 ETH</p>
+        </li>
+        <li class="l-row l-gap--xs">
           <img
-            class="c-card__pic u-pic-hover__img"
-            src="assets/images/image-equilibrium.jpg"
-            alt="a NFT picture of a cube"
+            class="c-card__icn c-card__icn--time"
+            src="assets/images/icon-clock.svg"
+            alt="clock"
           />
-        </div>
-        <div class="l-col l-gap--s">
-          <h1 class="c-card__title u-text-hover">Equilibrium #3429</h1>
-          <p class="c-card__copy">
-            Our Equilibrium collection promotes balance and calm.
-          </p>
-        </div>
-        <div class="l-row l-between">
-          <div class="l-row l-gap--xs">
-            <img
-              class="c-card__icn c-card__icn--eth"
-              src="assets/images/icon-ethereum.svg"
-              alt="etherium"
-            />
-            <p class="c-card__info c-card__info--eth">0.041 ETH</p>
-          </div>
-          <div class="l-row l-gap--xs">
-            <img
-              class="c-card__icn c-card__icn--time"
-              src="assets/images/icon-clock.svg"
-              alt="clock"
-            />
-            <p class="c-card__info c-card__info--time">3 days left</p>
-          </div>
-        </div>
-        <hr class="c-card__divider" />
-        <div class="l-row l-gap--s">
-          <img
-            src="assets/images/image-avatar.png"
-            alt="picture of Jules Wyvern"
-            class="c-card__avatar"
-          />
-          <p class="c-card__author">
-            Creation of <span class="emphasis u-text-hover">Jules Wyvern</span>
-          </p>
-        </div>
-      </main>
-    </div>
+          <p class="c-card__info c-card__info--time">3 days left</p>
+        </li>
+      </ul>
+      <div class="c-card__divider"></div>
+      <footer class="l-row l-gap--s">
+        <img
+          src="assets/images/image-avatar.png"
+          alt="picture of Jules Wyvern"
+          class="c-card__avatar"
+        />
+        <p class="c-card__author">
+          Creation of <span class="emphasis u-text-hover">Jules Wyvern</span>
+        </p>
+      </footer>
+    </article>
   </body>
 </html>

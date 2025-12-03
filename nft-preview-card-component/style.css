@@ -125,7 +125,6 @@ html {
 .c-card__divider {
   height: 0.1rem;
   background-color: var(--c-neutral);
-  border: none;
 }
 
 .c-card__avatar {
