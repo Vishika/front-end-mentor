@@ -34,6 +34,7 @@ html {
 .body {
   background-color: var(--c-neutral-xd);
   color: var(--c-primary);
+  user-select: none;
 }
 
 .l-centered {
@@ -83,7 +84,6 @@ html {
 
 .c-card__pic {
   width: 100%;
-  border-radius: 0.8rem;
 }
 
 .c-card__title {
@@ -91,12 +91,14 @@ html {
   font-weight: 600;
   line-height: 2.8rem;
   color: var(--c-white);
+  user-select: text;
 }
 
 .c-card__copy {
   font-size: 1.8rem;
   font-weight: 300;
   line-height: 2.6rem;
+  user-select: text;
 }
 
 .c-card__icn--eth {
@@ -112,6 +114,7 @@ html {
 .c-card__info {
   font-size: 1.6rem;
   line-height: 2rem;
+  user-select: text;
 }
 
 .c-card__info--eth {
@@ -135,8 +138,47 @@ html {
 .c-card__author {
   font-size: 1.6rem;
   line-height: 2rem;
+  user-select: text;
 }
 
 .emphasis {
   color: var(--c-white);
+}
+
+.u-pic-hover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.8rem;
+
+  .u-pic-hover__view {
+    position: absolute;
+    opacity: 0%;
+    inset: 0;
+    margin: auto;
+    transition: opacity 0.4s;
+  }
+
+  .u-pic-hover__img {
+    transition: opacity 0.4s;
+  }
+
+  &:hover {
+    background-color: var(--c-secondary);
+    cursor: pointer;
+
+    .u-pic-hover__view {
+      z-index: 1;
+      opacity: 100%;
+    }
+
+    .u-pic-hover__img {
+      opacity: 50%;
+    }
+  }
+}
+
+.u-text-hover:hover {
+  cursor: pointer;
+  color: var(--c-secondary);
+  transition: all 0.4s;
 }
