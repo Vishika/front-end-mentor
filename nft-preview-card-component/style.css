@@ -4,7 +4,7 @@
   --c-neutral-d: #14253d;
   --c-neutral: #2f415b;
   --c-white: #fff;
-  --c-grey-primary: #8bacda;
+  --c-primary: #8bacda;
   --c-secondary: #00fff7;
 }
 
@@ -27,4 +27,116 @@ button {
 
 html {
   font-size: 62.5%;
+  font-family: outfit;
+  line-height: 0;
+}
+
+.body {
+  background-color: var(--c-neutral-xd);
+  color: var(--c-primary);
+}
+
+.l-centered {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.l-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.l-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.l-gap--m {
+  gap: 2.4rem;
+}
+
+.l-gap--s {
+  gap: 1.6rem;
+}
+
+.l-gap--xs {
+  gap: 0.8rem;
+}
+
+.l-between {
+  justify-content: space-between;
+}
+
+.container {
+  background-color: var(--c-neutral-xd);
+  color: var(--c-primary);
+}
+
+.c-card {
+  max-width: 35rem;
+  border-radius: 2.4rem;
+  background-color: var(--c-neutral-d);
+  padding: 2.4rem;
+}
+
+.c-card__pic {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.c-card__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 2.8rem;
+  color: var(--c-white);
+}
+
+.c-card__copy {
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 2.6rem;
+}
+
+.c-card__icn--eth {
+  width: 1.1rem;
+  height: 1.8rem;
+}
+
+.c-card__icn--time {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.c-card__info {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.c-card__info--eth {
+  font-weight: 600;
+  color: var(--c-secondary);
+}
+
+.c-card__divider {
+  height: 0.1rem;
+  background-color: var(--c-neutral);
+  border: none;
+}
+
+.c-card__avatar {
+  height: 3.3rem;
+  width: 3.3rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--c-white);
+}
+
+.c-card__author {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.emphasis {
+  color: var(--c-white);
 }
