@@ -1,0 +1,30 @@
+:root {
+  --c-black: #000;
+  --c-neutral-xd: #0d192b;
+  --c-neutral-d: #14253d;
+  --c-neutral: #2f415b;
+  --c-white: #fff;
+  --c-grey-primary: #8bacda;
+  --c-secondary: #00fff7;
+}
+
+@font-face {
+  font-family: outfit;
+  src: url(assets/fonts/outfit.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  all: unset;
+}
+
+html {
+  font-size: 62.5%;
+}
