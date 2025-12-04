@@ -1,0 +1,5 @@
+// you can use the 7 /1 layout to organise sass files
+// https://medium.com/@diyorbekjuraev77/be-a-master-at-creating-the-7-1-sass-pattern-776fdfb5a3b1
+
+@forward "globals"; // automatically looks for _index.scss
+@forward "layout";

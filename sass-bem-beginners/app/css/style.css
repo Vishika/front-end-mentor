@@ -1,0 +1,67 @@
+:root {
+  --color-background: hsl(0, 0%, 11%);
+  --color-text: hsl(0, 0%, 100%);
+}
+
+@font-face {
+  font-family: open-sans;
+  src: url("../fonts/open-sans.ttf");
+}
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: open-sans, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 2.5rem;
+}
+.grid__main, .grid__sidebar {
+  padding: 2.5rem;
+}
+.grid__main {
+  background-color: hsl(240, 100%, 33%);
+}
+.grid__sidebar {
+  background-color: hsl(300, 100%, 33%);
+}
+
+@media (min-width: 48em) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}/*# sourceMappingURL=style.css.map */

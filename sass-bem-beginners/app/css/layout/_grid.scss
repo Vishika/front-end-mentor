@@ -1,0 +1,25 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 2.5rem;
+
+  &__main,
+  &__sidebar {
+    padding: 2.5rem;
+  }
+
+  &__main {
+    background-color: hsl(240, 100%, 33%);
+  }
+
+  &__sidebar {
+    background-color: hsl(300, 100%, 33%);
+  }
+}
+
+@media (min-width: calc(768em / 16)) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

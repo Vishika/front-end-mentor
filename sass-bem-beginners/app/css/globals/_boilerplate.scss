@@ -1,0 +1,23 @@
+@use "../util" as u;
+// by default this will be called "util",
+// you could use a wildcard "*" to avoid using namespaces,
+// but this may create conflicts later on
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: u.$font;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
