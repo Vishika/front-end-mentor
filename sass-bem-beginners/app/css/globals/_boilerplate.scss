@@ -5,6 +5,14 @@
 
 html {
   box-sizing: border-box;
+  // font-size 62.5%
+  // this makes is so the default is 10px without impacting accessibility
+  // a 10px base means we can easily convert pixels into rems
+  // the main reason we NO LONGER DO THIS is because
+  // it will conflict with existing libraries, and developers
+  // relative units is supposed to be a relative measure
+  // so it's just best to get used to the default 16 and think in terms of 8 point sizing
+  // it took a while to arbitarily learn how much a pixel is, it should take just as long to learn 8 point
   font-size: 100%;
 }
 

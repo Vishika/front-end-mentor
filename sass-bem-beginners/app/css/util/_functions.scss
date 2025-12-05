@@ -1,0 +1,19 @@
+@use "sass:math";
+
+@function rem($pixels) {
+  @if not math.is-unitless($pixels) {
+    @error "Don't use units units when using the rem() function, only numbers";
+  }
+
+  // sass used to be able to handle forward slashes for division
+  // but no more since a new feature was introduced that uses them, import,forward
+  // divide will actually concatinate string at least for a while, in order to be compatible with the old functionality
+  @return math.div($pixels, 16) + rem;
+}
+
+@function em($pixels) {
+  @if not math.is-unitless($pixels) {
+    @error "Don't use units units when using the rem() function, only numbers";
+  }
+  @return math.div($pixels, 16) + em;
+}

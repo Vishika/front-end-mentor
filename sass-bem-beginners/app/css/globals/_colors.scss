@@ -4,3 +4,7 @@
   --color-background: hsl(0, 0%, 11%);
   --color-text: hsl(0, 0%, 100%);
 }
+
+.primary {
+  color: var(--color-background);
+}

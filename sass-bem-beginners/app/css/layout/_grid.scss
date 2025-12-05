@@ -1,8 +1,21 @@
+@use "../util/" as u;
+
+// %padding {
+//   padding: u.rem(16);
+// }
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: 2.5rem;
+  width: min(100% - u.rem(40), u.rem(1000));
+  margin-inline: auto;
+
+  @include u.breakpoint(large) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
 
   &__main,
   &__sidebar {
@@ -11,15 +24,37 @@
 
   &__main {
     background-color: hsl(240, 100%, 33%);
+
+    @include u.breakpoint(medium) {
+      background-color: hsl(180, 100%, 33%);
+    }
+
+    @include u.breakpoint(large) {
+      background-color: hsl(120, 100%, 33%);
+    }
   }
 
   &__sidebar {
-    background-color: hsl(300, 100%, 33%);
-  }
-}
+    @include u.breakpoint-down(medium) {
+      text-align: center;
+    }
 
-@media (min-width: calc(768em / 16)) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
+    @include u.breakpoint-down(small) {
+      text-align: right;
+    }
+  }
+
+  &__widget {
+    $widget: &;
+    padding: u.rem(16);
+    background-color: hsl(300, 100%, 33%);
+    // @extend %padding;
+
+    &--secondary {
+      // @extend .grid__widget;
+      // use extend in this way sparingly as it can make debugging harder
+      @extend #{$widget}; // because we're using a variable in a style we need to use #{} to interpolate it
+      background-color: hsl(360, 100%, 33%);
+    }
   }
 }
