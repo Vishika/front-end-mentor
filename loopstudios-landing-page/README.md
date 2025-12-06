@@ -61,29 +61,55 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+A new way to do containers / wrappers
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.content-grid {
+  $outer-padding: clamp(1.5rem, 0.5458125rem + 4.071vw, 5rem);
+  $max-content-width: 8rem;
+  display: grid;
+  grid-template-columns:
+    [full-width-start]
+    minmax($outer-padding, 1fr)
+    [content-start]
+    min((100% - ($outer-padding * 2)), a.rem($max-content-width))
+    [content-end]
+    minmax($outer-padding, 1fr)
+    [full-width-end];
+}
+
+.full-width {
+  grid-column: full-width;
+}
+
+.content-grid > *:not(.full-width) {
+  grid-column: content;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+In scss you can nest BEM a little bit better
+
+modern css nesting
+
+```css
+.block {
+  /* parent styles */
+  .block__element {
+    /* child of parent styles */
+  }
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+scss nesting
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```css
+.block {
+  /* parent styles */
+  &__element {
+    /* child of parent styles */
+  }
+}
+```
 
 ### Continued development
 
@@ -93,10 +119,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+[Coder coders Sass for beginner](https://www.youtube.com/watch?v=jfMHA8SqUL4)
+[Kevin Powells new approach to containers](https://www.youtube.com/watch?v=c13gpBrnGEw)
 
 ## Author
 

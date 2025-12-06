@@ -1,0 +1,11 @@
+@use "../abstracts" as a;
+
+.btn {
+  border: 1px solid var(--colors-black);
+  padding: a.rem(12) a.rem(40);
+  background-color: var(--colors-white);
+  text-transform: uppercase;
+  font-size: a.rem(14);
+  line-height: 1;
+  letter-spacing: a.rem(2.85);
+}
