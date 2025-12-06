@@ -1,0 +1,4 @@
+@use "functions" as a;
+
+$media-tablet: a.rem(768);
+$media-desktop: a.rem(1440);

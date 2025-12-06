@@ -1,4 +1,4 @@
-@use "../abstracts";
+@use "../abstracts" as a;
 
 body {
   font-family: alta, sans-serif;
@@ -15,15 +15,19 @@ h3 {
 }
 
 h1 {
-  font-size: abstracts.rem(40);
+  font-size: a.rem(40);
+
+  @media (min-width: a.$media-tablet) {
+    font-size: a.rem(72);
+  }
 }
 
 h2 {
-  font-size: abstracts.rem(32);
+  font-size: a.rem(32);
 }
 
 p {
-  font-size: abstracts.rem(15);
+  font-size: a.rem(15);
   line-height: 1.65;
   opacity: 50%;
 }

@@ -111,6 +111,9 @@ scss nesting
 }
 ```
 
+I learned that I couldn't use css custom properties in media queries, but I could use sass properties
+[css spec](https://www.w3.org/TR/css-variables-1/#using-variables)
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
