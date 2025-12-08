@@ -22,7 +22,13 @@ input,
 button,
 textarea,
 select {
+  cursor: pointer;
   font: inherit;
+}
+
+button {
+  background: none;
+  border: none;
 }
 
 ul,
@@ -51,6 +57,9 @@ html {
 body {
   font-family: alta, sans-serif;
   color: var(--colors-black);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 h1,
@@ -122,9 +131,44 @@ p {
   width: clamp(9rem, 6.137rem + 12.214vw, 12rem);
   height: clamp(1.5rem, 1.023rem + 2.036vw, 2rem);
 }
-.header__menu {
+.header__icn--open {
   width: clamp(1.5rem, 1.023rem + 2.036vw, 2rem);
   height: clamp(1rem, 0.682rem + 1.356vw, 1.333rem);
+}
+.header__icn--close {
+  width: clamp(1.149rem, 0.783rem + 1.56vw, 1.532rem);
+  height: clamp(1.149rem, 0.783rem + 1.56vw, 1.532rem);
+}
+.header__nav {
+  margin-block: clamp(1.5rem, -1.84rem + 14.249vw, 5rem);
+  margin-inline: clamp(2.5rem, 1.069rem + 6.107vw, 4rem);
+  width: calc(100% - clamp(2.5rem, 1.069rem + 6.107vw, 4rem) * 2);
+  background-color: var(--colors-black);
+  box-shadow: 0 0 0 100vmax var(--colors-black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: clamp(8rem, 15.817rem - 16.285vw, 12rem);
+}
+.header__menu--close {
+  justify-self: flex-end;
+}
+.header__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.header__link:link, .header__link:visited {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: var(--colors-white);
+}
+.header__menu--open[aria-expanded=false] ~ .header__nav {
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .main-title {
@@ -261,6 +305,10 @@ p {
   .footer__links {
     flex-direction: row;
   }
+}
+.footer__link:link, .footer__link:visited {
+  text-decoration: none;
+  color: var(--colors-white);
 }
 .footer__socials {
   grid-area: socials;

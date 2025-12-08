@@ -22,7 +22,13 @@ input,
 button,
 textarea,
 select {
+  cursor: pointer;
   font: inherit;
+}
+
+button {
+  background: none;
+  border: none;
 }
 
 ul,
