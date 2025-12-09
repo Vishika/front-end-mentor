@@ -5,27 +5,34 @@ p {
   text-align: center;
 }
 
-.content-grid {
-  $outer-padding: clamp(1.5rem, 0.5458125rem + 4.071vw, 5rem);
-  display: grid;
-  grid-template-columns:
-    [full-width-start]
-    minmax($outer-padding, 1fr)
-    [content-start]
-    min((100% - ($outer-padding * 2)), a.rem(608))
-    [content-end]
-    minmax($outer-padding, 1fr)
-    [full-width-end];
+body {
+  position: relative;
 }
 
-.full-width {
-  grid-column: full-width;
-}
+.layout {
+  $outer-padding: clamp(1.5rem, calc(0.268rem + 5.258vw), 5rem);
 
-.content-grid > *:not(.full-width) {
-  width: 100%;
-  grid-column: content;
-  margin-inline: auto;
+  & {
+    display: grid;
+    grid-template-columns:
+      [full-width-start]
+      minmax($outer-padding, 1fr)
+      [content-start]
+      min((100% - ($outer-padding * 2)), var(--max-content-width))
+      [content-end]
+      minmax($outer-padding, 1fr)
+      [full-width-end];
+  }
+
+  &__full-width {
+    grid-column: full-width;
+  }
+
+  &__content {
+    width: 100%;
+    grid-column: content;
+    margin-inline: auto;
+  }
 }
 
 .header {
@@ -34,6 +41,14 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: a.$media-desktop) {
+    &__logo--nav,
+    &__menu--open,
+    &__menu--close {
+      display: none;
+    }
+  }
 
   &__logo {
     width: clamp(9rem, calc(6.137rem + 12.214vw), 12rem);
@@ -45,35 +60,49 @@ p {
     height: clamp(1rem, calc(0.682rem + 1.356vw), 1.333rem);
   }
 
+  &__menu--close {
+    justify-self: flex-end;
+  }
+
   &__icn--close {
     width: clamp(1.149rem, calc(0.783rem + 1.56vw), 1.532rem);
     height: clamp(1.149rem, calc(0.783rem + 1.56vw), 1.532rem);
   }
 
   &__nav {
-    $inline-margin: clamp(2.5rem, calc(1.069rem + 6.107vw), 4rem);
-    margin-block: clamp(1.5rem, calc(-1.84rem + 14.249vw), 5rem);
-    margin-inline: $inline-margin;
-    width: calc(100% - ($inline-margin * 2));
+    width: 100%;
+    height: 100%;
+    padding-block: clamp(1.5rem, calc(-1.84rem + 14.249vw), 5rem);
+    padding-inline: clamp(2.5rem, calc(1.069rem + 6.107vw), 4rem);
     background-color: var(--colors-black);
-    box-shadow: 0 0 0 100vmax var(--colors-black);
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     transition: all 0.3s ease-in-out;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: clamp(1.5rem, calc(1.023rem + 2.036vw), 2rem) auto;
     row-gap: clamp(8rem, calc(15.817rem - 16.285vw), 12rem);
-  }
 
-  &__menu--close {
-    justify-self: flex-end;
+    @media (min-width: a.$media-desktop) {
+      margin: 0;
+      background-color: unset;
+      box-shadow: unset;
+      position: unset;
+      display: unset;
+    }
   }
 
   &__links {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    @media (min-width: a.$media-desktop) {
+      flex-direction: row;
+      gap: 2rem;
+    }
   }
 
   &__link:link,
@@ -81,11 +110,20 @@ p {
     text-decoration: none;
     font-size: 1.5rem;
     color: var(--colors-white);
+
+    @media (min-width: a.$media-desktop) {
+      font-size: a.rem(15);
+    }
   }
 
   &__menu--open[aria-expanded="false"] ~ &__nav {
     opacity: 0;
     transform: translateX(-100%);
+
+    @media (min-width: a.$media-desktop) {
+      opacity: 100;
+      transform: translateX(0);
+    }
   }
 }
 
@@ -99,7 +137,13 @@ p {
   color: var(--colors-white);
 
   @media (min-width: a.$media-tablet) {
+    margin-top: a.rem(150);
+    max-width: a.rem(650);
     word-spacing: unset;
+  }
+
+  @media (min-width: a.$media-desktop) {
+    margin-inline: 0;
   }
 }
 
@@ -118,22 +162,57 @@ p {
 }
 
 .intro {
-  margin-bottom: a.rem(96);
+  position: relative;
 
   &__pic {
-    margin-bottom: a.rem(48);
+    margin-bottom: 3rem;
   }
 
   &__title {
     margin-bottom: clamp(1rem, calc(0.523rem + 2.036vw), 1.5rem);
   }
+
+  @media (min-width: a.$media-desktop) {
+    &__pic {
+      margin-bottom: 0;
+    }
+
+    &__content {
+      padding: 6rem;
+      width: 40rem;
+      background-color: var(--colors-white);
+      position: absolute;
+      right: 0;
+      transform: translate(6rem, calc(-100% + 6rem));
+    }
+
+    &__content > * {
+      text-align: start;
+    }
+  }
 }
 
 .creations {
-  margin-bottom: a.rem(96);
+  margin-top: 12rem;
+  margin-bottom: 6rem;
+
+  @media (min-width: a.$media-desktop) {
+    display: grid;
+    grid-template-areas:
+      "title button"
+      "cards cards";
+    gap: 5rem;
+    align-items: center;
+  }
 
   &__title {
     margin-bottom: clamp(2rem, calc(3.954rem - 4.071vw), 3rem);
+
+    @media (min-width: a.$media-desktop) {
+      margin-bottom: unset;
+      grid-area: title;
+      text-align: start;
+    }
   }
 
   &__cards {
@@ -141,6 +220,12 @@ p {
     display: flex;
     flex-direction: column;
     gap: a.rem(24);
+
+    @media (min-width: a.$media-desktop) {
+      grid-area: cards;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__card {
@@ -181,15 +266,58 @@ p {
     &:nth-child(8) {
       background-image: url("../images/mobile/image-fisheye.jpg");
     }
+
+    @media (min-width: a.$media-desktop) {
+      min-height: a.rem(450);
+
+      &:nth-child(1) {
+        background-image: url("../images/desktop/image-deep-earth.jpg");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../images/desktop/image-night-arcade.jpg");
+      }
+
+      &:nth-child(3) {
+        background-image: url("../images/desktop/image-soccer-team.jpg");
+      }
+
+      &:nth-child(4) {
+        background-image: url("../images/desktop/image-grid.jpg");
+      }
+
+      &:nth-child(5) {
+        background-image: url("../images/desktop/image-from-above.jpg");
+      }
+
+      &:nth-child(6) {
+        background-image: url("../images/desktop/image-pocket-borealis.jpg");
+      }
+
+      &:nth-child(7) {
+        background-image: url("../images/desktop/image-curiosity.jpg");
+      }
+
+      &:nth-child(8) {
+        background-image: url("../images/desktop/image-fisheye.jpg");
+      }
+    }
   }
 
   &__subtitle {
-    margin: a.rem(20);
+    margin: clamp(1.25rem, calc(0.393rem + 1.786vw), 2rem)
+      clamp(1.25rem, calc(0.81rem + 1.878vw), 2.5rem);
   }
 
   &__btn {
     display: block;
     margin-inline: auto;
+
+    @media (min-width: a.$media-desktop) {
+      grid-area: button;
+      margin-inline: unset;
+      margin-left: auto;
+    }
   }
 }
 

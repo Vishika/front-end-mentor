@@ -6,10 +6,9 @@ const containerMain = document.getElementById("container-main");
 const containerNav = document.getElementById("container-nav");
 const mainTitle = document.getElementById("main-title");
 const mainLogo = document.getElementById("main-logo");
+let deactivatedMenu = false;
 
 const openMenu = function (event) {
-  console.log("opened!");
-
   Array.from(containerMain.children).map((child) =>
     child.classList.contains("splash")
       ? child.removeAttribute("inert")
@@ -23,8 +22,6 @@ const openMenu = function (event) {
 };
 
 const closeMenu = function (event) {
-  console.log("closed!");
-
   Array.from(containerMain.children).map((child) =>
     child.removeAttribute("inert")
   );
@@ -34,5 +31,19 @@ const closeMenu = function (event) {
   btnMenuOpen.setAttribute("aria-expanded", "false");
 };
 
+const handleResize = function () {
+  if (!deactivatedMenu && window.innerWidth >= 1440) {
+    deactivatedMenu = true;
+    closeMenu();
+    containerNav.removeAttribute("inert");
+  }
+
+  if (deactivatedMenu && window.innerWidth < 1440) {
+    deactivatedMenu = false;
+    containerNav.setAttribute("inert", "");
+  }
+};
+
 btnMenuOpen.addEventListener("click", openMenu);
 btnMenuClose.addEventListener("click", closeMenu);
+window.addEventListener("resize", handleResize);

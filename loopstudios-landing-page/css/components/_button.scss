@@ -1,8 +1,9 @@
 @use "../abstracts" as a;
 
 .btn {
+  height: 2.5rem;
+  width: 10rem;
   border: 1px solid var(--colors-black);
-  padding: a.rem(12) a.rem(40);
   background-color: var(--colors-white);
   text-transform: uppercase;
   font-size: a.rem(14);

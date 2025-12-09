@@ -14,9 +14,9 @@
     <title>Frontend Mentor | Loopstudios landing page</title>
   </head>
   <body>
-    <main id="container-main" class="content-grid">
-      <section class="splash full-width content-grid">
-        <header class="header" id="container-header">
+    <main id="container-main" class="layout">
+      <section class="splash layout__full-width layout">
+        <header class="header layout__content" id="container-header">
           <img
             class="header__logo"
             id="main-logo"
@@ -44,7 +44,7 @@
               inert
             >
               <img
-                class="header__logo"
+                class="header__logo header__logo--nav"
                 src="images/logo.svg"
                 alt="loopstudios"
               />
@@ -65,16 +65,22 @@
             </nav>
           </div>
         </header>
-        <h1 id="main-title" class="main-title">
+        <h1 id="main-title" class="main-title layout__content">
           Immersive experiences that deliver
         </h1>
       </section>
-      <section class="intro">
-        <img
-          class="intro__pic"
-          src="images/mobile/image-interactive.jpg"
-          alt="a man using a VR headset"
-        />
+      <section class="intro layout__content">
+        <picture class="intro__pic">
+          <source
+            srcset="images/desktop/image-interactive.jpg"
+            media="(width >= 1440px)"
+          />
+          <img
+            src="images/mobile/image-interactive.jpg"
+            alt="a man using a VR
+          headset"
+          />
+        </picture>
         <div class="intro__content">
           <h2 class="intro__title">The leader in interactive VR</h2>
           <p>
@@ -85,7 +91,7 @@
           </p>
         </div>
       </section>
-      <section class="creations">
+      <section class="creations layout__content">
         <h2 class="creations__title">Our creations</h2>
         <ul class="creations__cards">
           <li class="creations__card">
@@ -115,8 +121,8 @@
         </ul>
         <button class="creations__btn btn">see all</button>
       </section>
-      <footer class="footer full-width content-grid">
-        <div class="footer__wrapper">
+      <footer class="footer layout__full-width layout">
+        <div class="footer__wrapper layout__content">
           <img class="footer__logo" src="images/logo.svg" alt="loopstudios" />
           <ul class="footer__links">
             <li><a href="#" class="footer__link">About</a></li>
