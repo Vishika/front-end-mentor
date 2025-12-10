@@ -201,6 +201,7 @@ body {
   margin-bottom: 6rem;
 
   @media (min-width: a.$media-desktop) {
+    margin-bottom: 12rem;
     display: grid;
     grid-template-areas:
       "title button"
@@ -220,12 +221,13 @@ body {
   }
 
   &__cards {
-    margin-bottom: a.rem(32);
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     gap: a.rem(24);
 
     @media (min-width: a.$media-desktop) {
+      margin-bottom: 0;
       grid-area: cards;
       display: grid;
       grid-template-columns: repeat(4, 1fr);

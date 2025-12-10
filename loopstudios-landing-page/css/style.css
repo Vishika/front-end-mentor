@@ -334,6 +334,7 @@ body {
 }
 @media (min-width: 90rem) {
   .creations {
+    margin-bottom: 12rem;
     display: grid;
     grid-template-areas: "title button" "cards cards";
     gap: 5rem;
@@ -358,6 +359,7 @@ body {
 }
 @media (min-width: 90rem) {
   .creations__cards {
+    margin-bottom: 0;
     grid-area: cards;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
