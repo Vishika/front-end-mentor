@@ -7,6 +7,7 @@ p {
 
 body {
   position: relative;
+  background-color: var(--colors-black);
 }
 
 .layout {
@@ -148,7 +149,6 @@ body {
 
 .splash {
   --overlay: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-  margin-bottom: 6rem;
   height: a.rem(650);
   background-image: var(--overlay), url("../images/mobile/image-hero.jpg");
   background-size: cover;
@@ -159,14 +159,19 @@ body {
   @media (min-width: a.$media-tablet) {
     background-image: var(--overlay), url("../images/desktop/image-hero.jpg");
   }
-
-  @media (min-width: a.$media-desktop) {
-    margin-bottom: 10rem;
-  }
 }
 
 .intro {
-  position: relative;
+  padding-top: 6rem;
+  background-color: var(--colors-white);
+
+  @media (min-width: a.$media-desktop) {
+    padding-top: 10rem;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
 
   &__pic {
     margin-bottom: 3rem;
@@ -187,7 +192,8 @@ body {
       background-color: var(--colors-white);
       position: absolute;
       right: 0;
-      transform: translate(6rem, calc(-100% + 6rem));
+      bottom: 0;
+      transform: translate(6rem, 6rem);
     }
 
     &__content > * {
@@ -197,17 +203,23 @@ body {
 }
 
 .creations {
-  margin-top: 12rem;
-  margin-bottom: 6rem;
+  padding-top: 12rem;
+  padding-bottom: 6rem;
+  background-color: var(--colors-white);
 
   @media (min-width: a.$media-desktop) {
-    margin-bottom: 12rem;
-    display: grid;
-    grid-template-areas:
-      "title button"
-      "cards cards";
-    gap: 5rem;
-    align-items: center;
+    padding-bottom: 12rem;
+  }
+
+  &__wrapper {
+    @media (min-width: a.$media-desktop) {
+      display: grid;
+      grid-template-areas:
+        "title button"
+        "cards cards";
+      gap: 5rem;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -375,7 +387,6 @@ body {
 }
 
 .footer {
-  background-color: var(--colors-black);
   color: var(--colors-white);
 
   &__wrapper {
