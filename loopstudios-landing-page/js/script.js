@@ -44,6 +44,14 @@ const handleResize = function () {
   }
 };
 
-btnMenuOpen.addEventListener("click", openMenu);
-btnMenuClose.addEventListener("click", closeMenu);
-window.addEventListener("resize", handleResize);
+const init = function () {
+  btnMenuOpen.addEventListener("click", openMenu);
+  btnMenuClose.addEventListener("click", closeMenu);
+  window.addEventListener("resize", handleResize);
+
+  if (window.innerWidth >= 1440) {
+    containerNav.removeAttribute("inert");
+  }
+};
+
+init();

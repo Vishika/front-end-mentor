@@ -1,0 +1,20 @@
+.hover-bar {
+  display: flex;
+  place-content: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 2px;
+    background-color: var(--colors-white);
+    position: absolute;
+    bottom: -8px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 100%;
+  }
+}

@@ -7,6 +7,13 @@
   background-color: var(--colors-white);
   text-transform: uppercase;
   font-size: a.rem(14);
+  font-weight: 700;
   line-height: 1;
   letter-spacing: a.rem(2.85);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--colors-black);
+  color: var(--colors-white);
 }

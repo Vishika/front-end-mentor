@@ -114,6 +114,28 @@ scss nesting
 I learned that I couldn't use css custom properties in media queries, but I could use sass properties
 [css spec](https://www.w3.org/TR/css-variables-1/#using-variables)
 
+I learned more about linear gradients in background images, and how to change them on hover after playing around with values in the mdn docs
+
+```css
+.block {
+  --overlay: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6) 25%,
+    50%,
+    rgba(0, 0, 0, 0) 75%
+  );
+
+  background-image: var(--overlay), url("../images/img.jpg");
+
+  &:hover {
+    --overlay: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    );
+  }
+}
+```
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
