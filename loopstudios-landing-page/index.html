@@ -25,6 +25,7 @@
           />
           <div class="header__menu-nav">
             <button
+              type="button"
               class="header__menu--open"
               id="btn-menu-open"
               aria-haspopup="true"
@@ -37,18 +38,17 @@
                 alt="hamburger menu button"
               />
             </button>
-            <nav
-              id="container-nav"
-              class="header__nav"
-              aria-labelledby="menu-label"
-              inert
-            >
+            <nav id="container-nav" class="header__nav" inert>
               <img
                 class="header__logo header__logo--nav"
                 src="images/logo.svg"
                 alt="loopstudios"
               />
-              <button id="btn-menu-close" class="header__menu--close">
+              <button
+                type="button"
+                id="btn-menu-close"
+                class="header__menu--close"
+              >
                 <img
                   class="header__icn--close"
                   src="images/icon-close.svg"
@@ -135,7 +135,7 @@
             </a>
           </li>
         </ul>
-        <button class="creations__btn btn">see all</button>
+        <button type="button" class="creations__btn btn">see all</button>
       </section>
       <footer class="footer layout__full-width layout">
         <div class="footer__wrapper layout__content">
