@@ -1,0 +1,12 @@
+@use "../abstracts" as a;
+
+body {
+  font-family: league-spartan, sans-serif;
+  color: var(--colors-black);
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}

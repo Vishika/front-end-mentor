@@ -1,0 +1,14 @@
+@use "functions" as a;
+
+$media-tablet: 48rem;
+$media-desktop: 90rem;
+
+:root {
+  --max-content-width: 38rem;
+}
+
+@media (min-width: 90rem) {
+  :root {
+    --max-content-width: 70rem;
+  }
+}

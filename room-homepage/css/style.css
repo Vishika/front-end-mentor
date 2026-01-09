@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  cursor: pointer;
+  font: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 100%;
+}
+
+@font-face {
+  font-family: league-spartan;
+  src: url(../fonts/league-spartan.ttf);
+}
+:root {
+  --max-content-width: 38rem;
+}
+
+@media (min-width: 90rem) {
+  :root {
+    --max-content-width: 70rem;
+  }
+}
+:root {
+  --colors-white: hsl(0, 0%, 100%);
+  --colors-grey-l: hsl(0, 0%, 63%);
+  --colors-grey: hsl(0, 0%, 27%);
+  --colors-black: hsl(0, 0%, 0%);
+}
+
+body {
+  font-family: league-spartan, sans-serif;
+  color: var(--colors-black);
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+}/*# sourceMappingURL=style.css.map */
