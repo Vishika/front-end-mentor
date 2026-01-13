@@ -1,0 +1,45 @@
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carousel;
+  scrollbar-width: none;
+
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > li {
+    scroll-snap-align: center;
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  &::scroll-button(*) {
+    width: 40px;
+    position: absolute;
+    position-anchor: --carousel;
+    position-area: span-block-start span-inline-start;
+  }
+
+  &::scroll-button(inline-end) {
+    content: "right";
+  }
+
+  &::scroll-button(inline-start) {
+    content: "left";
+    transform: translateX(-100%);
+  }
+
+  &::scroll-button(*):disabled {
+    opacity: 0.8;
+  }
+}

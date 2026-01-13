@@ -73,4 +73,44 @@ h1,
 h2,
 h3 {
   text-transform: uppercase;
+}
+
+.carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  anchor-name: --carousel;
+  scrollbar-width: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .carousel {
+    scroll-behavior: smooth;
+  }
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel > li {
+  scroll-snap-align: center;
+}
+.carousel > li > img {
+  width: 100%;
+}
+.carousel::scroll-button(*) {
+  width: 40px;
+  position: absolute;
+  position-anchor: --carousel;
+  position-area: span-block-start span-inline-start;
+}
+.carousel::scroll-button(inline-end) {
+  content: "right";
+}
+.carousel::scroll-button(inline-start) {
+  content: "left";
+  transform: translateX(-100%);
+}
+.carousel::scroll-button(*):disabled {
+  opacity: 0.8;
 }/*# sourceMappingURL=style.css.map */
