@@ -10,40 +10,64 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
     <title>Frontend Mentor | Room homepage</title>
   </head>
   <body>
     <main>
-      <section>
-        <ul class="carousel" aria-label="Gallery">
+      <section class="carousel">
+        <ul class="carousel__imgs" aria-label="Gallery">
           <li>
             <img
+              id="carousel__img--1"
+              class="carousel__img slid-in"
               srcset="
                 images/mobile-image-hero-1.jpg  375w,
                 images/desktop-image-hero-1.jpg 840w
               "
               alt="white chairs and table with bonsai"
+              data-num="1"
             />
           </li>
           <li>
             <img
+              id="carousel__img--2"
+              class="carousel__img"
               srcset="
                 images/mobile-image-hero-2.jpg  375w,
                 images/desktop-image-hero-2.jpg 840w
               "
               alt="three different coloured chairs"
+              data-num="2"
             />
           </li>
           <li>
             <img
+              id="carousel__img--3"
+              class="carousel__img"
               srcset="
                 images/mobile-image-hero-3.jpg  375w,
                 images/desktop-image-hero-3.jpg 840w
               "
               alt="foldable black chair"
+              class="carosel__img"
+              data-num="3"
             />
           </li>
         </ul>
+        <div class="carousel__btns">
+          <button
+            id="carousel__btn--prev"
+            class="carousel__btn carousel__btn--prev"
+          >
+            <img src="images/icon-angle-left.svg" alt="" /></button
+          ><button
+            id="carousel__btn--next"
+            class="carousel__btn carousel__btn--next"
+          >
+            <img src="images/icon-angle-right.svg" alt="" />
+          </button>
+        </div>
       </section>
     </main>
   </body>

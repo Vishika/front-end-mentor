@@ -1,45 +1,88 @@
 .carousel {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  anchor-name: --carousel;
-  scrollbar-width: none;
+  &__imgs {
+    display: grid;
+    // grid-auto-flow: column;
+    // grid-auto-columns: 100%;
+    overflow-x: auto;
+    // scroll-snap-type: x mandatory;
+    // scrollbar-width: none;
+    anchor-name: --carousel-imgs;
 
-  @media (prefers-reduced-motion: no-preference) {
-    scroll-behavior: smooth;
-  }
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
-  > li {
-    scroll-snap-align: center;
-
-    > img {
-      width: 100%;
+    > li {
+      scroll-snap-align: center;
+      grid-row: 1;
+      grid-column: 1;
     }
   }
 
-  &::scroll-button(*) {
-    width: 40px;
+  &__img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    position: relative;
+  }
+
+  &__btns {
+    z-index: 3;
     position: absolute;
-    position-anchor: --carousel;
-    position-area: span-block-start span-inline-start;
+    position-anchor: --carousel-imgs;
+    inset-block-end: anchor(end);
+    inset-inline-end: anchor(end);
+    display: flex;
   }
 
-  &::scroll-button(inline-end) {
-    content: "right";
+  &__btn {
+    height: 56px;
+    width: 56px;
+    background-color: var(--colors-black);
+    display: grid;
+    place-content: center;
+    transition: background-color 0.5s ease;
   }
 
-  &::scroll-button(inline-start) {
-    content: "left";
+  &__btn:hover {
+    background-color: var(--colors-grey);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
     transform: translateX(-100%);
   }
-
-  &::scroll-button(*):disabled {
-    opacity: 0.8;
+  to {
+    transform: translateX(0);
   }
+}
+
+.slid-in {
+  z-index: 1;
+}
+
+.slide-in-right {
+  z-index: 2;
+  animation: slide-in-right 1s ease-in both;
+  transition: z-index 0s;
+}
+
+.slide-in-left {
+  z-index: 2;
+  animation: slide-in-left 1s ease-in both;
+  transition: z-index 0s;
 }
