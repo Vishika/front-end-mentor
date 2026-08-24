@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,41 +18,52 @@
       <section class="carousel">
         <ul class="carousel__imgs" aria-label="Gallery">
           <li>
-            <img
-              id="carousel__img--1"
-              class="carousel__img slid-in"
-              srcset="
-                images/mobile-image-hero-1.jpg  375w,
-                images/desktop-image-hero-1.jpg 840w
-              "
-              alt="white chairs and table with bonsai"
-              data-num="1"
-            />
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="images/desktop-image-hero-1.jpg"
+              />
+              <source srcset="images/mobile-image-hero-1.jpg" />
+              <img
+                id="carousel__img--1"
+                class="carousel__img slid-in"
+                src="images/desktop-image-hero-1.jpg"
+                alt="white chairs and table with bonsai"
+                data-num="1"
+              />
+            </picture>
           </li>
           <li>
-            <img
-              id="carousel__img--2"
-              class="carousel__img"
-              srcset="
-                images/mobile-image-hero-2.jpg  375w,
-                images/desktop-image-hero-2.jpg 840w
-              "
-              alt="three different coloured chairs"
-              data-num="2"
-            />
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="images/desktop-image-hero-2.jpg"
+              />
+              <source srcset="images/mobile-image-hero-2.jpg" />
+              <img
+                id="carousel__img--2"
+                class="carousel__img slid-in"
+                src="images/desktop-image-hero-2.jpg"
+                alt="three different coloured chairs"
+                data-num="2"
+              />
+            </picture>
           </li>
           <li>
-            <img
-              id="carousel__img--3"
-              class="carousel__img"
-              srcset="
-                images/mobile-image-hero-3.jpg  375w,
-                images/desktop-image-hero-3.jpg 840w
-              "
-              alt="foldable black chair"
-              class="carosel__img"
-              data-num="3"
-            />
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="images/desktop-image-hero-3.jpg"
+              />
+              <source srcset="images/mobile-image-hero-3.jpg" />
+              <img
+                id="carousel__img--3"
+                class="carousel__img slid-in"
+                src="images/desktop-image-hero-3.jpg"
+                alt="three different coloured chairs"
+                data-num="3"
+              />
+            </picture>
           </li>
         </ul>
         <div class="carousel__btns">
