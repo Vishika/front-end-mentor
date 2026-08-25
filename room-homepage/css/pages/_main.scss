@@ -1,4 +1,41 @@
 @use "../abstracts" as a;
 
-body {
+.hero {
+  &__imgs {
+    anchor-name: --hero-imgs;
+  }
+
+  &__img {
+    object-fit: cover;
+    height: 360px;
+  }
+}
+
+.shop {
+  padding: 2rem 0rem;
+
+  &__card {
+    padding: 2rem;
+    background-color: var(--colors-white);
+  }
+
+  &__title {
+    text-transform: none;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.125rem;
+  }
+
+  &__text {
+    color: var(--colors-grey-l);
+  }
+
+  &__btn {
+    padding: 0 2rem 2rem 2rem;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }

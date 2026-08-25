@@ -15,8 +15,8 @@
   </head>
   <body>
     <main>
-      <section class="carousel">
-        <ul class="carousel__imgs" aria-label="Gallery">
+      <section class="hero carousel">
+        <ul class="hero__imgs carousel__slides" aria-label="Gallery">
           <li>
             <picture>
               <source
@@ -25,11 +25,9 @@
               />
               <source srcset="images/mobile-image-hero-1.jpg" />
               <img
-                id="carousel__img--1"
-                class="carousel__img slid-in"
+                class="hero__img carousel__slide current-slide"
                 src="images/desktop-image-hero-1.jpg"
                 alt="white chairs and table with bonsai"
-                data-num="1"
               />
             </picture>
           </li>
@@ -41,11 +39,9 @@
               />
               <source srcset="images/mobile-image-hero-2.jpg" />
               <img
-                id="carousel__img--2"
-                class="carousel__img slid-in"
+                class="hero__img carousel__slide"
                 src="images/desktop-image-hero-2.jpg"
                 alt="three different coloured chairs"
-                data-num="2"
               />
             </picture>
           </li>
@@ -57,11 +53,9 @@
               />
               <source srcset="images/mobile-image-hero-3.jpg" />
               <img
-                id="carousel__img--3"
-                class="carousel__img slid-in"
+                class="hero__img carousel__slide"
                 src="images/desktop-image-hero-3.jpg"
                 alt="three different coloured chairs"
-                data-num="3"
               />
             </picture>
           </li>
@@ -79,6 +73,44 @@
             <img src="images/icon-angle-right.svg" alt="" />
           </button>
         </div>
+      </section>
+      <section class="shop carousel">
+        <ul class="carousel__slides">
+          <li class="shop__card carousel__slide current-slide">
+            <h2 class="shop__title">Discover innovative ways to decorate</h2>
+            <p class="shop__text">
+              We provide unmatched quality, comfort, and style for property
+              owners across the country. Our experts combine form and function
+              in bringing your vision to life. Create a room in your own style
+              with our collection and make your property a reflection of you and
+              what you love.
+            </p>
+          </li>
+          <li class="shop__card carousel__slide">
+            <h2 class="shop__title">We are available all across the globe</h2>
+            <p class="shop__text">
+              With stores all over the world, it's easy for you to find
+              furniture for your home or place of business. Locally, we're in
+              most major cities throughout the country. Find the branch nearest
+              you using our store locator. Any questions? Don't hesitate to
+              contact us today.
+            </p>
+          </li>
+          <li class="shop__card carousel__slide">
+            <h2 class="shop__title">Manufactured with the best materials</h2>
+            <p class="shop__text">
+              Our modern furniture store provide a high level of quality. Our
+              company has invested in advanced technology to ensure that every
+              product is made as perfect and as consistent as possible. With
+              three decades of experience in this industry, we understand what
+              customers want for their home and office.
+            </p>
+          </li>
+        </ul>
+        <button class="shop__btn">
+          <span class>shop now</span>
+          <img src="images/icon-arrow.svg" />
+        </button>
       </section>
     </main>
   </body>

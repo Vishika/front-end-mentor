@@ -1,12 +1,7 @@
 .carousel {
-  &__imgs {
+  &__slides {
     display: grid;
-    // grid-auto-flow: column;
-    // grid-auto-columns: 100%;
     overflow-x: auto;
-    // scroll-snap-type: x mandatory;
-    // scrollbar-width: none;
-    anchor-name: --carousel-imgs;
 
     @media (prefers-reduced-motion: no-preference) {
       scroll-behavior: smooth;
@@ -23,25 +18,24 @@
     }
   }
 
-  &__img {
+  &__slide {
     width: 100%;
-    height: 360px;
-    object-fit: cover;
     position: relative;
+    z-index: -1;
   }
 
   &__btns {
     z-index: 3;
     position: absolute;
-    position-anchor: --carousel-imgs;
+    position-anchor: --hero-imgs;
     inset-block-end: anchor(end);
     inset-inline-end: anchor(end);
     display: flex;
   }
 
   &__btn {
-    height: 56px;
-    width: 56px;
+    height: 3.5rem;
+    width: 3.5rem;
     background-color: var(--colors-black);
     display: grid;
     place-content: center;
@@ -71,7 +65,7 @@
   }
 }
 
-.slid-in {
+.current-slide {
   z-index: 1;
 }
 

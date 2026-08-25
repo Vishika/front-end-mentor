@@ -3,58 +3,59 @@
 const btnPrev = document.getElementById("carousel__btn--prev");
 const btnNext = document.getElementById("carousel__btn--next");
 
-const prevImg = () => {
-  const carouselImgs = Array.from(document.querySelectorAll(".carousel__img"));
-  const firstIndex = 0;
-  const lastIndex = carouselImgs.length - 1;
-  let newIndex;
-  let oldIndex;
-  for (let i = 0; i < carouselImgs.length; i++) {
-    if (!carouselImgs[i].classList.contains("slid-in")) continue;
+const findOldIndex = (carousel) => {
+  return carousel.reduce(
+    (acc, slide, index) =>
+      slide.classList.contains("current-slide") ? index : acc,
+    0,
+  );
+};
 
-    oldIndex = i;
-    newIndex = i === firstIndex ? lastIndex : i - 1;
-  }
-  carouselImgs[oldIndex].classList.remove("slide-in-right");
-  carouselImgs[oldIndex].classList.remove("slide-in-left");
-  carouselImgs[newIndex].classList.add("slid-in");
-  carouselImgs[newIndex].classList.add("slide-in-left");
+const findNewIndex = (oldIndex, lastIndex, direction) => {
+  return direction === "left"
+    ? oldIndex === 0
+      ? lastIndex
+      : oldIndex - 1
+    : oldIndex === lastIndex
+      ? 0
+      : oldIndex + 1;
+};
+
+const updateOldSlide = (carousel, index) => {
+  carousel[index].classList.remove("slide-in-right");
+  carousel[index].classList.remove("slide-in-left");
   setTimeout(() => {
-    carouselImgs[oldIndex].classList.remove("slid-in");
+    carousel[index].classList.remove("current-slide");
   }, 1000);
 };
 
-const nextImg = () => {
-  const carouselImgs = Array.from(document.querySelectorAll(".carousel__img"));
-  const firstIndex = 0;
-  const lastIndex = carouselImgs.length - 1;
-  let newIndex;
-  let oldIndex;
-  for (let i = 0; i < carouselImgs.length; i++) {
-    if (!carouselImgs[i].classList.contains("slid-in")) continue;
-
-    oldIndex = i;
-    newIndex = i === lastIndex ? firstIndex : i + 1;
+const updateNewSlide = (carousel, index, direction) => {
+  if (direction === "left") {
+    carousel[index].classList.add("current-slide");
+    carousel[index].classList.add("slide-in-left");
+  } else {
+    carousel[index].classList.add("current-slide");
+    carousel[index].classList.add("slide-in-right");
   }
+};
 
-  carouselImgs[oldIndex].classList.remove("slide-in-right");
-  carouselImgs[oldIndex].classList.remove("slide-in-left");
-  carouselImgs[newIndex].classList.add("slid-in");
-  carouselImgs[newIndex].classList.add("slide-in-right");
-  setTimeout(() => {
-    carouselImgs[oldIndex].classList.remove("slid-in");
-  }, 1000);
+const slideIn = (carouselName, direction) => {
+  const carousel = Array.from(document.querySelectorAll(carouselName));
+  const oldIndex = findOldIndex(carousel);
+  const newIndex = findNewIndex(oldIndex, carousel.length - 1, direction);
+  updateOldSlide(carousel, oldIndex);
+  updateNewSlide(carousel, newIndex, direction);
+};
+
+const prevImg = () => {
+  slideIn(".hero__img", "left");
+  slideIn(".shop__card", "left");
+};
+
+const nextImg = () => {
+  slideIn(".hero__img", "right");
+  slideIn(".shop__card", "right");
 };
 
 btnPrev.addEventListener("click", prevImg);
 btnNext.addEventListener("click", nextImg);
-
-/**
- * o x x > x o x
- * x o x > x x o
- * x x o > o x x
- *
- * o x x < x x o
- * x o x < o x x
- * x x o < x o x
- */
