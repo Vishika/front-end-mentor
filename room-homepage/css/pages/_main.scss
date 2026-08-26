@@ -28,6 +28,8 @@
 
   &__text {
     color: var(--colors-grey-l);
+    letter-spacing: -0.02rem;
+    line-height: 1.4;
   }
 
   &__btn {
@@ -37,5 +39,33 @@
     letter-spacing: 0.75rem;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__btn:hover {
+    filter: brightness(0) saturate(100%) invert(70%) sepia(4%) saturate(9%)
+      hue-rotate(343deg) brightness(92%) contrast(85%);
+  }
+}
+
+.about {
+  &__info {
+    padding: 3rem 2rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: var(--colors-grey-l);
+    letter-spacing: -0.02rem;
+    line-height: 1.4;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    height: 360px;
   }
 }

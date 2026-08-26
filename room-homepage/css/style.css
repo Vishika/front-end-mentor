@@ -173,6 +173,8 @@ h3 {
 }
 .shop__text {
   color: var(--colors-grey-l);
+  letter-spacing: -0.02rem;
+  line-height: 1.4;
 }
 .shop__btn {
   padding: 0 2rem 2rem 2rem;
@@ -181,4 +183,26 @@ h3 {
   letter-spacing: 0.75rem;
   display: flex;
   justify-content: space-between;
+}
+.shop__btn:hover {
+  filter: brightness(0) saturate(100%) invert(70%) sepia(4%) saturate(9%) hue-rotate(343deg) brightness(92%) contrast(85%);
+}
+
+.about__info {
+  padding: 3rem 2rem;
+}
+.about__title {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.about__text {
+  color: var(--colors-grey-l);
+  letter-spacing: -0.02rem;
+  line-height: 1.4;
+}
+.about__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 360px;
 }/*# sourceMappingURL=style.css.map */
